@@ -52,6 +52,13 @@
     </developers>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.abubusoft/kripton -->
+        <dependency>
+            <groupId>com.abubusoft</groupId>
+            <artifactId>kripton</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+
         <!-- junit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
