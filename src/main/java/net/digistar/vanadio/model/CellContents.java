@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +61,7 @@ import java.util.List;
         "lineOrRectangleOrEllipse"
 })
 @XmlRootElement(name = "cellContents", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class CellContents {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

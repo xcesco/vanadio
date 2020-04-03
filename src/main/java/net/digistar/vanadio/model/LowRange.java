@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 /**
@@ -34,7 +32,7 @@ import javax.xml.bind.annotation.*;
         "dataRange"
 })
 @XmlRootElement(name = "lowRange", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class LowRange {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

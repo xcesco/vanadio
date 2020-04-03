@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -39,7 +37,7 @@ import javax.xml.bind.annotation.*;
         "bubblePlot"
 })
 @XmlRootElement(name = "bubbleChart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class BubbleChart {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

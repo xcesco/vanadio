@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 /**
@@ -38,7 +36,7 @@ import javax.xml.bind.annotation.*;
         "bar3DPlot"
 })
 @XmlRootElement(name = "stackedBar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class StackedBar3DChart {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

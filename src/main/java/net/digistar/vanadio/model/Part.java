@@ -8,9 +8,9 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,177 +45,30 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "property",
-        "printWhenExpression",
-        "partNameExpression",
-        "partComponent"
-})
-@XmlRootElement(name = "part", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//        "property",
+//        "printWhenExpression",
+//        "partNameExpression",
+//        "partComponent"
+//})
+//@XmlRootElement(name = "part", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//@BindType
 public class Part {
+    public List<Property> property = new ArrayList<>();
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Property> property;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected PrintWhenExpression printWhenExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected PartNameExpression partNameExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected PartComponentType partComponent;
-    @XmlAttribute(name = "uuid")
-    protected String uuid;
-    @XmlAttribute(name = "evaluationTime")
-    protected String evaluationTime;
-    @XmlAttribute(name = "evaluationGroup")
-    protected String evaluationGroup;
+    public PrintWhenExpression printWhenExpression;
 
-    /**
-     * Gets the value of the property property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the property property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProperty().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Property }
-     */
-    public List<Property> getProperty() {
-        if (property == null) {
-            property = new ArrayList<Property>();
-        }
-        return this.property;
-    }
+    public PartNameExpression partNameExpression;
 
-    /**
-     * Gets the value of the printWhenExpression property.
-     *
-     * @return possible object is
-     * {@link PrintWhenExpression }
-     */
-    public PrintWhenExpression getPrintWhenExpression() {
-        return printWhenExpression;
-    }
+    public PartComponentType partComponent;
 
-    /**
-     * Sets the value of the printWhenExpression property.
-     *
-     * @param value allowed object is
-     *              {@link PrintWhenExpression }
-     */
-    public void setPrintWhenExpression(PrintWhenExpression value) {
-        this.printWhenExpression = value;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE)
+    public String uuid;
 
-    /**
-     * Gets the value of the partNameExpression property.
-     *
-     * @return possible object is
-     * {@link PartNameExpression }
-     */
-    public PartNameExpression getPartNameExpression() {
-        return partNameExpression;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE)
+    public String evaluationTime;
 
-    /**
-     * Sets the value of the partNameExpression property.
-     *
-     * @param value allowed object is
-     *              {@link PartNameExpression }
-     */
-    public void setPartNameExpression(PartNameExpression value) {
-        this.partNameExpression = value;
-    }
-
-    /**
-     * Gets the value of the partComponent property.
-     *
-     * @return possible object is
-     * {@link PartComponentType }
-     */
-    public PartComponentType getPartComponent() {
-        return partComponent;
-    }
-
-    /**
-     * Sets the value of the partComponent property.
-     *
-     * @param value allowed object is
-     *              {@link PartComponentType }
-     */
-    public void setPartComponent(PartComponentType value) {
-        this.partComponent = value;
-    }
-
-    /**
-     * Gets the value of the uuid property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getUuid() {
-        return uuid;
-    }
-
-    /**
-     * Sets the value of the uuid property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setUuid(String value) {
-        this.uuid = value;
-    }
-
-    /**
-     * Gets the value of the evaluationTime property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getEvaluationTime() {
-        return evaluationTime;
-    }
-
-    /**
-     * Sets the value of the evaluationTime property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setEvaluationTime(String value) {
-        this.evaluationTime = value;
-    }
-
-    /**
-     * Gets the value of the evaluationGroup property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getEvaluationGroup() {
-        return evaluationGroup;
-    }
-
-    /**
-     * Sets the value of the evaluationGroup property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setEvaluationGroup(String value) {
-        this.evaluationGroup = value;
-    }
-
+    @BindXml(xmlType = XmlType.ATTRIBUTE)
+    public String evaluationGroup;
 }

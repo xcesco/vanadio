@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -77,7 +75,7 @@ import javax.xml.bind.annotation.*;
         "rangeAxisMaxValueExpression"
 })
 @XmlRootElement(name = "barPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class BarPlot {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

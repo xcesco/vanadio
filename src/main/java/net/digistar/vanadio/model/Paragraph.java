@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -57,7 +55,7 @@ import java.util.List;
         "tabStop"
 })
 @XmlRootElement(name = "paragraph", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class Paragraph {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

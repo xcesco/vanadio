@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -35,7 +33,7 @@ import javax.xml.bind.annotation.*;
         "font"
 })
 @XmlRootElement(name = "tickLabelFont", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class TickLabelFont {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

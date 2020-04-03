@@ -8,8 +8,10 @@
 
 package net.digistar.vanadio.model;
 
+import com.abubusoft.kripton.annotation.BindAdapter;
 import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
 
 import static com.abubusoft.kripton.xml.XmlType.ATTRIBUTE;
 
@@ -165,102 +167,121 @@ import static com.abubusoft.kripton.xml.XmlType.ATTRIBUTE;
 //@XmlRootElement(name = "jasperReport", namespace = "http://jasperreports.sourceforge.net/jasperreports")
 @BindType
 public class JasperReport {
-//  protected List<Property> property = new ArrayList<Property>();
+//  public List<Property> property = new ArrayList<Property>();
 //
-//  protected List<DatasetPropertyExpressionType> propertyExpression = new ArrayList<>();
+//  public List<DatasetPropertyExpressionType> propertyExpression = new ArrayList<>();
 //
 //  @BindXml(elementTag = "import")
-//  protected List<Import> importList = new ArrayList<>();
-//  protected List<Template> template = new ArrayList<>();
-//  protected List<ReportFont> reportFont = new ArrayList<>();
-//  protected List<Style> style = new ArrayList<>();
-//  protected List<SubDataset> subDataset = new ArrayList<>();
-//  protected List<Scriptlet> scriptlet = new ArrayList<>();
-//  protected List<Parameter> parameter = new ArrayList<>();
-//  protected QueryString queryString;
-//  protected List<Field> field = new ArrayList<>();
-//  protected List<SortField> sortField = new ArrayList<>();
-//  protected List<Variable> variable = new ArrayList<>();
-//  protected FilterExpression filterExpression;
-//  protected List<Group> group = new ArrayList<>();
-//  protected Background background;
-//  protected Title title;
-//  protected PageHeader pageHeader;
-//  protected ColumnHeader columnHeader;
+//  public List<Import> importList = new ArrayList<>();
+//  public List<Template> template = new ArrayList<>();
+//  public List<ReportFont> reportFont = new ArrayList<>();
+//  public List<Style> style = new ArrayList<>();
+//  public List<SubDataset> subDataset = new ArrayList<>();
+//  public List<Scriptlet> scriptlet = new ArrayList<>();
+//  public List<Parameter> parameter = new ArrayList<>();
+//  public QueryString queryString;
+//  public List<Field> field = new ArrayList<>();
+//  public List<SortField> sortField = new ArrayList<>();
+//  public List<Variable> variable = new ArrayList<>();
+//  public FilterExpression filterExpression;
+//  public List<Group> group = new ArrayList<>();
+//  public Background background;
+//  public Title title;
+//  public PageHeader pageHeader;
+//  public ColumnHeader columnHeader;
 //  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//  protected Detail detail;
-//  protected ColumnFooter columnFooter;
-//  protected PageFooter pageFooter;
-//  protected LastPageFooter lastPageFooter;
-//  protected Summary summary;
+//  public Detail detail;
+//  public ColumnFooter columnFooter;
+//  public PageFooter pageFooter;
+//  public LastPageFooter lastPageFooter;
+//  public Summary summary;
 //  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//  protected NoData noData;
-//  @BindXml(xmlType = ATTRIBUTE)
-//  //@XmlAttribute(name = "name", required = true)
-//  protected String name;
-//  @BindXml(xmlType = ATTRIBUTE)
-//  //@XmlAttribute(name = "language")
-//  protected String language = "java";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  // @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  protected String columnCount = "1";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String printOrder = "Vertical";
-//  @XmlAttribute(name = "columnDirection")
-//  protected String columnDirection = "LTR";
-//  @XmlAttribute(name = "pageWidth")
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  protected String pageWidth = "595";
-//  @XmlAttribute(name = "pageHeight")
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  protected String pageHeight = "842";
-//  @XmlAttribute(name = "orientation")
-//  protected String orientation = "Portrait";
-//  @XmlAttribute(name = "whenNoDataType")
-//  protected String whenNoDataType;
-//  @XmlAttribute(name = "sectionType")
-//  protected String sectionType = "Band";
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String columnWidth = "555";
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String columnSpacing = "0";
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String leftMargin = "20";
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String rightMargin = "20";
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String topMargin = "30";
-//  //@XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String bottomMargin = "30";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String isTitleNewPage = "false";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String isSummaryNewPage = "false";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String isSummaryWithPageHeaderAndFooter = "false";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String isFloatColumnFooter = "false";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String scriptletClass;
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String resourceBundle;
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String whenResourceMissingType = "Null";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String isIgnorePagination = "false";
-//  @BindXml(xmlType = ATTRIBUTE)
-//  protected String formatFactoryClass;
+//  public NoData noData;
 
   @BindXml(xmlType = ATTRIBUTE)
-  protected final String uuid;
+  public String name;
 
-  public JasperReport(String uuid) {
-    this.uuid = uuid;
-  }
+  @BindXml(xmlType = ATTRIBUTE)
+  public String language = "java";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  public String columnCount = "1";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String printOrder = "Vertical";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String columnDirection = "LTR";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  public String pageWidth = "595";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  public String pageHeight = "842";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String orientation = "Portrait";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String whenNoDataType;
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String sectionType = "Band";
+
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  @BindXml(xmlType = ATTRIBUTE)
+  public String columnWidth = "555";
+
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  @BindXml(xmlType = ATTRIBUTE)
+  public String columnSpacing = "0";
+
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  @BindXml(xmlType = ATTRIBUTE)
+  public String leftMargin = "20";
+
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  @BindXml(xmlType = ATTRIBUTE)
+  public String rightMargin = "20";
+
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  @BindXml(xmlType = ATTRIBUTE)
+  public String topMargin = "30";
+
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  @BindXml(xmlType = ATTRIBUTE)
+  public String bottomMargin = "30";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String isTitleNewPage = "false";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String isSummaryNewPage = "false";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String isSummaryWithPageHeaderAndFooter = "false";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String isFloatColumnFooter = "false";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String scriptletClass;
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String resourceBundle;
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String whenResourceMissingType = "Null";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String isIgnorePagination = "false";
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String formatFactoryClass;
+
+  @BindXml(xmlType = ATTRIBUTE)
+  public String uuid;
 }

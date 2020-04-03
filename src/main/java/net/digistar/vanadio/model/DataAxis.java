@@ -8,9 +8,9 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,64 +40,17 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "axisLevel"
-})
-@XmlRootElement(name = "dataAxis", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//        "axisLevel"
+//})
+//@XmlRootElement(name = "dataAxis", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//@BindType
 public class DataAxis {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<AxisLevel> axisLevel;
-    @XmlAttribute(name = "axis", required = true)
-    protected String axis;
+  //    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public List<AxisLevel> axisLevel = new ArrayList<>();
 
-    /**
-     * Gets the value of the axisLevel property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the axisLevel property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getAxisLevel().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link AxisLevel }
-     */
-    public List<AxisLevel> getAxisLevel() {
-        if (axisLevel == null) {
-            axisLevel = new ArrayList<AxisLevel>();
-        }
-        return this.axisLevel;
-    }
-
-    /**
-     * Gets the value of the axis property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getAxis() {
-        return axis;
-    }
-
-    /**
-     * Sets the value of the axis property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setAxis(String value) {
-        this.axis = value;
-    }
-
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String axis;
 }

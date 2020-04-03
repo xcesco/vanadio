@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -84,7 +82,7 @@ import javax.xml.bind.annotation.*;
         "initialValueExpression"
 })
 @XmlRootElement(name = "variable", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class Variable {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

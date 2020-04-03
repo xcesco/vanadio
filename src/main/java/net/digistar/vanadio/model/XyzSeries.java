@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -43,7 +41,7 @@ import javax.xml.bind.annotation.*;
         "itemHyperlink"
 })
 @XmlRootElement(name = "xyzSeries", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class XyzSeries {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

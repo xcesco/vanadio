@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +40,7 @@ import java.util.List;
         "fieldDescription"
 })
 @XmlRootElement(name = "field", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class Field {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

@@ -8,10 +8,8 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlValue;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -34,38 +32,12 @@ import javax.xml.bind.annotation.XmlValue;
 //    "content"
 //})
 //@XmlRootElement(name = "property", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class Property {
-
-    @XmlValue
-    protected String content;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "value")
-    protected String value;
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String value) {
-        this.content = value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
+    public String content;
+    @BindXml(xmlType = XmlType.ATTRIBUTE)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE)
+    public String value;
 
 }

@@ -8,9 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,65 +30,15 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "dataset",
-        "timePeriodSeries"
-})
-@XmlRootElement(name = "timePeriodDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//        "dataset",
+//        "timePeriodSeries"
+//})
+//@XmlRootElement(name = "timePeriodDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//@BindType
 public class TimePeriodDataset {
+    public Dataset dataset;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Dataset dataset;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<TimePeriodSeries> timePeriodSeries;
-
-    /**
-     * Gets the value of the dataset property.
-     *
-     * @return possible object is
-     * {@link Dataset }
-     */
-    public Dataset getDataset() {
-        return dataset;
-    }
-
-    /**
-     * Sets the value of the dataset property.
-     *
-     * @param value allowed object is
-     *              {@link Dataset }
-     */
-    public void setDataset(Dataset value) {
-        this.dataset = value;
-    }
-
-    /**
-     * Gets the value of the timePeriodSeries property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the timePeriodSeries property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTimePeriodSeries().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TimePeriodSeries }
-     */
-    public List<TimePeriodSeries> getTimePeriodSeries() {
-        if (timePeriodSeries == null) {
-            timePeriodSeries = new ArrayList<TimePeriodSeries>();
-        }
-        return this.timePeriodSeries;
-    }
-
+    public List<TimePeriodSeries> timePeriodSeries = new ArrayList<>();
 }

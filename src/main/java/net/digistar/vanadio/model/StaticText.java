@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 /**
@@ -40,7 +38,7 @@ import javax.xml.bind.annotation.*;
         "text"
 })
 @XmlRootElement(name = "staticText", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class StaticText {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

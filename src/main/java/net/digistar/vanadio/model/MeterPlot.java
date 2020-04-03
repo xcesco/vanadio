@@ -8,9 +8,9 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,310 +53,45 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "plot",
-        "tickLabelFont",
-        "valueDisplay",
-        "dataRange",
-        "meterInterval"
-})
-@XmlRootElement(name = "meterPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//        "plot",
+//        "tickLabelFont",
+//        "valueDisplay",
+//        "dataRange",
+//        "meterInterval"
+//})
+//@XmlRootElement(name = "meterPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//@BindType
 public class MeterPlot {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Plot plot;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected TickLabelFont tickLabelFont;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ValueDisplay valueDisplay;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected DataRange dataRange;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<MeterInterval> meterInterval;
-    @XmlAttribute(name = "shape")
-    protected String shape;
-    @XmlAttribute(name = "angle")
-    protected String angle;
-    @XmlAttribute(name = "units")
-    protected String units;
-    @XmlAttribute(name = "tickInterval")
-    protected String tickInterval;
-    @XmlAttribute(name = "meterColor")
-    protected String meterColor;
-    @XmlAttribute(name = "needleColor")
-    protected String needleColor;
-    @XmlAttribute(name = "tickColor")
-    protected String tickColor;
-    @XmlAttribute(name = "tickCount")
-    protected String tickCount;
+  public Plot plot;
+  public TickLabelFont tickLabelFont;
+  public ValueDisplay valueDisplay;
+  public DataRange dataRange;
+  public List<MeterInterval> meterInterval = new ArrayList<>();
 
-    /**
-     * Gets the value of the plot property.
-     *
-     * @return possible object is
-     * {@link Plot }
-     */
-    public Plot getPlot() {
-        return plot;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String shape;
 
-    /**
-     * Sets the value of the plot property.
-     *
-     * @param value allowed object is
-     *              {@link Plot }
-     */
-    public void setPlot(Plot value) {
-        this.plot = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String angle;
 
-    /**
-     * Gets the value of the tickLabelFont property.
-     *
-     * @return possible object is
-     * {@link TickLabelFont }
-     */
-    public TickLabelFont getTickLabelFont() {
-        return tickLabelFont;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String units;
 
-    /**
-     * Sets the value of the tickLabelFont property.
-     *
-     * @param value allowed object is
-     *              {@link TickLabelFont }
-     */
-    public void setTickLabelFont(TickLabelFont value) {
-        this.tickLabelFont = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String tickInterval;
 
-    /**
-     * Gets the value of the valueDisplay property.
-     *
-     * @return possible object is
-     * {@link ValueDisplay }
-     */
-    public ValueDisplay getValueDisplay() {
-        return valueDisplay;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String meterColor;
 
-    /**
-     * Sets the value of the valueDisplay property.
-     *
-     * @param value allowed object is
-     *              {@link ValueDisplay }
-     */
-    public void setValueDisplay(ValueDisplay value) {
-        this.valueDisplay = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String needleColor;
 
-    /**
-     * Gets the value of the dataRange property.
-     *
-     * @return possible object is
-     * {@link DataRange }
-     */
-    public DataRange getDataRange() {
-        return dataRange;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String tickColor;
 
-    /**
-     * Sets the value of the dataRange property.
-     *
-     * @param value allowed object is
-     *              {@link DataRange }
-     */
-    public void setDataRange(DataRange value) {
-        this.dataRange = value;
-    }
-
-    /**
-     * Gets the value of the meterInterval property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the meterInterval property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getMeterInterval().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link MeterInterval }
-     */
-    public List<MeterInterval> getMeterInterval() {
-        if (meterInterval == null) {
-            meterInterval = new ArrayList<MeterInterval>();
-        }
-        return this.meterInterval;
-    }
-
-    /**
-     * Gets the value of the shape property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getShape() {
-        return shape;
-    }
-
-    /**
-     * Sets the value of the shape property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setShape(String value) {
-        this.shape = value;
-    }
-
-    /**
-     * Gets the value of the angle property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getAngle() {
-        return angle;
-    }
-
-    /**
-     * Sets the value of the angle property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setAngle(String value) {
-        this.angle = value;
-    }
-
-    /**
-     * Gets the value of the units property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getUnits() {
-        return units;
-    }
-
-    /**
-     * Sets the value of the units property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setUnits(String value) {
-        this.units = value;
-    }
-
-    /**
-     * Gets the value of the tickInterval property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getTickInterval() {
-        return tickInterval;
-    }
-
-    /**
-     * Sets the value of the tickInterval property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTickInterval(String value) {
-        this.tickInterval = value;
-    }
-
-    /**
-     * Gets the value of the meterColor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getMeterColor() {
-        return meterColor;
-    }
-
-    /**
-     * Sets the value of the meterColor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setMeterColor(String value) {
-        this.meterColor = value;
-    }
-
-    /**
-     * Gets the value of the needleColor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getNeedleColor() {
-        return needleColor;
-    }
-
-    /**
-     * Sets the value of the needleColor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setNeedleColor(String value) {
-        this.needleColor = value;
-    }
-
-    /**
-     * Gets the value of the tickColor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getTickColor() {
-        return tickColor;
-    }
-
-    /**
-     * Sets the value of the tickColor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTickColor(String value) {
-        this.tickColor = value;
-    }
-
-    /**
-     * Gets the value of the tickCount property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getTickCount() {
-        return tickCount;
-    }
-
-    /**
-     * Sets the value of the tickCount property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTickCount(String value) {
-        this.tickCount = value;
-    }
-
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String tickCount;
 }

@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.Bind;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,206 +54,34 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "property",
-        "parameterDescription",
-        "defaultValueExpression"
-})
-@XmlRootElement(name = "parameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//        "property",
+//        "parameterDescription",
+//        "defaultValueExpression"
+//})
+//@XmlRootElement(name = "parameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//@BindType
 public class Parameter {
+  public List<Property> property = new ArrayList<>();
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Property> property;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ParameterDescription parameterDescription;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DefaultValueExpression defaultValueExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "class")
-    protected String clazz;
-    @XmlAttribute(name = "nestedType")
-    protected String nestedType;
-    @XmlAttribute(name = "isForPrompting")
-    protected String isForPrompting;
-    @XmlAttribute(name = "evaluationTime")
-    protected String evaluationTime;
+  public ParameterDescription parameterDescription;
 
-    /**
-     * Gets the value of the property property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the property property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProperty().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Property }
-     */
-    public List<Property> getProperty() {
-        if (property == null) {
-            property = new ArrayList<Property>();
-        }
-        return this.property;
-    }
+  public DefaultValueExpression defaultValueExpression;
 
-    /**
-     * Gets the value of the parameterDescription property.
-     *
-     * @return possible object is
-     * {@link ParameterDescription }
-     */
-    public ParameterDescription getParameterDescription() {
-        return parameterDescription;
-    }
+  public String name;
 
-    /**
-     * Sets the value of the parameterDescription property.
-     *
-     * @param value allowed object is
-     *              {@link ParameterDescription }
-     */
-    public void setParameterDescription(ParameterDescription value) {
-        this.parameterDescription = value;
-    }
+  @Bind("class")
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String clazz = "java.lang.String";
 
-    /**
-     * Gets the value of the defaultValueExpression property.
-     *
-     * @return possible object is
-     * {@link DefaultValueExpression }
-     */
-    public DefaultValueExpression getDefaultValueExpression() {
-        return defaultValueExpression;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String nestedType;
 
-    /**
-     * Sets the value of the defaultValueExpression property.
-     *
-     * @param value allowed object is
-     *              {@link DefaultValueExpression }
-     */
-    public void setDefaultValueExpression(DefaultValueExpression value) {
-        this.defaultValueExpression = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String isForPrompting = "true";
 
-    /**
-     * Gets the value of the name property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets the value of the name property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * Gets the value of the clazz property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getClazz() {
-        if (clazz == null) {
-            return "java.lang.String";
-        } else {
-            return clazz;
-        }
-    }
-
-    /**
-     * Sets the value of the clazz property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setClazz(String value) {
-        this.clazz = value;
-    }
-
-    /**
-     * Gets the value of the nestedType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getNestedType() {
-        return nestedType;
-    }
-
-    /**
-     * Sets the value of the nestedType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setNestedType(String value) {
-        this.nestedType = value;
-    }
-
-    /**
-     * Gets the value of the isForPrompting property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsForPrompting() {
-        if (isForPrompting == null) {
-            return "true";
-        } else {
-            return isForPrompting;
-        }
-    }
-
-    /**
-     * Sets the value of the isForPrompting property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsForPrompting(String value) {
-        this.isForPrompting = value;
-    }
-
-    /**
-     * Gets the value of the evaluationTime property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getEvaluationTime() {
-        return evaluationTime;
-    }
-
-    /**
-     * Sets the value of the evaluationTime property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setEvaluationTime(String value) {
-        this.evaluationTime = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String evaluationTime;
 
 }

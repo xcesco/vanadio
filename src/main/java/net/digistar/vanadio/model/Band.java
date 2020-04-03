@@ -9,14 +9,13 @@
 package net.digistar.vanadio.model;
 
 import com.abubusoft.kripton.annotation.Bind;
-import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * <p>Java class for anonymous complex type.
@@ -91,283 +90,111 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "property",
-        "printWhenExpression",
-        "breakOrLineOrRectangle",
-        "returnValue"
-})
-@XmlRootElement(name = "band", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlType(name = "", propOrder = {
+//        "property",
+//        "printWhenExpression",
+//        "breakOrLineOrRectangle",
+//        "returnValue"
+//})
+//@XmlRootElement(name = "band", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//@BindType
 public class Band {
 
-    @Bind("break")
-    protected List<Break> breakList;
+  @Bind("break")
+  public List<Break> breakList = new ArrayList<>();
 
-    @Bind("line")
-    protected List<Break> lineList;
+  @Bind("line")
+  public List<Break> lineList = new ArrayList<>();
+
+//    @XmlElement(name = "rectangle", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Rectangle.class),
+//    @XmlElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Ellipse.class),
+//    @XmlElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Image.class),
+//    @XmlElement(name = "staticText", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StaticText.class),
+//    @XmlElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TextField.class),
+//    @XmlElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Subreport.class),
+//    @XmlElement(name = "pieChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = PieChart.class),
+//    @XmlElement(name = "pie3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Pie3DChart.class),
+//    @XmlElement(name = "barChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = BarChart.class),
+//    @XmlElement(name = "bar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Bar3DChart.class),
+//    @XmlElement(name = "xyBarChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyBarChart.class),
+//    @XmlElement(name = "stackedBarChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedBarChart.class),
+//    @XmlElement(name = "stackedBar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedBar3DChart.class),
+//    @XmlElement(name = "lineChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = LineChart.class),
+//    @XmlElement(name = "xyLineChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyLineChart.class),
+//    @XmlElement(name = "areaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = AreaChart.class),
+//    @XmlElement(name = "xyAreaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyAreaChart.class),
+//    @XmlElement(name = "scatterChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ScatterChart.class),
+//    @XmlElement(name = "bubbleChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = BubbleChart.class),
+//    @XmlElement(name = "timeSeriesChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TimeSeriesChart.class),
+//    @XmlElement(name = "highLowChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = HighLowChart.class),
+//    @XmlElement(name = "candlestickChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = CandlestickChart.class),
+//    @XmlElement(name = "meterChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = MeterChart.class),
+//    @XmlElement(name = "thermometerChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ThermometerChart.class),
+//    @XmlElement(name = "multiAxisChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = MultiAxisChart.class),
+//    @XmlElement(name = "stackedAreaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedAreaChart.class),
+//    @XmlElement(name = "ganttChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GanttChart.class),
+//    @XmlElement(name = "elementGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ElementGroup.class),
+//    @XmlElement(name = "crosstab", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Crosstab.class),
+//    @XmlElement(name = "frame", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Frame.class),
+//    @XmlElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ComponentElement.class),
+//    @XmlElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GenericElement.class)
 
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Property> property;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected PrintWhenExpression printWhenExpression;
-    @XmlElements({
-            @XmlElement(name = "break", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Break.class),
-            @XmlElement(name = "line", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Line.class),
-            @XmlElement(name = "rectangle", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Rectangle.class),
-            @XmlElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Ellipse.class),
-            @XmlElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Image.class),
-            @XmlElement(name = "staticText", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StaticText.class),
-            @XmlElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TextField.class),
-            @XmlElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Subreport.class),
-            @XmlElement(name = "pieChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = PieChart.class),
-            @XmlElement(name = "pie3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Pie3DChart.class),
-            @XmlElement(name = "barChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = BarChart.class),
-            @XmlElement(name = "bar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Bar3DChart.class),
-            @XmlElement(name = "xyBarChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyBarChart.class),
-            @XmlElement(name = "stackedBarChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedBarChart.class),
-            @XmlElement(name = "stackedBar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedBar3DChart.class),
-            @XmlElement(name = "lineChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = LineChart.class),
-            @XmlElement(name = "xyLineChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyLineChart.class),
-            @XmlElement(name = "areaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = AreaChart.class),
-            @XmlElement(name = "xyAreaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyAreaChart.class),
-            @XmlElement(name = "scatterChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ScatterChart.class),
-            @XmlElement(name = "bubbleChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = BubbleChart.class),
-            @XmlElement(name = "timeSeriesChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TimeSeriesChart.class),
-            @XmlElement(name = "highLowChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = HighLowChart.class),
-            @XmlElement(name = "candlestickChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = CandlestickChart.class),
-            @XmlElement(name = "meterChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = MeterChart.class),
-            @XmlElement(name = "thermometerChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ThermometerChart.class),
-            @XmlElement(name = "multiAxisChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = MultiAxisChart.class),
-            @XmlElement(name = "stackedAreaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedAreaChart.class),
-            @XmlElement(name = "ganttChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GanttChart.class),
-            @XmlElement(name = "elementGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ElementGroup.class),
-            @XmlElement(name = "crosstab", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Crosstab.class),
-            @XmlElement(name = "frame", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Frame.class),
-            @XmlElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ComponentElement.class),
-            @XmlElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GenericElement.class)
-    })
-    protected List<Object> breakOrLineOrRectangle;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<ExpressionReturnValue> returnValue;
-    @XmlAttribute(name = "height")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String height;
-    @XmlAttribute(name = "isSplitAllowed")
-    protected String isSplitAllowed;
-    @XmlAttribute(name = "splitType")
-    protected String splitType;
+  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public List<Property> property = new ArrayList<>();
 
-    /**
-     * Gets the value of the property property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the property property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProperty().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Property }
-     */
-    public List<Property> getProperty() {
-        if (property == null) {
-            property = new ArrayList<Property>();
-        }
-        return this.property;
-    }
+  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public PrintWhenExpression printWhenExpression;
 
-    public void setProperty(List<Property> property) {
-        this.property = property;
-    }
+//  @XmlElements({
+//          @XmlElement(name = "break", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Break.class),
+//          @XmlElement(name = "line", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Line.class),
+//          @XmlElement(name = "rectangle", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Rectangle.class),
+//          @XmlElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Ellipse.class),
+//          @XmlElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Image.class),
+//          @XmlElement(name = "staticText", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StaticText.class),
+//          @XmlElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TextField.class),
+//          @XmlElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Subreport.class),
+//          @XmlElement(name = "pieChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = PieChart.class),
+//          @XmlElement(name = "pie3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Pie3DChart.class),
+//          @XmlElement(name = "barChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = BarChart.class),
+//          @XmlElement(name = "bar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Bar3DChart.class),
+//          @XmlElement(name = "xyBarChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyBarChart.class),
+//          @XmlElement(name = "stackedBarChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedBarChart.class),
+//          @XmlElement(name = "stackedBar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedBar3DChart.class),
+//          @XmlElement(name = "lineChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = LineChart.class),
+//          @XmlElement(name = "xyLineChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyLineChart.class),
+//          @XmlElement(name = "areaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = AreaChart.class),
+//          @XmlElement(name = "xyAreaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = XyAreaChart.class),
+//          @XmlElement(name = "scatterChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ScatterChart.class),
+//          @XmlElement(name = "bubbleChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = BubbleChart.class),
+//          @XmlElement(name = "timeSeriesChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TimeSeriesChart.class),
+//          @XmlElement(name = "highLowChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = HighLowChart.class),
+//          @XmlElement(name = "candlestickChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = CandlestickChart.class),
+//          @XmlElement(name = "meterChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = MeterChart.class),
+//          @XmlElement(name = "thermometerChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ThermometerChart.class),
+//          @XmlElement(name = "multiAxisChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = MultiAxisChart.class),
+//          @XmlElement(name = "stackedAreaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StackedAreaChart.class),
+//          @XmlElement(name = "ganttChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GanttChart.class),
+//          @XmlElement(name = "elementGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ElementGroup.class),
+//          @XmlElement(name = "crosstab", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Crosstab.class),
+//          @XmlElement(name = "frame", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Frame.class),
+//          @XmlElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ComponentElement.class),
+//          @XmlElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GenericElement.class)
+//  })
+//  protected List<Object> breakOrLineOrRectangle;
 
-    /**
-     * Gets the value of the printWhenExpression property.
-     *
-     * @return possible object is
-     * {@link PrintWhenExpression }
-     */
-    public PrintWhenExpression getPrintWhenExpression() {
-        return printWhenExpression;
-    }
+  //   @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public List<ExpressionReturnValue> returnValue = new ArrayList<>();
 
-    /**
-     * Sets the value of the printWhenExpression property.
-     *
-     * @param value allowed object is
-     *              {@link PrintWhenExpression }
-     */
-    public void setPrintWhenExpression(PrintWhenExpression value) {
-        this.printWhenExpression = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  public String height = "0";
 
-    /**
-     * Gets the value of the breakOrLineOrRectangle property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the breakOrLineOrRectangle property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getBreakOrLineOrRectangle().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Break }
-     * {@link Line }
-     * {@link Rectangle }
-     * {@link Ellipse }
-     * {@link Image }
-     * {@link StaticText }
-     * {@link TextField }
-     * {@link Subreport }
-     * {@link PieChart }
-     * {@link Pie3DChart }
-     * {@link BarChart }
-     * {@link Bar3DChart }
-     * {@link XyBarChart }
-     * {@link StackedBarChart }
-     * {@link StackedBar3DChart }
-     * {@link LineChart }
-     * {@link XyLineChart }
-     * {@link AreaChart }
-     * {@link XyAreaChart }
-     * {@link ScatterChart }
-     * {@link BubbleChart }
-     * {@link TimeSeriesChart }
-     * {@link HighLowChart }
-     * {@link CandlestickChart }
-     * {@link MeterChart }
-     * {@link ThermometerChart }
-     * {@link MultiAxisChart }
-     * {@link StackedAreaChart }
-     * {@link GanttChart }
-     * {@link ElementGroup }
-     * {@link Crosstab }
-     * {@link Frame }
-     * {@link ComponentElement }
-     * {@link GenericElement }
-     */
-    public List<Object> getBreakOrLineOrRectangle() {
-        if (breakOrLineOrRectangle == null) {
-            breakOrLineOrRectangle = new ArrayList<Object>();
-        }
-        return this.breakOrLineOrRectangle;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String isSplitAllowed;
 
-    public void setBreakOrLineOrRectangle(List<Object> breakOrLineOrRectangle) {
-        this.breakOrLineOrRectangle = breakOrLineOrRectangle;
-    }
-
-    /**
-     * Gets the value of the returnValue property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the returnValue property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getReturnValue().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link ExpressionReturnValue }
-     */
-    public List<ExpressionReturnValue> getReturnValue() {
-        if (returnValue == null) {
-            returnValue = new ArrayList<ExpressionReturnValue>();
-        }
-        return this.returnValue;
-    }
-
-    public void setReturnValue(List<ExpressionReturnValue> returnValue) {
-        this.returnValue = returnValue;
-    }
-
-    /**
-     * Gets the value of the height property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getHeight() {
-        if (height == null) {
-            return "0";
-        } else {
-            return height;
-        }
-    }
-
-    /**
-     * Sets the value of the height property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setHeight(String value) {
-        this.height = value;
-    }
-
-    /**
-     * Gets the value of the isSplitAllowed property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsSplitAllowed() {
-        return isSplitAllowed;
-    }
-
-    /**
-     * Sets the value of the isSplitAllowed property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsSplitAllowed(String value) {
-        this.isSplitAllowed = value;
-    }
-
-    /**
-     * Gets the value of the splitType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getSplitType() {
-        return splitType;
-    }
-
-    /**
-     * Sets the value of the splitType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setSplitType(String value) {
-        this.splitType = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  public String splitType;
 }

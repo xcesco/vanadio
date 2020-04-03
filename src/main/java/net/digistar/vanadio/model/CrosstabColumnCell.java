@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -47,7 +45,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "CrosstabColumnCell", namespace = "http://jasperreports.sourceforge.net/jasperreports", propOrder = {
         "cellContents"
 })
-@BindType
+//@BindType
 public class CrosstabColumnCell {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

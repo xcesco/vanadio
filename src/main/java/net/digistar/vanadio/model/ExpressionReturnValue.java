@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 /**
@@ -40,7 +38,7 @@ import javax.xml.bind.annotation.*;
 @XmlType(name = "expressionReturnValue", namespace = "http://jasperreports.sourceforge.net/jasperreports", propOrder = {
         "expression"
 })
-@BindType
+//@BindType
 public class ExpressionReturnValue
         extends CommonReturnValue {
 

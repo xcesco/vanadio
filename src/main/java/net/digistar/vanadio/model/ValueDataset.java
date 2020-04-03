@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -37,7 +35,7 @@ import javax.xml.bind.annotation.*;
         "valueExpression"
 })
 @XmlRootElement(name = "valueDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class ValueDataset {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -55,7 +53,7 @@ import javax.xml.bind.annotation.*;
         "itemLabel"
 })
 @XmlRootElement(name = "piePlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class PiePlot {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

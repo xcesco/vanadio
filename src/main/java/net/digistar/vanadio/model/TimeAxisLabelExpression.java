@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -32,7 +30,7 @@ import javax.xml.bind.annotation.*;
         "content"
 })
 @XmlRootElement(name = "timeAxisLabelExpression", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class TimeAxisLabelExpression {
 
     @XmlValue

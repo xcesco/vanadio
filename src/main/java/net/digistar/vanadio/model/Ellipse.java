@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -37,7 +35,7 @@ import javax.xml.bind.annotation.*;
         "graphicElement"
 })
 @XmlRootElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class Ellipse {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

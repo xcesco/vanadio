@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -39,7 +37,7 @@ import javax.xml.bind.annotation.*;
         "areaPlot"
 })
 @XmlRootElement(name = "stackedAreaChart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class StackedAreaChart {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

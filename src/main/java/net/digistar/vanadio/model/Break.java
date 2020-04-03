@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 
 
@@ -43,7 +41,7 @@ import javax.xml.bind.annotation.*;
         "reportElement"
 })
 @XmlRootElement(name = "break", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class Break {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

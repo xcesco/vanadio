@@ -8,8 +8,6 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindType;
-
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +36,7 @@ import java.util.List;
         "part"
 })
 @XmlRootElement(name = "groupHeader", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindType
+//@BindType
 public class GroupHeader {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
