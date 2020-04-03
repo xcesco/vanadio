@@ -15,6 +15,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <kripton.version>7.0.0-rc.4</kripton.version>
     </properties>
 
     <licenses>
@@ -37,7 +38,6 @@
     </scm>
 
     <developers>
-
         <developer>
             <id>alxsty</id>
             <name>Alex Svetina</name>
@@ -52,6 +52,20 @@
     </developers>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.abubusoft/kripton -->
+        <dependency>
+            <groupId>com.abubusoft</groupId>
+            <artifactId>kripton</artifactId>
+            <version>${kripton.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.abubusoft/kripton -->
+<!--        <dependency>-->
+<!--            <groupId>com.abubusoft</groupId>-->
+<!--            <artifactId>kripton-processor</artifactId>-->
+<!--            <version>${kripton.version}</version>-->
+<!--        </dependency>-->
+
         <!-- junit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -72,21 +86,28 @@
     <build>
         <plugins>
 
-            <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <classifier>jdk8</classifier>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-jar-plugin</artifactId>-->
+<!--                <version>3.2.0</version>-->
+<!--                <configuration>-->
+<!--                    <classifier>jdk8</classifier>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>com.abubusoft</groupId>
+                            <artifactId>kripton-processor</artifactId>
+                            <version>${kripton.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
                 <executions>
                     <execution>
@@ -99,22 +120,22 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>2.5.0</version>
-                <executions>
-                    <execution>
-                        <id>xjc</id>
-                        <goals>
-                            <goal>xjc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <noPackageLevelAnnotations>true</noPackageLevelAnnotations>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.codehaus.mojo</groupId>-->
+<!--                <artifactId>jaxb2-maven-plugin</artifactId>-->
+<!--                <version>2.5.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>xjc</id>-->
+<!--                        <goals>-->
+<!--                            <goal>xjc</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <noPackageLevelAnnotations>true</noPackageLevelAnnotations>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>
