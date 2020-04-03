@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -43,7 +43,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "bar3DPlot"
 })
 @XmlRootElement(name = "stackedBar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class StackedBar3DChart {
+@BindType public class StackedBar3DChart {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected Chart chart;

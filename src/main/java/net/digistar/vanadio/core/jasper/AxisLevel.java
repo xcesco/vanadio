@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -53,7 +53,7 @@ import javax.xml.bind.annotation.XmlValue;
     "axisLevelBucket"
 })
 @XmlRootElement(name = "axisLevel", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class AxisLevel {
+@BindType public class AxisLevel {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected AxisLevel.LabelExpression labelExpression;

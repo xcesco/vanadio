@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -123,7 +123,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "rightPen"
 })
 @XmlRootElement(name = "box", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Box {
+@BindType public class Box {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected Pen pen;

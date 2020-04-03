@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
     "part"
 })
 @XmlRootElement(name = "detail", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType
+@BindType
 public class Detail {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

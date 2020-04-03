@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
     "bar3DPlot"
 })
 @XmlRootElement(name = "bar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Bar3DChart {
+@BindType public class Bar3DChart {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected Chart chart;

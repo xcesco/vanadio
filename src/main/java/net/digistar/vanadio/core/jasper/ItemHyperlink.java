@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -54,7 +54,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "hyperlinkParameter"
 })
 @XmlRootElement(name = "itemHyperlink", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class ItemHyperlink {
+@BindType public class ItemHyperlink {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected HyperlinkReferenceExpression hyperlinkReferenceExpression;
@@ -68,6 +68,11 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     protected HyperlinkTooltipExpression hyperlinkTooltipExpression;
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<HyperlinkParameter> hyperlinkParameter;
+
+    public void setHyperlinkParameter(List<HyperlinkParameter> hyperlinkParameter) {
+        this.hyperlinkParameter = hyperlinkParameter;
+    }
+
     @XmlAttribute(name = "hyperlinkType")
     protected String hyperlinkType;
     @XmlAttribute(name = "hyperlinkTarget")

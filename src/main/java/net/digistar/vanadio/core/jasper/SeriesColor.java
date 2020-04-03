@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -36,7 +36,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "seriesColor", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class SeriesColor {
+@BindType public class SeriesColor {
 
     @XmlAttribute(name = "seriesOrder", required = true)
     protected String seriesOrder;

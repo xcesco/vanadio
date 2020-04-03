@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -121,7 +121,15 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "printWhenExpression"
 })
 @XmlRootElement(name = "reportElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class ReportElement {
+@BindType public class ReportElement {
+
+    public void setProperty(List<Property> property) {
+        this.property = property;
+    }
+
+    public void setPropertyExpression(List<PropertyExpressionType> propertyExpression) {
+        this.propertyExpression = propertyExpression;
+    }
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<Property> property;

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
     "axisFormat"
 })
 @XmlRootElement(name = "categoryAxisFormat", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class CategoryAxisFormat {
+@BindType public class CategoryAxisFormat {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected AxisFormat axisFormat;

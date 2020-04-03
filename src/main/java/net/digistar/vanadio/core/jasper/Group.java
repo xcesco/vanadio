@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -116,7 +116,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "groupFooter"
 })
 @XmlRootElement(name = "group", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Group {
+@BindType public class Group {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected GroupExpression groupExpression;

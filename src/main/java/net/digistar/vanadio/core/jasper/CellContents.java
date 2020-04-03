@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +71,7 @@ import javax.xml.bind.annotation.XmlType;
     "lineOrRectangleOrEllipse"
 })
 @XmlRootElement(name = "cellContents", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class CellContents {
+@BindType public class CellContents {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<Property> property;

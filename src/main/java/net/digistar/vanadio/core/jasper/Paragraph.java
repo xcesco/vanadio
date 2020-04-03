@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -64,7 +64,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "tabStop"
 })
 @XmlRootElement(name = "paragraph", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Paragraph {
+@BindType public class Paragraph {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<TabStop> tabStop;

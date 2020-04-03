@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -310,10 +310,39 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "conditionalStyle"
 })
 @XmlRootElement(name = "style", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Style {
+@BindType public class Style {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected Pen pen;
+
+    public void setConditionalStyle(List<ConditionalStyle> conditionalStyle) {
+        this.conditionalStyle = conditionalStyle;
+    }
+
+    public void sethAlign(String hAlign) {
+        this.hAlign = hAlign;
+    }
+
+    public void sethTextAlign(String hTextAlign) {
+        this.hTextAlign = hTextAlign;
+    }
+
+    public void sethImageAlign(String hImageAlign) {
+        this.hImageAlign = hImageAlign;
+    }
+
+    public void setvAlign(String vAlign) {
+        this.vAlign = vAlign;
+    }
+
+    public void setvTextAlign(String vTextAlign) {
+        this.vTextAlign = vTextAlign;
+    }
+
+    public void setvImageAlign(String vImageAlign) {
+        this.vImageAlign = vImageAlign;
+    }
+
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected Box box;
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

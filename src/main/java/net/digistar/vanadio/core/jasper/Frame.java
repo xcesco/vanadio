@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,7 +92,7 @@ import javax.xml.bind.annotation.XmlType;
     "breakOrLineOrRectangle"
 })
 @XmlRootElement(name = "frame", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType
+@BindType
 public class Frame {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
@@ -138,6 +138,10 @@ public class Frame {
     protected List<Object> breakOrLineOrRectangle;
     @XmlAttribute(name = "borderSplitType")
     protected String borderSplitType;
+
+    public void setBreakOrLineOrRectangle(List<Object> breakOrLineOrRectangle) {
+        this.breakOrLineOrRectangle = breakOrLineOrRectangle;
+    }
 
     /**
      * Gets the value of the reportElement property.

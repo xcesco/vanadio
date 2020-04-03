@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -57,10 +57,15 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "seriesColor"
 })
 @XmlRootElement(name = "plot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Plot {
+@BindType public class Plot {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<SeriesColor> seriesColor;
+
+    public void setSeriesColor(List<SeriesColor> seriesColor) {
+        this.seriesColor = seriesColor;
+    }
+
     @XmlAttribute(name = "backcolor")
     protected String backcolor;
     @XmlAttribute(name = "orientation")

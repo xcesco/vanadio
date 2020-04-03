@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -73,7 +73,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "crosstabTotalColumnHeader"
 })
 @XmlRootElement(name = "columnGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class ColumnGroup {
+@BindType public class ColumnGroup {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected Bucket bucket;

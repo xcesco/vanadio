@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,7 +100,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "hyperlinkParameter"
 })
 @XmlRootElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType
+@BindType
 public class TextField {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

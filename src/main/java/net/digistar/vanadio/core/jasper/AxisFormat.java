@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -49,7 +49,7 @@ import javax.xml.bind.annotation.XmlType;
     "tickLabelFont"
 })
 @XmlRootElement(name = "axisFormat", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class AxisFormat {
+@BindType public class AxisFormat {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected LabelFont labelFont;

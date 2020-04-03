@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -72,7 +72,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "rangeAxisMaxValueExpression"
 })
 @XmlRootElement(name = "highLowPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class HighLowPlot {
+@BindType public class HighLowPlot {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected Plot plot;

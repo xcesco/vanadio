@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -134,7 +134,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "hyperlinkParameter"
 })
 @XmlRootElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Image {
+@BindType public class Image {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected ReportElement reportElement;

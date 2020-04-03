@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for propertyExpressionType complex type.
@@ -48,7 +48,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
 @XmlSeeAlso({
     DatasetPropertyExpressionType.class
 })
-@BindXmlType public class PropertyExpressionType {
+@BindType public class PropertyExpressionType {
 
     @XmlValue
     protected String content;

@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 /**
  * <p>Java class for expressionReturnValue complex type.
  * 
@@ -45,7 +45,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
 @XmlType(name = "expressionReturnValue", namespace = "http://jasperreports.sourceforge.net/jasperreports", propOrder = {
     "expression"
 })
-@BindXmlType public class ExpressionReturnValue
+@BindType public class ExpressionReturnValue
     extends CommonReturnValue
 {
 

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -66,7 +66,7 @@ import javax.xml.bind.annotation.XmlType;
     "rangeAxisMaxValueExpression"
 })
 @XmlRootElement(name = "candlestickPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class CandlestickPlot {
+@BindType public class CandlestickPlot {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected Plot plot;

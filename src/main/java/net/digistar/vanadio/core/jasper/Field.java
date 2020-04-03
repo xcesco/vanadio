@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 /**
  * <p>Java class for anonymous complex type.
  * 
@@ -48,7 +48,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "fieldDescription"
 })
 @XmlRootElement(name = "field", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class Field {
+@BindType public class Field {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<Property> property;

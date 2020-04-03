@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -71,7 +71,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "crosstabTotalRowHeader"
 })
 @XmlRootElement(name = "rowGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType
+@BindType
 public class RowGroup {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)

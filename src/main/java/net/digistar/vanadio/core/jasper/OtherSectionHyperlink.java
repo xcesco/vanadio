@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +56,12 @@ import javax.xml.bind.annotation.XmlType;
     "hyperlinkParameter"
 })
 @XmlRootElement(name = "otherSectionHyperlink", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType
+@BindType
 public class OtherSectionHyperlink {
+
+    public void setHyperlinkParameter(List<HyperlinkParameter> hyperlinkParameter) {
+        this.hyperlinkParameter = hyperlinkParameter;
+    }
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected HyperlinkReferenceExpression hyperlinkReferenceExpression;

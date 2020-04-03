@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -31,7 +31,7 @@ import javax.xml.namespace.QName;
  * 
  */
 @XmlRegistry
-@BindXmlType
+@BindType
 public class ObjectFactory {
 
     private final static QName _PropertyExpression_QNAME = new QName("http://jasperreports.sourceforge.net/jasperreports", "propertyExpression");
@@ -91,7 +91,7 @@ public class ObjectFactory {
      * 
      */
     public JasperReport createJasperReport() {
-        return new JasperReport();
+        return new JasperReport(uuid);
     }
 
     /**

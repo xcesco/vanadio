@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -47,7 +47,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "tabStop", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class TabStop {
+@BindType public class TabStop {
 
     @XmlAttribute(name = "alignment")
     protected String alignment;

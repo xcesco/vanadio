@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -51,7 +51,7 @@ import javax.xml.bind.annotation.XmlType;
     "percentExpression"
 })
 @XmlRootElement(name = "ganttSeries", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType
+@BindType
 public class GanttSeries {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

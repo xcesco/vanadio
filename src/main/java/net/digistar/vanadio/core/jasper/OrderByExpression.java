@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -38,7 +38,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "content"
 })
 @XmlRootElement(name = "orderByExpression", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class OrderByExpression {
+@BindType public class OrderByExpression {
 
     @XmlValue
     protected String content;

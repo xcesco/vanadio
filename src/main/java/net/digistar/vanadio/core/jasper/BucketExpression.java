@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlValue;
     "content"
 })
 @XmlRootElement(name = "bucketExpression", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class BucketExpression {
+@BindType public class BucketExpression {
 
     @XmlValue
     protected String content;

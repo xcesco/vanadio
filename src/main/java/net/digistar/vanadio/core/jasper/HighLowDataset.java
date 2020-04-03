@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -55,7 +55,7 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "itemHyperlink"
 })
 @XmlRootElement(name = "highLowDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class HighLowDataset {
+@BindType public class HighLowDataset {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected Dataset dataset;

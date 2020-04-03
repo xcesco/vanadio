@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,13 +104,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "whenNoDataCell"
 })
 @XmlRootElement(name = "crosstab", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType
+@BindType
 public class Crosstab {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     protected ReportElement reportElement;
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected Box box;
+
+    public void setCrosstabParameter(List<CrosstabParameter> crosstabParameter) {
+        this.crosstabParameter = crosstabParameter;
+    }
+
+    public void setRowGroup(List<RowGroup> rowGroup) {
+        this.rowGroup = rowGroup;
+    }
+
+    public void setColumnGroup(List<ColumnGroup> columnGroup) {
+        this.columnGroup = columnGroup;
+    }
+
+    public void setMeasure(List<Measure> measure) {
+        this.measure = measure;
+    }
+
+    public void setCrosstabCell(List<CrosstabCell> crosstabCell) {
+        this.crosstabCell = crosstabCell;
+    }
+
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<CrosstabParameter> crosstabParameter;
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -43,12 +43,20 @@ import com.abubusoft.kripton.annotation.BindXmlType;
     "part"
 })
 @XmlRootElement(name = "groupFooter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class GroupFooter {
+@BindType public class GroupFooter {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<Band> band;
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected List<Part> part;
+
+    public void setBand(List<Band> band) {
+        this.band = band;
+    }
+
+    public void setPart(List<Part> part) {
+        this.part = part;
+    }
 
     /**
      * Gets the value of the band property.

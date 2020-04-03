@@ -60,11 +60,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.abubusoft/kripton -->
-        <dependency>
-            <groupId>com.abubusoft</groupId>
-            <artifactId>kripton-processor</artifactId>
-            <version>${kripton.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.abubusoft</groupId>-->
+<!--            <artifactId>kripton-processor</artifactId>-->
+<!--            <version>${kripton.version}</version>-->
+<!--        </dependency>-->
 
         <!-- junit 5 -->
         <dependency>

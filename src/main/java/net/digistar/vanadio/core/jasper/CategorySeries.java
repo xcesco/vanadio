@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.core.jasper;
 
-import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.annotation.BindType;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -49,7 +49,7 @@ import javax.xml.bind.annotation.XmlType;
     "itemHyperlink"
 })
 @XmlRootElement(name = "categorySeries", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@BindXmlType public class CategorySeries {
+@BindType public class CategorySeries {
 
     @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     protected SeriesExpression seriesExpression;
