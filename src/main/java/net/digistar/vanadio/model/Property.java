@@ -8,6 +8,7 @@
 
 package net.digistar.vanadio.model;
 
+import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
@@ -32,11 +33,13 @@ import com.abubusoft.kripton.xml.XmlType;
 //    "content"
 //})
 //@XmlRootElement(name = "property", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+@BindType
 public class Property {
     public String content;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE)
     public String name;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE)
     public String value;
 

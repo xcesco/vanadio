@@ -13,6 +13,9 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import net.digistar.vanadio.support.CollapsedStringAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.abubusoft.kripton.xml.XmlType.ATTRIBUTE;
 
 
@@ -167,7 +170,7 @@ import static com.abubusoft.kripton.xml.XmlType.ATTRIBUTE;
 //@XmlRootElement(name = "jasperReport", namespace = "http://jasperreports.sourceforge.net/jasperreports")
 @BindType
 public class JasperReport {
-//  public List<Property> property = new ArrayList<Property>();
+  public List<Property> property = new ArrayList<>();
 //
 //  public List<DatasetPropertyExpressionType> propertyExpression = new ArrayList<>();
 //
