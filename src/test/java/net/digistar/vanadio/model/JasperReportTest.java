@@ -14,5 +14,7 @@ public class JasperReportTest {
 
     String result = VanadioTestUtils.writeAsYaml(report);
     logger.info(result);
+
+    VanadioTestUtils.writeYAML(report, "ricetta");
   }
 }
