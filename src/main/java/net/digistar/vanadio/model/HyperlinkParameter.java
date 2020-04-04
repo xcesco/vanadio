@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -28,18 +28,20 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "hyperlinkParameterExpression"
-})
-@XmlRootElement(name = "hyperlinkParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class HyperlinkParameter {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "hyperlinkParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected HyperlinkParameterExpression hyperlinkParameterExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
+@BindType
+public class  HyperlinkParameter {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public HyperlinkParameterExpression hyperlinkParameterExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
 
     /**
      * Gets the value of the hyperlinkParameterExpression property.

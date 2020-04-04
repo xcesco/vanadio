@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -44,20 +44,24 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "returnValue", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class ReturnValue {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "returnValue", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlAttribute(name = "subreportVariable")
-    protected String subreportVariable;
-    @XmlAttribute(name = "toVariable")
-    protected String toVariable;
-    @XmlAttribute(name = "calculation")
-    protected String calculation;
-    @XmlAttribute(name = "incrementerFactoryClass")
-    protected String incrementerFactoryClass;
+@BindType
+public class  ReturnValue {
+
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "subreportVariable")
+    public String subreportVariable;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "toVariable")
+    public String toVariable;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "calculation")
+    public String calculation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "incrementerFactoryClass")
+    public String incrementerFactoryClass;
 
     /**
      * Gets the value of the subreportVariable property.

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,21 +46,22 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "dataset",
-        "timeSeries"
-})
-@XmlRootElement(name = "timeSeriesDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class TimeSeriesDataset {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Dataset dataset;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<TimeSeries> timeSeries;
-    @XmlAttribute(name = "timePeriod")
-    protected String timePeriod;
+// @XmlRootElement(name = "timeSeriesDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  TimeSeriesDataset {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Dataset dataset;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<TimeSeries> timeSeries;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "timePeriod")
+    public String timePeriod;
 
     /**
      * Gets the value of the dataset property.

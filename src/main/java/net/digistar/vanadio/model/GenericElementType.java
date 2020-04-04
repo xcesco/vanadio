@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -27,16 +27,20 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "genericElementType", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class GenericElementType {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "genericElementType", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlAttribute(name = "namespace", required = true)
-    protected String namespace;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
+@BindType
+public class  GenericElementType {
+
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "namespace", required = true)
+    public String namespace;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
 
     /**
      * Gets the value of the namespace property.

@@ -9,7 +9,7 @@
 package net.digistar.vanadio.model;
 
 import com.abubusoft.kripton.annotation.BindType;
-import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.annotation.*;
 import com.abubusoft.kripton.xml.XmlType;
 
 /**
@@ -28,19 +28,17 @@ import com.abubusoft.kripton.xml.XmlType;
  * &lt;/complexType&gt;
  * </pre>
  */
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//    "content"
-//})
-//@XmlRootElement(name = "property", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "property", namespace = "http://jasperreports.sourceforge.net/jasperreports")
 @BindType
 public class Property {
     public String content;
 
-    @BindXml(xmlType = XmlType.ATTRIBUTE)
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String name;
 
-    @BindXml(xmlType = XmlType.ATTRIBUTE)
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String value;
 
 }

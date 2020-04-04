@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -75,38 +75,38 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "variableDescription",
-        "variableExpression",
-        "initialValueExpression"
-})
-@XmlRootElement(name = "variable", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Variable {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected VariableDescription variableDescription;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected VariableExpression variableExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected InitialValueExpression initialValueExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "class")
-    protected String clazz;
-    @XmlAttribute(name = "resetType")
-    protected String resetType;
-    @XmlAttribute(name = "resetGroup")
-    protected String resetGroup;
-    @XmlAttribute(name = "incrementType")
-    protected String incrementType;
-    @XmlAttribute(name = "incrementGroup")
-    protected String incrementGroup;
-    @XmlAttribute(name = "calculation")
-    protected String calculation;
-    @XmlAttribute(name = "incrementerFactoryClass")
-    protected String incrementerFactoryClass;
+// @XmlRootElement(name = "variable", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Variable {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public VariableDescription variableDescription;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public VariableExpression variableExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public InitialValueExpression initialValueExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
+    public String clazz;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "resetType")
+    public String resetType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "resetGroup")
+    public String resetGroup;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "incrementType")
+    public String incrementType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "incrementGroup")
+    public String incrementGroup;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "calculation")
+    public String calculation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "incrementerFactoryClass")
+    public String incrementerFactoryClass;
 
     /**
      * Gets the value of the variableDescription property.

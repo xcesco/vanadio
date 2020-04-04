@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -31,25 +31,24 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "keyExpression",
-        "valueExpression",
-        "labelExpression",
-        "sectionHyperlink"
-})
-@XmlRootElement(name = "pieSeries", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class PieSeries {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected KeyExpression keyExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ValueExpression valueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LabelExpression labelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected SectionHyperlink sectionHyperlink;
+// @XmlRootElement(name = "pieSeries", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  PieSeries {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public KeyExpression keyExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ValueExpression valueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LabelExpression labelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public SectionHyperlink sectionHyperlink;
 
     /**
      * Gets the value of the keyExpression property.

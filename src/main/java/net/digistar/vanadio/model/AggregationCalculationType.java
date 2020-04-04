@@ -10,7 +10,7 @@ package net.digistar.vanadio.model;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import com.abubusoft.kripton.xml.XmlType;
 
 
 /**
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/simpleType&gt;
  * </pre>
  */
-@XmlType(name = "aggregationCalculationType", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+
 @XmlEnum
 public enum AggregationCalculationType {
 

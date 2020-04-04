@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -35,40 +35,34 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "dataset",
-        "seriesExpression",
-        "dateExpression",
-        "highExpression",
-        "lowExpression",
-        "openExpression",
-        "closeExpression",
-        "volumeExpression",
-        "itemHyperlink"
-})
-@XmlRootElement(name = "highLowDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class HighLowDataset {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Dataset dataset;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected SeriesExpression seriesExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DateExpression dateExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HighExpression highExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LowExpression lowExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected OpenExpression openExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CloseExpression closeExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected VolumeExpression volumeExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ItemHyperlink itemHyperlink;
+// @XmlRootElement(name = "highLowDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  HighLowDataset {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Dataset dataset;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public SeriesExpression seriesExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DateExpression dateExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HighExpression highExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LowExpression lowExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public OpenExpression openExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CloseExpression closeExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public VolumeExpression volumeExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ItemHyperlink itemHyperlink;
 
     /**
      * Gets the value of the dataset property.

@@ -10,7 +10,7 @@ package net.digistar.vanadio.model;
 
 import com.abubusoft.kripton.annotation.BindAdapter;
 import com.abubusoft.kripton.annotation.BindType;
-import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.annotation.*;
 import net.digistar.vanadio.support.CollapsedStringAdapter;
 
 import java.util.ArrayList;
@@ -167,7 +167,7 @@ import static com.abubusoft.kripton.xml.XmlType.ATTRIBUTE;
  * &lt;/complexType&gt;
  * </pre>
  */
-//@XmlRootElement(name = "jasperReport", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//// @XmlRootElement(name = "jasperReport", namespace = "http://jasperreports.sourceforge.net/jasperreports")
 @BindType
 public class JasperReport {
   public List<Property> property = new ArrayList<>();
@@ -192,14 +192,15 @@ public class JasperReport {
 //  public Title title;
 //  public PageHeader pageHeader;
 //  public ColumnHeader columnHeader;
-//  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//  //// @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
 //  public Detail detail;
 //  public ColumnFooter columnFooter;
 //  public PageFooter pageFooter;
 //  public LastPageFooter lastPageFooter;
 //  public Summary summary;
-//  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//  public NoData noData;
+
+//  //// @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public NoData noData;
 
   @BindXml(xmlType = ATTRIBUTE)
   public String name;

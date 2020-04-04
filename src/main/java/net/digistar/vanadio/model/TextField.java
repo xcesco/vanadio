@@ -8,12 +8,17 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import java.util.ArrayList;
+// import javax.xml.bind.annotation.*;
+
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+
 import java.util.List;
 
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -74,503 +79,60 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement",
-        "box",
-        "textElement",
-        "textFieldExpression",
-        "patternExpression",
-        "anchorNameExpression",
-        "hyperlinkReferenceExpression",
-        "hyperlinkWhenExpression",
-        "hyperlinkAnchorExpression",
-        "hyperlinkPageExpression",
-        "hyperlinkTooltipExpression",
-        "hyperlinkParameter"
-})
-@XmlRootElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+// @XmlAccessorType(XmlAccessType.FIELD)
+// @XmlRootElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+
+@BindType
 public class TextField {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Box box;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected TextElement textElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected TextFieldExpression textFieldExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Object patternExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected AnchorNameExpression anchorNameExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkReferenceExpression hyperlinkReferenceExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkWhenExpression hyperlinkWhenExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkAnchorExpression hyperlinkAnchorExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkPageExpression hyperlinkPageExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkTooltipExpression hyperlinkTooltipExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<HyperlinkParameter> hyperlinkParameter;
-    @XmlAttribute(name = "isStretchWithOverflow")
-    protected String isStretchWithOverflow;
-    @XmlAttribute(name = "textAdjust")
-    protected String textAdjust;
-    @XmlAttribute(name = "evaluationTime")
-    protected ComplexEvaluationTime evaluationTime;
-    @XmlAttribute(name = "evaluationGroup")
-    protected String evaluationGroup;
-    @XmlAttribute(name = "pattern")
-    protected String pattern;
-    @XmlAttribute(name = "isBlankWhenNull")
-    protected String isBlankWhenNull;
-    @XmlAttribute(name = "hyperlinkType")
-    protected String hyperlinkType;
-    @XmlAttribute(name = "hyperlinkTarget")
-    protected String hyperlinkTarget;
-    @XmlAttribute(name = "bookmarkLevel")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String bookmarkLevel;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+  public ReportElement reportElement;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public Box box;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public TextElement textElement;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public TextFieldExpression textFieldExpression;
 
-    /**
-     * Gets the value of the reportElement property.
-     *
-     * @return possible object is
-     * {@link ReportElement }
-     */
-    public ReportElement getReportElement() {
-        return reportElement;
-    }
+  //TODO ojbect
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  //public Object patternExpression;
 
-    /**
-     * Sets the value of the reportElement property.
-     *
-     * @param value allowed object is
-     *              {@link ReportElement }
-     */
-    public void setReportElement(ReportElement value) {
-        this.reportElement = value;
-    }
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public AnchorNameExpression anchorNameExpression;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public HyperlinkReferenceExpression hyperlinkReferenceExpression;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public HyperlinkWhenExpression hyperlinkWhenExpression;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public HyperlinkAnchorExpression hyperlinkAnchorExpression;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public HyperlinkPageExpression hyperlinkPageExpression;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public HyperlinkTooltipExpression hyperlinkTooltipExpression;
+  // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  public List<HyperlinkParameter> hyperlinkParameter;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStretchWithOverflow")
+  public String isStretchWithOverflow;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "textAdjust")
+  public String textAdjust;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationTime")
+  public ComplexEvaluationTime evaluationTime = ComplexEvaluationTime.NOW;
+  ;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationGroup")
+  public String evaluationGroup;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pattern")
+  public String pattern;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isBlankWhenNull")
+  public String isBlankWhenNull;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkType")
+  public String hyperlinkType;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkTarget")
+  public String hyperlinkTarget;
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bookmarkLevel")
+  @BindAdapter(adapter = CollapsedStringAdapter.class)
+  // // @XmlSchemaType(name = "NMTOKEN")
+  public String bookmarkLevel = "0";
 
-    /**
-     * Gets the value of the box property.
-     *
-     * @return possible object is
-     * {@link Box }
-     */
-    public Box getBox() {
-        return box;
-    }
-
-    /**
-     * Sets the value of the box property.
-     *
-     * @param value allowed object is
-     *              {@link Box }
-     */
-    public void setBox(Box value) {
-        this.box = value;
-    }
-
-    /**
-     * Gets the value of the textElement property.
-     *
-     * @return possible object is
-     * {@link TextElement }
-     */
-    public TextElement getTextElement() {
-        return textElement;
-    }
-
-    /**
-     * Sets the value of the textElement property.
-     *
-     * @param value allowed object is
-     *              {@link TextElement }
-     */
-    public void setTextElement(TextElement value) {
-        this.textElement = value;
-    }
-
-    /**
-     * Gets the value of the textFieldExpression property.
-     *
-     * @return possible object is
-     * {@link TextFieldExpression }
-     */
-    public TextFieldExpression getTextFieldExpression() {
-        return textFieldExpression;
-    }
-
-    /**
-     * Sets the value of the textFieldExpression property.
-     *
-     * @param value allowed object is
-     *              {@link TextFieldExpression }
-     */
-    public void setTextFieldExpression(TextFieldExpression value) {
-        this.textFieldExpression = value;
-    }
-
-    /**
-     * Gets the value of the patternExpression property.
-     *
-     * @return possible object is
-     * {@link Object }
-     */
-    public Object getPatternExpression() {
-        return patternExpression;
-    }
-
-    /**
-     * Sets the value of the patternExpression property.
-     *
-     * @param value allowed object is
-     *              {@link Object }
-     */
-    public void setPatternExpression(Object value) {
-        this.patternExpression = value;
-    }
-
-    /**
-     * Gets the value of the anchorNameExpression property.
-     *
-     * @return possible object is
-     * {@link AnchorNameExpression }
-     */
-    public AnchorNameExpression getAnchorNameExpression() {
-        return anchorNameExpression;
-    }
-
-    /**
-     * Sets the value of the anchorNameExpression property.
-     *
-     * @param value allowed object is
-     *              {@link AnchorNameExpression }
-     */
-    public void setAnchorNameExpression(AnchorNameExpression value) {
-        this.anchorNameExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkReferenceExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkReferenceExpression }
-     */
-    public HyperlinkReferenceExpression getHyperlinkReferenceExpression() {
-        return hyperlinkReferenceExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkReferenceExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkReferenceExpression }
-     */
-    public void setHyperlinkReferenceExpression(HyperlinkReferenceExpression value) {
-        this.hyperlinkReferenceExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkWhenExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkWhenExpression }
-     */
-    public HyperlinkWhenExpression getHyperlinkWhenExpression() {
-        return hyperlinkWhenExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkWhenExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkWhenExpression }
-     */
-    public void setHyperlinkWhenExpression(HyperlinkWhenExpression value) {
-        this.hyperlinkWhenExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkAnchorExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkAnchorExpression }
-     */
-    public HyperlinkAnchorExpression getHyperlinkAnchorExpression() {
-        return hyperlinkAnchorExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkAnchorExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkAnchorExpression }
-     */
-    public void setHyperlinkAnchorExpression(HyperlinkAnchorExpression value) {
-        this.hyperlinkAnchorExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkPageExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkPageExpression }
-     */
-    public HyperlinkPageExpression getHyperlinkPageExpression() {
-        return hyperlinkPageExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkPageExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkPageExpression }
-     */
-    public void setHyperlinkPageExpression(HyperlinkPageExpression value) {
-        this.hyperlinkPageExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkTooltipExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkTooltipExpression }
-     */
-    public HyperlinkTooltipExpression getHyperlinkTooltipExpression() {
-        return hyperlinkTooltipExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkTooltipExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkTooltipExpression }
-     */
-    public void setHyperlinkTooltipExpression(HyperlinkTooltipExpression value) {
-        this.hyperlinkTooltipExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkParameter property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hyperlinkParameter property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHyperlinkParameter().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link HyperlinkParameter }
-     */
-    public List<HyperlinkParameter> getHyperlinkParameter() {
-        if (hyperlinkParameter == null) {
-            hyperlinkParameter = new ArrayList<HyperlinkParameter>();
-        }
-        return this.hyperlinkParameter;
-    }
-
-    /**
-     * Gets the value of the isStretchWithOverflow property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsStretchWithOverflow() {
-        return isStretchWithOverflow;
-    }
-
-    /**
-     * Sets the value of the isStretchWithOverflow property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsStretchWithOverflow(String value) {
-        this.isStretchWithOverflow = value;
-    }
-
-    /**
-     * Gets the value of the textAdjust property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getTextAdjust() {
-        return textAdjust;
-    }
-
-    /**
-     * Sets the value of the textAdjust property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTextAdjust(String value) {
-        this.textAdjust = value;
-    }
-
-    /**
-     * Gets the value of the evaluationTime property.
-     *
-     * @return possible object is
-     * {@link ComplexEvaluationTime }
-     */
-    public ComplexEvaluationTime getEvaluationTime() {
-        if (evaluationTime == null) {
-            return ComplexEvaluationTime.NOW;
-        } else {
-            return evaluationTime;
-        }
-    }
-
-    /**
-     * Sets the value of the evaluationTime property.
-     *
-     * @param value allowed object is
-     *              {@link ComplexEvaluationTime }
-     */
-    public void setEvaluationTime(ComplexEvaluationTime value) {
-        this.evaluationTime = value;
-    }
-
-    /**
-     * Gets the value of the evaluationGroup property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getEvaluationGroup() {
-        return evaluationGroup;
-    }
-
-    /**
-     * Sets the value of the evaluationGroup property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setEvaluationGroup(String value) {
-        this.evaluationGroup = value;
-    }
-
-    /**
-     * Gets the value of the pattern property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getPattern() {
-        return pattern;
-    }
-
-    /**
-     * Sets the value of the pattern property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setPattern(String value) {
-        this.pattern = value;
-    }
-
-    /**
-     * Gets the value of the isBlankWhenNull property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsBlankWhenNull() {
-        return isBlankWhenNull;
-    }
-
-    /**
-     * Sets the value of the isBlankWhenNull property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsBlankWhenNull(String value) {
-        this.isBlankWhenNull = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getHyperlinkType() {
-        return hyperlinkType;
-    }
-
-    /**
-     * Sets the value of the hyperlinkType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setHyperlinkType(String value) {
-        this.hyperlinkType = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkTarget property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getHyperlinkTarget() {
-        return hyperlinkTarget;
-    }
-
-    /**
-     * Sets the value of the hyperlinkTarget property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setHyperlinkTarget(String value) {
-        this.hyperlinkTarget = value;
-    }
-
-    /**
-     * Gets the value of the bookmarkLevel property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getBookmarkLevel() {
-        if (bookmarkLevel == null) {
-            return "0";
-        } else {
-            return bookmarkLevel;
-        }
-    }
-
-    /**
-     * Sets the value of the bookmarkLevel property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setBookmarkLevel(String value) {
-        this.bookmarkLevel = value;
-    }
 
 }

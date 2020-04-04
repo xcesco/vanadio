@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,29 +50,28 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "bucketExpression",
-        "labelExpression",
-        "comparatorExpression",
-        "bucketProperty"
-})
-@XmlRootElement(name = "axisLevelBucket", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class AxisLevelBucket {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected BucketExpression bucketExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected AxisLevelBucket.LabelExpression labelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ComparatorExpression comparatorExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<BucketProperty> bucketProperty;
-    @XmlAttribute(name = "class")
-    protected String clazz;
-    @XmlAttribute(name = "order")
-    protected String order;
+// @XmlRootElement(name = "axisLevelBucket", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  AxisLevelBucket {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public BucketExpression bucketExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public AxisLevelBucketLabelExpression labelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ComparatorExpression comparatorExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<BucketProperty> bucketProperty;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
+    public String clazz;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "order")
+    public String order;
 
     /**
      * Gets the value of the bucketExpression property.
@@ -98,9 +97,9 @@ public class AxisLevelBucket {
      * Gets the value of the labelExpression property.
      *
      * @return possible object is
-     * {@link AxisLevelBucket.LabelExpression }
+     * {@link AxisLevelBucketLabelExpression }
      */
-    public AxisLevelBucket.LabelExpression getLabelExpression() {
+    public AxisLevelBucketLabelExpression getLabelExpression() {
         return labelExpression;
     }
 
@@ -108,9 +107,9 @@ public class AxisLevelBucket {
      * Sets the value of the labelExpression property.
      *
      * @param value allowed object is
-     *              {@link AxisLevelBucket.LabelExpression }
+     *              {@link AxisLevelBucketLabelExpression }
      */
-    public void setLabelExpression(AxisLevelBucket.LabelExpression value) {
+    public void setLabelExpression(AxisLevelBucketLabelExpression value) {
         this.labelExpression = value;
     }
 
@@ -209,50 +208,5 @@ public class AxisLevelBucket {
         this.order = value;
     }
 
-
-    /**
-     * <p>Java class for anonymous complex type.
-     *
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     *
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-            "content"
-    })
-    public static class LabelExpression {
-
-        @XmlValue
-        protected String content;
-
-        /**
-         * Gets the value of the content property.
-         *
-         * @return possible object is
-         * {@link String }
-         */
-        public String getContent() {
-            return content;
-        }
-
-        /**
-         * Sets the value of the content property.
-         *
-         * @param value allowed object is
-         *              {@link String }
-         */
-        public void setContent(String value) {
-            this.content = value;
-        }
-
-    }
 
 }

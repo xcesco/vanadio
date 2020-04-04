@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,46 +51,48 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "tabStop"
-})
-@XmlRootElement(name = "paragraph", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Paragraph {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "paragraph", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<TabStop> tabStop;
-    @XmlAttribute(name = "lineSpacing")
-    protected String lineSpacing;
-    @XmlAttribute(name = "lineSpacingSize")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String lineSpacingSize;
-    @XmlAttribute(name = "firstLineIndent")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String firstLineIndent;
-    @XmlAttribute(name = "leftIndent")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String leftIndent;
-    @XmlAttribute(name = "rightIndent")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String rightIndent;
-    @XmlAttribute(name = "spacingBefore")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String spacingBefore;
-    @XmlAttribute(name = "spacingAfter")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String spacingAfter;
-    @XmlAttribute(name = "tabStopWidth")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String tabStopWidth;
+@BindType
+public class  Paragraph {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<TabStop> tabStop;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineSpacing")
+    public String lineSpacing;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineSpacingSize")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String lineSpacingSize;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "firstLineIndent")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String firstLineIndent;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftIndent")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String leftIndent;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightIndent")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String rightIndent;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "spacingBefore")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String spacingBefore;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "spacingAfter")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String spacingAfter;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "tabStopWidth")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String tabStopWidth;
 
     /**
      * Gets the value of the tabStop property.

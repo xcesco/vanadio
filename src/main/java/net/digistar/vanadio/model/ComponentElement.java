@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -29,58 +29,22 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement",
-        "component"
-})
-@XmlRootElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class ComponentElement {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ComponentType component;
+// @XmlRootElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    /**
-     * Gets the value of the reportElement property.
-     *
-     * @return possible object is
-     * {@link ReportElement }
-     */
-    public ReportElement getReportElement() {
-        return reportElement;
-    }
+@BindType
+public class  ComponentElement {
 
-    /**
-     * Sets the value of the reportElement property.
-     *
-     * @param value allowed object is
-     *              {@link ReportElement }
-     */
-    public void setReportElement(ReportElement value) {
-        this.reportElement = value;
-    }
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ReportElement reportElement;
 
-    /**
-     * Gets the value of the component property.
-     *
-     * @return possible object is
-     * {@link ComponentType }
-     */
-    public ComponentType getComponent() {
-        return component;
-    }
+    //TODO
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    //public ComponentType component;
 
-    /**
-     * Sets the value of the component property.
-     *
-     * @param value allowed object is
-     *              {@link ComponentType }
-     */
-    public void setComponent(ComponentType value) {
-        this.component = value;
-    }
 
 }

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -34,29 +34,30 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "labelFont",
-        "tickLabelFont"
-})
-@XmlRootElement(name = "axisFormat", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class AxisFormat {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "axisFormat", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LabelFont labelFont;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected TickLabelFont tickLabelFont;
-    @XmlAttribute(name = "labelColor")
-    protected String labelColor;
-    @XmlAttribute(name = "tickLabelColor")
-    protected String tickLabelColor;
-    @XmlAttribute(name = "tickLabelMask")
-    protected String tickLabelMask;
-    @XmlAttribute(name = "verticalTickLabels")
-    protected Boolean verticalTickLabels;
-    @XmlAttribute(name = "axisLineColor")
-    protected String axisLineColor;
+@BindType
+public class  AxisFormat {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LabelFont labelFont;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public TickLabelFont tickLabelFont;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "labelColor")
+    public String labelColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "tickLabelColor")
+    public String tickLabelColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "tickLabelMask")
+    public String tickLabelMask;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "verticalTickLabels")
+    public Boolean verticalTickLabels;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "axisLineColor")
+    public String axisLineColor;
 
     /**
      * Gets the value of the labelFont property.

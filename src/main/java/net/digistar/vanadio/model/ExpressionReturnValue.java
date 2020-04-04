@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for expressionReturnValue complex type.
@@ -34,24 +34,26 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "expressionReturnValue", namespace = "http://jasperreports.sourceforge.net/jasperreports", propOrder = {
-        "expression"
-})
-//@BindType
-public class ExpressionReturnValue
+// @XmlAccessorType(XmlAccessType.FIELD)
+
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  ExpressionReturnValue
         extends CommonReturnValue {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ExpressionReturnValue.Expression expression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ExpressionReturnValueExpression expression;
 
     /**
      * Gets the value of the expression property.
      *
      * @return possible object is
-     * {@link ExpressionReturnValue.Expression }
+     * {@link ExpressionReturnValueExpression }
      */
-    public ExpressionReturnValue.Expression getExpression() {
+    public ExpressionReturnValueExpression getExpression() {
         return expression;
     }
 
@@ -59,56 +61,13 @@ public class ExpressionReturnValue
      * Sets the value of the expression property.
      *
      * @param value allowed object is
-     *              {@link ExpressionReturnValue.Expression }
+     *              {@link ExpressionReturnValueExpression }
      */
-    public void setExpression(ExpressionReturnValue.Expression value) {
+    public void setExpression(ExpressionReturnValueExpression value) {
         this.expression = value;
     }
 
 
-    /**
-     * <p>Java class for anonymous complex type.
-     *
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     *
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-            "content"
-    })
-    public static class Expression {
 
-        @XmlValue
-        protected String content;
-
-        /**
-         * Gets the value of the content property.
-         *
-         * @return possible object is
-         * {@link String }
-         */
-        public String getContent() {
-            return content;
-        }
-
-        /**
-         * Sets the value of the content property.
-         *
-         * @param value allowed object is
-         *              {@link String }
-         */
-        public void setContent(String value) {
-            this.content = value;
-        }
-
-    }
 
 }

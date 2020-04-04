@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -48,29 +48,30 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "plot",
-        "itemLabel"
-})
-@XmlRootElement(name = "pie3DPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Pie3DPlot {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Plot plot;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ItemLabel itemLabel;
-    @XmlAttribute(name = "isShowLabels")
-    protected String isShowLabels;
-    @XmlAttribute(name = "depthFactor")
-    protected String depthFactor;
-    @XmlAttribute(name = "isCircular")
-    protected String isCircular;
-    @XmlAttribute(name = "labelFormat")
-    protected String labelFormat;
-    @XmlAttribute(name = "legendLabelFormat")
-    protected String legendLabelFormat;
+// @XmlRootElement(name = "pie3DPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Pie3DPlot {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public Plot plot;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ItemLabel itemLabel;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isShowLabels")
+    public String isShowLabels;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "depthFactor")
+    public String depthFactor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isCircular")
+    public String isCircular;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "labelFormat")
+    public String labelFormat;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "legendLabelFormat")
+    public String legendLabelFormat;
 
     /**
      * Gets the value of the plot property.

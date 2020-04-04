@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.annotation.*;
 import com.abubusoft.kripton.xml.XmlType;
 
 import java.util.ArrayList;
@@ -53,17 +53,15 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "plot",
-//        "tickLabelFont",
-//        "valueDisplay",
-//        "dataRange",
-//        "meterInterval"
-//})
-//@XmlRootElement(name = "meterPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class MeterPlot {
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "meterPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  MeterPlot {
 
   public Plot plot;
   public TickLabelFont tickLabelFont;
@@ -71,27 +69,27 @@ public class MeterPlot {
   public DataRange dataRange;
   public List<MeterInterval> meterInterval = new ArrayList<>();
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String shape;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String angle;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String units;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String tickInterval;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String meterColor;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String needleColor;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String tickColor;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String tickCount;
 }

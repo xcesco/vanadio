@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -30,20 +30,22 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "parameterValueExpression"
-})
-@XmlRootElement(name = "crosstabParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class CrosstabParameter {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ParameterValueExpression parameterValueExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "class")
-    protected String clazz;
+// @XmlRootElement(name = "crosstabParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  CrosstabParameter {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ParameterValueExpression parameterValueExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
+    public String clazz;
 
     /**
      * Gets the value of the parameterValueExpression property.

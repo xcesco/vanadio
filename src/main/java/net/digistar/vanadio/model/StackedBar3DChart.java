@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -29,22 +29,22 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "chart",
-        "categoryDataset",
-        "bar3DPlot"
-})
-@XmlRootElement(name = "stackedBar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class StackedBar3DChart {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "stackedBar3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Chart chart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected CategoryDataset categoryDataset;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Bar3DPlot bar3DPlot;
+@BindType
+public class  StackedBar3DChart {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public Chart chart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public CategoryDataset categoryDataset;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public Bar3DPlot bar3DPlot;
 
     /**
      * Gets the value of the chart property.

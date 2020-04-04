@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,53 +52,46 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "property",
-        "propertyExpression",
-        "scriptlet",
-        "parameter",
-        "queryString",
-        "field",
-        "sortField",
-        "variable",
-        "filterExpression",
-        "group"
-})
-@XmlRootElement(name = "subDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class SubDataset {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Property> property;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<DatasetPropertyExpressionType> propertyExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Scriptlet> scriptlet;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Parameter> parameter;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected QueryString queryString;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Field> field;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<SortField> sortField;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Variable> variable;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected FilterExpression filterExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Group> group;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "scriptletClass")
-    protected String scriptletClass;
-    @XmlAttribute(name = "resourceBundle")
-    protected String resourceBundle;
-    @XmlAttribute(name = "whenResourceMissingType")
-    protected String whenResourceMissingType;
-    @XmlAttribute(name = "uuid")
-    protected String uuid;
+// @XmlRootElement(name = "subDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  SubDataset {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Property> property;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<DatasetPropertyExpressionType> propertyExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Scriptlet> scriptlet;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Parameter> parameter;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public QueryString queryString;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Field> field;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<SortField> sortField;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Variable> variable;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public FilterExpression filterExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Group> group;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "scriptletClass")
+    public String scriptletClass;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "resourceBundle")
+    public String resourceBundle;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "whenResourceMissingType")
+    public String whenResourceMissingType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "uuid")
+    public String uuid;
 
     /**
      * Gets the value of the property property.

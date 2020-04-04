@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -36,18 +37,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "tabStop", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class TabStop {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "tabStop", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlAttribute(name = "alignment")
-    protected String alignment;
-    @XmlAttribute(name = "position", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String position;
+@BindType
+public class  TabStop {
+
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "alignment")
+    public String alignment;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "position", required = true)
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String position;
 
     /**
      * Gets the value of the alignment property.

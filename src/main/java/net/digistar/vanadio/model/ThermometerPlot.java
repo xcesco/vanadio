@@ -8,8 +8,11 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
+
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -52,37 +55,34 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "plot",
-        "valueDisplay",
-        "dataRange",
-        "lowRange",
-        "mediumRange",
-        "highRange"
-})
-@XmlRootElement(name = "thermometerPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class ThermometerPlot {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "thermometerPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Plot plot;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ValueDisplay valueDisplay;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected DataRange dataRange;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LowRange lowRange;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected MediumRange mediumRange;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HighRange highRange;
-    @XmlAttribute(name = "valueLocation")
-    protected String valueLocation;
-    @XmlAttribute(name = "isShowValueLines")
-    protected String isShowValueLines;
-    @XmlAttribute(name = "mercuryColor")
-    protected String mercuryColor;
+@BindType
+public class  ThermometerPlot {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public Plot plot;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ValueDisplay valueDisplay;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public DataRange dataRange;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LowRange lowRange;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public MediumRange mediumRange;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HighRange highRange;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "valueLocation")
+    public String valueLocation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isShowValueLines")
+    public String isShowValueLines;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "mercuryColor")
+    public String mercuryColor;
 
     /**
      * Gets the value of the plot property.

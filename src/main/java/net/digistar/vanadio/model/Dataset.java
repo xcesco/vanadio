@@ -8,8 +8,12 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
+
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -53,150 +57,22 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "incrementWhenExpression",
-        "datasetRun"
-})
-@XmlRootElement(name = "dataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "dataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class Dataset {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected IncrementWhenExpression incrementWhenExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DatasetRun datasetRun;
-    @XmlAttribute(name = "resetType")
-    protected String resetType;
-    @XmlAttribute(name = "resetGroup")
-    protected String resetGroup;
-    @XmlAttribute(name = "incrementType")
-    protected String incrementType;
-    @XmlAttribute(name = "incrementGroup")
-    protected String incrementGroup;
-
-    /**
-     * Gets the value of the incrementWhenExpression property.
-     *
-     * @return possible object is
-     * {@link IncrementWhenExpression }
-     */
-    public IncrementWhenExpression getIncrementWhenExpression() {
-        return incrementWhenExpression;
-    }
-
-    /**
-     * Sets the value of the incrementWhenExpression property.
-     *
-     * @param value allowed object is
-     *              {@link IncrementWhenExpression }
-     */
-    public void setIncrementWhenExpression(IncrementWhenExpression value) {
-        this.incrementWhenExpression = value;
-    }
-
-    /**
-     * Gets the value of the datasetRun property.
-     *
-     * @return possible object is
-     * {@link DatasetRun }
-     */
-    public DatasetRun getDatasetRun() {
-        return datasetRun;
-    }
-
-    /**
-     * Sets the value of the datasetRun property.
-     *
-     * @param value allowed object is
-     *              {@link DatasetRun }
-     */
-    public void setDatasetRun(DatasetRun value) {
-        this.datasetRun = value;
-    }
-
-    /**
-     * Gets the value of the resetType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getResetType() {
-        return resetType;
-    }
-
-    /**
-     * Sets the value of the resetType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setResetType(String value) {
-        this.resetType = value;
-    }
-
-    /**
-     * Gets the value of the resetGroup property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getResetGroup() {
-        return resetGroup;
-    }
-
-    /**
-     * Sets the value of the resetGroup property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setResetGroup(String value) {
-        this.resetGroup = value;
-    }
-
-    /**
-     * Gets the value of the incrementType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIncrementType() {
-        if (incrementType == null) {
-            return "None";
-        } else {
-            return incrementType;
-        }
-    }
-
-    /**
-     * Sets the value of the incrementType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIncrementType(String value) {
-        this.incrementType = value;
-    }
-
-    /**
-     * Gets the value of the incrementGroup property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIncrementGroup() {
-        return incrementGroup;
-    }
-
-    /**
-     * Sets the value of the incrementGroup property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIncrementGroup(String value) {
-        this.incrementGroup = value;
-    }
-
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public IncrementWhenExpression incrementWhenExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DatasetRun datasetRun;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String resetType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String resetGroup;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String incrementType="None";
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String incrementGroup;
 }

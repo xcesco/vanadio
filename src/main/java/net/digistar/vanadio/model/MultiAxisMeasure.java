@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -47,35 +47,36 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "labelExpression",
-        "valueExpression"
-})
-@XmlRootElement(name = "multiAxisMeasure", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class MultiAxisMeasure {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected MultiAxisMeasure.LabelExpression labelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected MultiAxisMeasure.ValueExpression valueExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "class")
-    protected String clazz;
-    @XmlAttribute(name = "calculation")
-    protected AggregationCalculationType calculation;
-    @XmlAttribute(name = "incrementerFactoryClass")
-    protected String incrementerFactoryClass;
+// @XmlRootElement(name = "multiAxisMeasure", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  MultiAxisMeasure {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public MultiAxisMeasureLabelExpression labelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public MultiAxisMeasureValueExpression valueExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
+    public String clazz;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "calculation")
+    public AggregationCalculationType calculation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "incrementerFactoryClass")
+    public String incrementerFactoryClass;
 
     /**
      * Gets the value of the labelExpression property.
      *
      * @return possible object is
-     * {@link MultiAxisMeasure.LabelExpression }
+     * {@link MultiAxisMeasureLabelExpression }
      */
-    public MultiAxisMeasure.LabelExpression getLabelExpression() {
+    public MultiAxisMeasureLabelExpression getLabelExpression() {
         return labelExpression;
     }
 
@@ -83,9 +84,9 @@ public class MultiAxisMeasure {
      * Sets the value of the labelExpression property.
      *
      * @param value allowed object is
-     *              {@link MultiAxisMeasure.LabelExpression }
+     *              {@link MultiAxisMeasureLabelExpression }
      */
-    public void setLabelExpression(MultiAxisMeasure.LabelExpression value) {
+    public void setLabelExpression(MultiAxisMeasureLabelExpression value) {
         this.labelExpression = value;
     }
 
@@ -93,9 +94,9 @@ public class MultiAxisMeasure {
      * Gets the value of the valueExpression property.
      *
      * @return possible object is
-     * {@link MultiAxisMeasure.ValueExpression }
+     * {@link MultiAxisMeasureValueExpression }
      */
-    public MultiAxisMeasure.ValueExpression getValueExpression() {
+    public MultiAxisMeasureValueExpression getValueExpression() {
         return valueExpression;
     }
 
@@ -103,9 +104,9 @@ public class MultiAxisMeasure {
      * Sets the value of the valueExpression property.
      *
      * @param value allowed object is
-     *              {@link MultiAxisMeasure.ValueExpression }
+     *              {@link MultiAxisMeasureValueExpression }
      */
-    public void setValueExpression(MultiAxisMeasure.ValueExpression value) {
+    public void setValueExpression(MultiAxisMeasureValueExpression value) {
         this.valueExpression = value;
     }
 
@@ -194,95 +195,9 @@ public class MultiAxisMeasure {
     }
 
 
-    /**
-     * <p>Java class for anonymous complex type.
-     *
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     *
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-            "content"
-    })
-    public static class LabelExpression {
-
-        @XmlValue
-        protected String content;
-
-        /**
-         * Gets the value of the content property.
-         *
-         * @return possible object is
-         * {@link String }
-         */
-        public String getContent() {
-            return content;
-        }
-
-        /**
-         * Sets the value of the content property.
-         *
-         * @param value allowed object is
-         *              {@link String }
-         */
-        public void setContent(String value) {
-            this.content = value;
-        }
-
-    }
 
 
-    /**
-     * <p>Java class for anonymous complex type.
-     *
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     *
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-            "content"
-    })
-    public static class ValueExpression {
 
-        @XmlValue
-        protected String content;
 
-        /**
-         * Gets the value of the content property.
-         *
-         * @return possible object is
-         * {@link String }
-         */
-        public String getContent() {
-            return content;
-        }
-
-        /**
-         * Sets the value of the content property.
-         *
-         * @param value allowed object is
-         *              {@link String }
-         */
-        public void setContent(String value) {
-            this.content = value;
-        }
-
-    }
 
 }

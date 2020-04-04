@@ -8,8 +8,11 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
+
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
 /**
  * <p>Java class for commonReturnValue complex type.
@@ -43,20 +46,20 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "commonReturnValue", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-@XmlSeeAlso({
-        VariableReturnValue.class,
-        ExpressionReturnValue.class
-})
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//@XmlSeeAlso({
+//        VariableReturnValue.class,
+//        ExpressionReturnValue.class
+//})
 public abstract class CommonReturnValue {
 
-    @XmlAttribute(name = "toVariable")
-    protected String toVariable;
-    @XmlAttribute(name = "calculation")
-    protected String calculation;
-    @XmlAttribute(name = "incrementerFactoryClass")
-    protected String incrementerFactoryClass;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "toVariable")
+    public String toVariable;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "calculation")
+    public String calculation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "incrementerFactoryClass")
+    public String incrementerFactoryClass;
 
     /**
      * Gets the value of the toVariable property.

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -36,40 +36,34 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "plot",
-        "categoryAxisLabelExpression",
-        "categoryAxisFormat",
-        "valueAxisLabelExpression",
-        "valueAxisFormat",
-        "domainAxisMinValueExpression",
-        "domainAxisMaxValueExpression",
-        "rangeAxisMinValueExpression",
-        "rangeAxisMaxValueExpression"
-})
-@XmlRootElement(name = "areaPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class AreaPlot {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Plot plot;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CategoryAxisLabelExpression categoryAxisLabelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CategoryAxisFormat categoryAxisFormat;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ValueAxisLabelExpression valueAxisLabelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ValueAxisFormat valueAxisFormat;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DomainAxisMinValueExpression domainAxisMinValueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DomainAxisMaxValueExpression domainAxisMaxValueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected RangeAxisMinValueExpression rangeAxisMinValueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected RangeAxisMaxValueExpression rangeAxisMaxValueExpression;
+// @XmlRootElement(name = "areaPlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  AreaPlot {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public Plot plot;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CategoryAxisLabelExpression categoryAxisLabelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CategoryAxisFormat categoryAxisFormat;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ValueAxisLabelExpression valueAxisLabelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ValueAxisFormat valueAxisFormat;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DomainAxisMinValueExpression domainAxisMinValueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DomainAxisMaxValueExpression domainAxisMaxValueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public RangeAxisMinValueExpression rangeAxisMinValueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public RangeAxisMaxValueExpression rangeAxisMaxValueExpression;
 
     /**
      * Gets the value of the plot property.

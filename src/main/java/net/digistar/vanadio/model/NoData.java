@@ -8,7 +8,9 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindType;
+
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -28,35 +30,12 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "band"
-})
-@XmlRootElement(name = "noData", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "noData", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class NoData {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Band band;
-
-    /**
-     * Gets the value of the band property.
-     *
-     * @return possible object is
-     * {@link Band }
-     */
-    public Band getBand() {
-        return band;
-    }
-
-    /**
-     * Sets the value of the band property.
-     *
-     * @param value allowed object is
-     *              {@link Band }
-     */
-    public void setBand(Band value) {
-        this.band = value;
-    }
-
+//    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Band band;
 }

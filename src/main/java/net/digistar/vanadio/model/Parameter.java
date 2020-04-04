@@ -9,7 +9,7 @@
 package net.digistar.vanadio.model;
 
 import com.abubusoft.kripton.annotation.Bind;
-import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.annotation.*;
 import com.abubusoft.kripton.xml.XmlType;
 
 import java.util.ArrayList;
@@ -54,15 +54,15 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "property",
-//        "parameterDescription",
-//        "defaultValueExpression"
-//})
-//@XmlRootElement(name = "parameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Parameter {
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "parameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Parameter {
   public List<Property> property = new ArrayList<>();
 
   public ParameterDescription parameterDescription;
@@ -72,16 +72,16 @@ public class Parameter {
   public String name;
 
   @Bind("class")
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String clazz = "java.lang.String";
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String nestedType;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String isForPrompting = "true";
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String evaluationTime;
 
 }

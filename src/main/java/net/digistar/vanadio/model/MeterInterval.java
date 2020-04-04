@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -31,22 +31,24 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "dataRange"
-})
-@XmlRootElement(name = "meterInterval", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class MeterInterval {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected DataRange dataRange;
-    @XmlAttribute(name = "label")
-    protected String label;
-    @XmlAttribute(name = "color")
-    protected String color;
-    @XmlAttribute(name = "alpha")
-    protected String alpha;
+// @XmlRootElement(name = "meterInterval", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  MeterInterval {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public DataRange dataRange;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "label")
+    public String label;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "color")
+    public String color;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "alpha")
+    public String alpha;
 
     /**
      * Gets the value of the dataRange property.

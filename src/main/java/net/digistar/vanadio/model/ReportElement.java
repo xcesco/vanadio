@@ -8,9 +8,12 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,509 +108,95 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "property",
-        "propertyExpression",
-        "printWhenExpression"
-})
-@XmlRootElement(name = "reportElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "reportElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class ReportElement {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Property> property;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<PropertyExpressionType> propertyExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected PrintWhenExpression printWhenExpression;
-    @XmlAttribute(name = "uuid")
-    protected String uuid;
-    @XmlAttribute(name = "key")
-    protected String key;
-    @XmlAttribute(name = "style")
-    protected String style;
-    @XmlAttribute(name = "positionType")
-    protected String positionType;
-    @XmlAttribute(name = "stretchType")
-    protected String stretchType;
-    @XmlAttribute(name = "isPrintRepeatedValues")
-    protected String isPrintRepeatedValues;
-    @XmlAttribute(name = "mode")
-    protected String mode;
-    @XmlAttribute(name = "x", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String x;
-    @XmlAttribute(name = "y", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String y;
-    @XmlAttribute(name = "width", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String width;
-    @XmlAttribute(name = "height", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String height;
-    @XmlAttribute(name = "isRemoveLineWhenBlank")
-    protected String isRemoveLineWhenBlank;
-    @XmlAttribute(name = "isPrintInFirstWholeBand")
-    protected String isPrintInFirstWholeBand;
-    @XmlAttribute(name = "isPrintWhenDetailOverflows")
-    protected String isPrintWhenDetailOverflows;
-    @XmlAttribute(name = "printWhenGroupChanges")
-    protected String printWhenGroupChanges;
-    @XmlAttribute(name = "forecolor")
-    protected String forecolor;
-    @XmlAttribute(name = "backcolor")
-    protected String backcolor;
+    public List<Property> property=new ArrayList<>();
 
-    /**
-     * Gets the value of the property property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the property property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProperty().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Property }
-     */
-    public List<Property> getProperty() {
-        if (property == null) {
-            property = new ArrayList<Property>();
-        }
-        return this.property;
-    }
+    public List<PropertyExpressionType> propertyExpression=new ArrayList<>();
 
-    public void setProperty(List<Property> property) {
-        this.property = property;
-    }
+    public PrintWhenExpression printWhenExpression;
 
-    /**
-     * Gets the value of the propertyExpression property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the propertyExpression property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPropertyExpression().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link PropertyExpressionType }
-     */
-    public List<PropertyExpressionType> getPropertyExpression() {
-        if (propertyExpression == null) {
-            propertyExpression = new ArrayList<PropertyExpressionType>();
-        }
-        return this.propertyExpression;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "uuid")
+    public String uuid;
 
-    public void setPropertyExpression(List<PropertyExpressionType> propertyExpression) {
-        this.propertyExpression = propertyExpression;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "key")
+    public String key;
 
-    /**
-     * Gets the value of the printWhenExpression property.
-     *
-     * @return possible object is
-     * {@link PrintWhenExpression }
-     */
-    public PrintWhenExpression getPrintWhenExpression() {
-        return printWhenExpression;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "style")
+    public String style;
 
-    /**
-     * Sets the value of the printWhenExpression property.
-     *
-     * @param value allowed object is
-     *              {@link PrintWhenExpression }
-     */
-    public void setPrintWhenExpression(PrintWhenExpression value) {
-        this.printWhenExpression = value;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "positionType")
+    public String positionType="FixRelativeToTop";
 
-    /**
-     * Gets the value of the uuid property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getUuid() {
-        return uuid;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "stretchType")
+    public String stretchType="FixRelativeToTop";
 
-    /**
-     * Sets the value of the uuid property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setUuid(String value) {
-        this.uuid = value;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isPrintRepeatedValues")
+    public String isPrintRepeatedValues="true";
 
-    /**
-     * Gets the value of the key property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getKey() {
-        return key;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "mode")
+    public String mode;
 
-    /**
-     * Sets the value of the key property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setKey(String value) {
-        this.key = value;
-    }
+    @BindAdapter(adapter = CollapsedStringAdapter.class)
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "x", required = true)
+//    @BindAdapter(adapter=CollapsedStringAdapter.class)
+//    // // @XmlSchemaType(name = "NMTOKEN")
+    public String x;
 
-    /**
-     * Gets the value of the style property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getStyle() {
-        return style;
-    }
+    @BindAdapter(adapter = CollapsedStringAdapter.class)
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "y", required = true)
+//    @BindAdapter(adapter=CollapsedStringAdapter.class)
+//    // // @XmlSchemaType(name = "NMTOKEN")
+    public String y;
 
-    /**
-     * Sets the value of the style property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setStyle(String value) {
-        this.style = value;
-    }
+    @BindAdapter(adapter = CollapsedStringAdapter.class)
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "width", required = true)
+//    @BindAdapter(adapter=CollapsedStringAdapter.class)
+//    // // @XmlSchemaType(name = "NMTOKEN")
+    public String width;
 
-    /**
-     * Gets the value of the positionType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getPositionType() {
-        if (positionType == null) {
-            return "FixRelativeToTop";
-        } else {
-            return positionType;
-        }
-    }
+    @BindAdapter(adapter = CollapsedStringAdapter.class)
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "height", required = true)
+//    @BindAdapter(adapter=CollapsedStringAdapter.class)
+//    // // @XmlSchemaType(name = "NMTOKEN")
+    public String height;
 
-    /**
-     * Sets the value of the positionType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setPositionType(String value) {
-        this.positionType = value;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isRemoveLineWhenBlank")
+    public String isRemoveLineWhenBlank="false";
 
-    /**
-     * Gets the value of the stretchType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getStretchType() {
-        if (stretchType == null) {
-            return "NoStretch";
-        } else {
-            return stretchType;
-        }
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isPrintInFirstWholeBand")
+    public String isPrintInFirstWholeBand="false";
 
-    /**
-     * Sets the value of the stretchType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setStretchType(String value) {
-        this.stretchType = value;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isPrintWhenDetailOverflows")
+    public String isPrintWhenDetailOverflows="false";
 
-    /**
-     * Gets the value of the isPrintRepeatedValues property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsPrintRepeatedValues() {
-        if (isPrintRepeatedValues == null) {
-            return "true";
-        } else {
-            return isPrintRepeatedValues;
-        }
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "printWhenGroupChanges")
+    public String printWhenGroupChanges;
 
-    /**
-     * Sets the value of the isPrintRepeatedValues property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsPrintRepeatedValues(String value) {
-        this.isPrintRepeatedValues = value;
-    }
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "forecolor")
+    public String forecolor;
 
-    /**
-     * Gets the value of the mode property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getMode() {
-        return mode;
-    }
-
-    /**
-     * Sets the value of the mode property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setMode(String value) {
-        this.mode = value;
-    }
-
-    /**
-     * Gets the value of the x property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getX() {
-        return x;
-    }
-
-    /**
-     * Sets the value of the x property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setX(String value) {
-        this.x = value;
-    }
-
-    /**
-     * Gets the value of the y property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getY() {
-        return y;
-    }
-
-    /**
-     * Sets the value of the y property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setY(String value) {
-        this.y = value;
-    }
-
-    /**
-     * Gets the value of the width property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getWidth() {
-        return width;
-    }
-
-    /**
-     * Sets the value of the width property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setWidth(String value) {
-        this.width = value;
-    }
-
-    /**
-     * Gets the value of the height property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getHeight() {
-        return height;
-    }
-
-    /**
-     * Sets the value of the height property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setHeight(String value) {
-        this.height = value;
-    }
-
-    /**
-     * Gets the value of the isRemoveLineWhenBlank property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsRemoveLineWhenBlank() {
-        if (isRemoveLineWhenBlank == null) {
-            return "false";
-        } else {
-            return isRemoveLineWhenBlank;
-        }
-    }
-
-    /**
-     * Sets the value of the isRemoveLineWhenBlank property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsRemoveLineWhenBlank(String value) {
-        this.isRemoveLineWhenBlank = value;
-    }
-
-    /**
-     * Gets the value of the isPrintInFirstWholeBand property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsPrintInFirstWholeBand() {
-        if (isPrintInFirstWholeBand == null) {
-            return "false";
-        } else {
-            return isPrintInFirstWholeBand;
-        }
-    }
-
-    /**
-     * Sets the value of the isPrintInFirstWholeBand property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsPrintInFirstWholeBand(String value) {
-        this.isPrintInFirstWholeBand = value;
-    }
-
-    /**
-     * Gets the value of the isPrintWhenDetailOverflows property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsPrintWhenDetailOverflows() {
-        if (isPrintWhenDetailOverflows == null) {
-            return "false";
-        } else {
-            return isPrintWhenDetailOverflows;
-        }
-    }
-
-    /**
-     * Sets the value of the isPrintWhenDetailOverflows property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsPrintWhenDetailOverflows(String value) {
-        this.isPrintWhenDetailOverflows = value;
-    }
-
-    /**
-     * Gets the value of the printWhenGroupChanges property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getPrintWhenGroupChanges() {
-        return printWhenGroupChanges;
-    }
-
-    /**
-     * Sets the value of the printWhenGroupChanges property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setPrintWhenGroupChanges(String value) {
-        this.printWhenGroupChanges = value;
-    }
-
-    /**
-     * Gets the value of the forecolor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getForecolor() {
-        return forecolor;
-    }
-
-    /**
-     * Sets the value of the forecolor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setForecolor(String value) {
-        this.forecolor = value;
-    }
-
-    /**
-     * Gets the value of the backcolor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getBackcolor() {
-        return backcolor;
-    }
-
-    /**
-     * Sets the value of the backcolor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setBackcolor(String value) {
-        this.backcolor = value;
-    }
-
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "backcolor")
+    public String backcolor;
 }

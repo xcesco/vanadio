@@ -8,9 +8,13 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,69 +63,56 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement",
-        "box",
-        "chartTitle",
-        "chartSubtitle",
-        "chartLegend",
-        "anchorNameExpression",
-        "hyperlinkReferenceExpression",
-        "hyperlinkWhenExpression",
-        "hyperlinkAnchorExpression",
-        "hyperlinkPageExpression",
-        "hyperlinkTooltipExpression",
-        "hyperlinkParameter"
-})
-@XmlRootElement(name = "chart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "chart", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class Chart {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Box box;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ChartTitle chartTitle;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ChartSubtitle chartSubtitle;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ChartLegend chartLegend;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected AnchorNameExpression anchorNameExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkReferenceExpression hyperlinkReferenceExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkWhenExpression hyperlinkWhenExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkAnchorExpression hyperlinkAnchorExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkPageExpression hyperlinkPageExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkTooltipExpression hyperlinkTooltipExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<HyperlinkParameter> hyperlinkParameter;
-    @XmlAttribute(name = "isShowLegend")
-    protected String isShowLegend;
-    @XmlAttribute(name = "evaluationTime")
-    protected BasicEvaluationTime evaluationTime;
-    @XmlAttribute(name = "evaluationGroup")
-    protected String evaluationGroup;
-    @XmlAttribute(name = "hyperlinkType")
-    protected String hyperlinkType;
-    @XmlAttribute(name = "hyperlinkTarget")
-    protected String hyperlinkTarget;
-    @XmlAttribute(name = "bookmarkLevel")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String bookmarkLevel;
-    @XmlAttribute(name = "customizerClass")
-    protected String customizerClass;
-    @XmlAttribute(name = "renderType")
-    protected String renderType;
-    @XmlAttribute(name = "theme")
-    protected String theme;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ReportElement reportElement;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Box box;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ChartTitle chartTitle;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ChartSubtitle chartSubtitle;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ChartLegend chartLegend;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public AnchorNameExpression anchorNameExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkReferenceExpression hyperlinkReferenceExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkWhenExpression hyperlinkWhenExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkAnchorExpression hyperlinkAnchorExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkPageExpression hyperlinkPageExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkTooltipExpression hyperlinkTooltipExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<HyperlinkParameter> hyperlinkParameter;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isShowLegend")
+    public String isShowLegend;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationTime")
+    public BasicEvaluationTime evaluationTime;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationGroup")
+    public String evaluationGroup;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkType")
+    public String hyperlinkType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkTarget")
+    public String hyperlinkTarget;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bookmarkLevel")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String bookmarkLevel;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "customizerClass")
+    public String customizerClass;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "renderType")
+    public String renderType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "theme")
+    public String theme;
 
     /**
      * Gets the value of the reportElement property.

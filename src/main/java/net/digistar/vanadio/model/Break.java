@@ -8,7 +8,12 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.annotation.BindXmlType;
+import com.abubusoft.kripton.xml.XmlType;
+
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -36,61 +41,17 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement"
-})
-@XmlRootElement(name = "break", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "break", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class Break {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlAttribute(name = "type")
-    protected String type;
+//    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ReportElement reportElement;
 
-    /**
-     * Gets the value of the reportElement property.
-     *
-     * @return possible object is
-     * {@link ReportElement }
-     */
-    public ReportElement getReportElement() {
-        return reportElement;
-    }
-
-    /**
-     * Sets the value of the reportElement property.
-     *
-     * @param value allowed object is
-     *              {@link ReportElement }
-     */
-    public void setReportElement(ReportElement value) {
-        this.reportElement = value;
-    }
-
-    /**
-     * Gets the value of the type property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getType() {
-        if (type == null) {
-            return "Page";
-        } else {
-            return type;
-        }
-    }
-
-    /**
-     * Sets the value of the type property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setType(String value) {
-        this.type = value;
-    }
+//    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "type")
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String type="Page";
 
 }

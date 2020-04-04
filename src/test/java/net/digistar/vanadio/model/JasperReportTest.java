@@ -12,7 +12,7 @@ public class JasperReportTest {
   public void testReadJasperReport() throws Exception {
     JasperReport report = VanadioTestUtils.read("ricetta");
 
-    String result = VanadioTestUtils.write(report);
+    String result = VanadioTestUtils.writeAsYaml(report);
     logger.info(result);
   }
 }

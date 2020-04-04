@@ -10,7 +10,8 @@ package net.digistar.vanadio.model;
 
 import com.abubusoft.kripton.annotation.Bind;
 import com.abubusoft.kripton.annotation.BindAdapter;
-import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
 import com.abubusoft.kripton.xml.XmlType;
 import net.digistar.vanadio.support.CollapsedStringAdapter;
 
@@ -90,22 +91,17 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "property",
-//        "printWhenExpression",
-//        "breakOrLineOrRectangle",
-//        "returnValue"
-//})
-//@XmlRootElement(name = "band", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "band", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class Band {
 
   @Bind("break")
   public List<Break> breakList = new ArrayList<>();
 
   @Bind("line")
-  public List<Break> lineList = new ArrayList<>();
+  public List<Line> lineList = new ArrayList<>();
 
 //    @XmlElement(name = "rectangle", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Rectangle.class),
 //    @XmlElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Ellipse.class),
@@ -141,10 +137,10 @@ public class Band {
 //    @XmlElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GenericElement.class)
 
 
-  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  //// @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public List<Property> property = new ArrayList<>();
 
-  //@XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+  //// @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public PrintWhenExpression printWhenExpression;
 
 //  @XmlElements({
@@ -183,18 +179,18 @@ public class Band {
 //          @XmlElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ComponentElement.class),
 //          @XmlElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GenericElement.class)
 //  })
-//  protected List<Object> breakOrLineOrRectangle;
+//  public List<Object> breakOrLineOrRectangle;
 
-  //   @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-  public List<ExpressionReturnValue> returnValue = new ArrayList<>();
+  //   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+//  public List<ExpressionReturnValue> returnValue = new ArrayList<>();
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   @BindAdapter(adapter = CollapsedStringAdapter.class)
   public String height = "0";
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String isSplitAllowed;
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String splitType;
 }

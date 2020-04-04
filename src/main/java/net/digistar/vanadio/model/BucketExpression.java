@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -26,18 +26,20 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "content"
-})
-@XmlRootElement(name = "bucketExpression", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class BucketExpression {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlValue
-    protected String content;
-    @XmlAttribute(name = "class")
-    protected String clazz;
+// @XmlRootElement(name = "bucketExpression", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  BucketExpression {
+
+      @BindXml(xmlType = XmlType.VALUE)
+    public String content;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
+    public String clazz;
 
     /**
      * Gets the value of the content property.

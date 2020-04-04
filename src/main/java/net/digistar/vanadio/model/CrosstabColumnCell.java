@@ -8,9 +8,13 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.*;
+
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+
 
 
 /**
@@ -41,21 +45,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CrosstabColumnCell", namespace = "http://jasperreports.sourceforge.net/jasperreports", propOrder = {
-        "cellContents"
-})
-//@BindType
-public class CrosstabColumnCell {
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected CellContents cellContents;
-    @XmlAttribute(name = "height", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String height;
-    @XmlAttribute(name = "contentsPosition")
-    protected String contentsPosition;
+@BindType
+public class  CrosstabColumnCell {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public CellContents cellContents;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String height;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String contentsPosition;
 
     /**
      * Gets the value of the cellContents property.

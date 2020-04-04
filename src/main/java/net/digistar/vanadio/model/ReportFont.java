@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -80,36 +81,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "reportFont", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class ReportFont {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "reportFont", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "isDefault")
-    protected String isDefault;
-    @XmlAttribute(name = "fontName")
-    protected String fontName;
-    @XmlAttribute(name = "size")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String size;
-    @XmlAttribute(name = "isBold")
-    protected String isBold;
-    @XmlAttribute(name = "isItalic")
-    protected String isItalic;
-    @XmlAttribute(name = "isUnderline")
-    protected String isUnderline;
-    @XmlAttribute(name = "isStrikeThrough")
-    protected String isStrikeThrough;
-    @XmlAttribute(name = "pdfFontName")
-    protected String pdfFontName;
-    @XmlAttribute(name = "pdfEncoding")
-    protected String pdfEncoding;
-    @XmlAttribute(name = "isPdfEmbedded")
-    protected String isPdfEmbedded;
+@BindType
+public class  ReportFont {
+
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isDefault")
+    public String isDefault;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fontName")
+    public String fontName;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "size")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String size;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isBold")
+    public String isBold;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isItalic")
+    public String isItalic;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isUnderline")
+    public String isUnderline;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStrikeThrough")
+    public String isStrikeThrough;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pdfFontName")
+    public String pdfFontName;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pdfEncoding")
+    public String pdfEncoding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isPdfEmbedded")
+    public String isPdfEmbedded;
 
     /**
      * Gets the value of the name property.

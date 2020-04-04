@@ -10,7 +10,7 @@ package net.digistar.vanadio.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
+import com.abubusoft.kripton.xml.XmlType;
 
 
 /**
@@ -27,8 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "componentType", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+// @XmlAccessorType(XmlAccessType.FIELD)
+
 public abstract class ComponentType {
 
 

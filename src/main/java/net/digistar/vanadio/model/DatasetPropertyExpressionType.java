@@ -11,7 +11,7 @@ package net.digistar.vanadio.model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
+import com.abubusoft.kripton.xml.XmlType;
 
 
 /**
@@ -37,14 +37,18 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "datasetPropertyExpressionType", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class DatasetPropertyExpressionType
+// @XmlAccessorType(XmlAccessType.FIELD)
+
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  DatasetPropertyExpressionType
         extends PropertyExpressionType {
 
-    @XmlAttribute(name = "evaluationTime")
-    protected String evaluationTime;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationTime")
+    public String evaluationTime;
 
     /**
      * Gets the value of the evaluationTime property.

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -32,28 +32,26 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "seriesExpression",
-        "categoryExpression",
-        "valueExpression",
-        "labelExpression",
-        "itemHyperlink"
-})
-@XmlRootElement(name = "categorySeries", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class CategorySeries {
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "categorySeries", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected SeriesExpression seriesExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CategoryExpression categoryExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ValueExpression valueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LabelExpression labelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ItemHyperlink itemHyperlink;
+@BindType
+public class  CategorySeries {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public SeriesExpression seriesExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CategoryExpression categoryExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ValueExpression valueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LabelExpression labelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ItemHyperlink itemHyperlink;
 
     /**
      * Gets the value of the seriesExpression property.

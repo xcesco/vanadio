@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -34,28 +35,30 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "cellContents"
-})
-@XmlRootElement(name = "crosstabCell", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class CrosstabCell {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CellContents cellContents;
-    @XmlAttribute(name = "width")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String width;
-    @XmlAttribute(name = "height")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String height;
-    @XmlAttribute(name = "rowTotalGroup")
-    protected String rowTotalGroup;
-    @XmlAttribute(name = "columnTotalGroup")
-    protected String columnTotalGroup;
+// @XmlRootElement(name = "crosstabCell", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  CrosstabCell {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CellContents cellContents;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "width")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String width;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "height")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String height;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rowTotalGroup")
+    public String rowTotalGroup;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "columnTotalGroup")
+    public String columnTotalGroup;
 
     /**
      * Gets the value of the cellContents property.

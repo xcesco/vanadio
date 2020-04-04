@@ -8,8 +8,12 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
+
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -29,57 +33,17 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "datasetParameterExpression"
-})
-@XmlRootElement(name = "datasetParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "datasetParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class DatasetParameter {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DatasetParameterExpression datasetParameterExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DatasetParameterExpression datasetParameterExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String name;
 
-    /**
-     * Gets the value of the datasetParameterExpression property.
-     *
-     * @return possible object is
-     * {@link DatasetParameterExpression }
-     */
-    public DatasetParameterExpression getDatasetParameterExpression() {
-        return datasetParameterExpression;
-    }
 
-    /**
-     * Sets the value of the datasetParameterExpression property.
-     *
-     * @param value allowed object is
-     *              {@link DatasetParameterExpression }
-     */
-    public void setDatasetParameterExpression(DatasetParameterExpression value) {
-        this.datasetParameterExpression = value;
-    }
-
-    /**
-     * Gets the value of the name property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets the value of the name property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
 }

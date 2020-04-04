@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,63 +79,54 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement",
-        "box",
-        "crosstabParameter",
-        "parametersMapExpression",
-        "crosstabDataset",
-        "titleCell",
-        "crosstabHeaderCell",
-        "rowGroup",
-        "columnGroup",
-        "measure",
-        "crosstabCell",
-        "whenNoDataCell"
-})
-@XmlRootElement(name = "crosstab", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Crosstab {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Box box;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<CrosstabParameter> crosstabParameter;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ParametersMapExpression parametersMapExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CrosstabDataset crosstabDataset;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CrosstabColumnCell titleCell;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CrosstabHeaderCell crosstabHeaderCell;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<RowGroup> rowGroup;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<ColumnGroup> columnGroup;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Measure> measure;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<CrosstabCell> crosstabCell;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected WhenNoDataCell whenNoDataCell;
-    @XmlAttribute(name = "isRepeatColumnHeaders")
-    protected String isRepeatColumnHeaders;
-    @XmlAttribute(name = "isRepeatRowHeaders")
-    protected String isRepeatRowHeaders;
-    @XmlAttribute(name = "columnBreakOffset")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String columnBreakOffset;
-    @XmlAttribute(name = "runDirection")
-    protected String runDirection;
-    @XmlAttribute(name = "ignoreWidth")
-    protected Boolean ignoreWidth;
-    @XmlAttribute(name = "horizontalPosition")
-    protected String horizontalPosition;
+// @XmlRootElement(name = "crosstab", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Crosstab {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ReportElement reportElement;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Box box;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<CrosstabParameter> crosstabParameter;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ParametersMapExpression parametersMapExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CrosstabDataset crosstabDataset;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CrosstabColumnCell titleCell;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CrosstabHeaderCell crosstabHeaderCell;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<RowGroup> rowGroup;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<ColumnGroup> columnGroup;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Measure> measure;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<CrosstabCell> crosstabCell;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public WhenNoDataCell whenNoDataCell;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isRepeatColumnHeaders")
+    public String isRepeatColumnHeaders;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isRepeatRowHeaders")
+    public String isRepeatRowHeaders;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "columnBreakOffset")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String columnBreakOffset;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "runDirection")
+    public String runDirection;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "ignoreWidth")
+    public Boolean ignoreWidth;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "horizontalPosition")
+    public String horizontalPosition;
 
     /**
      * Gets the value of the reportElement property.

@@ -11,7 +11,7 @@ package net.digistar.vanadio.model;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
+
 
 
 /**
@@ -29,14 +29,18 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "variableReturnValue", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class VariableReturnValue
+// @XmlAccessorType(XmlAccessType.FIELD)
+
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  VariableReturnValue
         extends CommonReturnValue {
 
-    @XmlAttribute(name = "fromVariable")
-    protected String fromVariable;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fromVariable")
+    public String fromVariable;
 
     /**
      * Gets the value of the fromVariable property.

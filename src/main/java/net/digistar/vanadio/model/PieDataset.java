@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,48 +43,42 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "dataset",
-        "pieSeries",
-        "keyExpression",
-        "valueExpression",
-        "labelExpression",
-        "sectionHyperlink",
-        "otherKeyExpression",
-        "otherLabelExpression",
-        "otherSectionHyperlink"
-})
-@XmlRootElement(name = "pieDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class PieDataset {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Dataset dataset;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<PieSeries> pieSeries;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected KeyExpression keyExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ValueExpression valueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LabelExpression labelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected SectionHyperlink sectionHyperlink;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected OtherKeyExpression otherKeyExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected OtherLabelExpression otherLabelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected OtherSectionHyperlink otherSectionHyperlink;
-    @XmlAttribute(name = "minPercentage")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String minPercentage;
-    @XmlAttribute(name = "maxCount")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String maxCount;
+// @XmlRootElement(name = "pieDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  PieDataset {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Dataset dataset;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<PieSeries> pieSeries;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public KeyExpression keyExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ValueExpression valueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LabelExpression labelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public SectionHyperlink sectionHyperlink;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public OtherKeyExpression otherKeyExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public OtherLabelExpression otherLabelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public OtherSectionHyperlink otherSectionHyperlink;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "minPercentage")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String minPercentage;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "maxCount")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String maxCount;
 
     /**
      * Gets the value of the dataset property.

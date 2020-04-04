@@ -8,9 +8,13 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,554 +114,59 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement",
-        "box",
-        "graphicElement",
-        "imageExpression",
-        "anchorNameExpression",
-        "hyperlinkReferenceExpression",
-        "hyperlinkWhenExpression",
-        "hyperlinkAnchorExpression",
-        "hyperlinkPageExpression",
-        "hyperlinkTooltipExpression",
-        "hyperlinkParameter"
-})
-@XmlRootElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class Image {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Box box;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected GraphicElement graphicElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ImageExpression imageExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected AnchorNameExpression anchorNameExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkReferenceExpression hyperlinkReferenceExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkWhenExpression hyperlinkWhenExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkAnchorExpression hyperlinkAnchorExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkPageExpression hyperlinkPageExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkTooltipExpression hyperlinkTooltipExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<HyperlinkParameter> hyperlinkParameter;
-    @XmlAttribute(name = "scaleImage")
-    protected String scaleImage;
-    @XmlAttribute(name = "rotation")
-    protected String rotation;
-    @XmlAttribute(name = "hAlign")
-    protected String hAlign;
-    @XmlAttribute(name = "vAlign")
-    protected String vAlign;
-    @XmlAttribute(name = "isUsingCache")
-    protected String isUsingCache;
-    @XmlAttribute(name = "isLazy")
-    protected String isLazy;
-    @XmlAttribute(name = "onErrorType")
-    protected String onErrorType;
-    @XmlAttribute(name = "evaluationTime")
-    protected ComplexEvaluationTime evaluationTime;
-    @XmlAttribute(name = "evaluationGroup")
-    protected String evaluationGroup;
-    @XmlAttribute(name = "hyperlinkType")
-    protected String hyperlinkType;
-    @XmlAttribute(name = "hyperlinkTarget")
-    protected String hyperlinkTarget;
-    @XmlAttribute(name = "bookmarkLevel")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String bookmarkLevel;
-
-    /**
-     * Gets the value of the reportElement property.
-     *
-     * @return possible object is
-     * {@link ReportElement }
-     */
-    public ReportElement getReportElement() {
-        return reportElement;
-    }
-
-    /**
-     * Sets the value of the reportElement property.
-     *
-     * @param value allowed object is
-     *              {@link ReportElement }
-     */
-    public void setReportElement(ReportElement value) {
-        this.reportElement = value;
-    }
-
-    /**
-     * Gets the value of the box property.
-     *
-     * @return possible object is
-     * {@link Box }
-     */
-    public Box getBox() {
-        return box;
-    }
-
-    /**
-     * Sets the value of the box property.
-     *
-     * @param value allowed object is
-     *              {@link Box }
-     */
-    public void setBox(Box value) {
-        this.box = value;
-    }
-
-    /**
-     * Gets the value of the graphicElement property.
-     *
-     * @return possible object is
-     * {@link GraphicElement }
-     */
-    public GraphicElement getGraphicElement() {
-        return graphicElement;
-    }
-
-    /**
-     * Sets the value of the graphicElement property.
-     *
-     * @param value allowed object is
-     *              {@link GraphicElement }
-     */
-    public void setGraphicElement(GraphicElement value) {
-        this.graphicElement = value;
-    }
-
-    /**
-     * Gets the value of the imageExpression property.
-     *
-     * @return possible object is
-     * {@link ImageExpression }
-     */
-    public ImageExpression getImageExpression() {
-        return imageExpression;
-    }
-
-    /**
-     * Sets the value of the imageExpression property.
-     *
-     * @param value allowed object is
-     *              {@link ImageExpression }
-     */
-    public void setImageExpression(ImageExpression value) {
-        this.imageExpression = value;
-    }
-
-    /**
-     * Gets the value of the anchorNameExpression property.
-     *
-     * @return possible object is
-     * {@link AnchorNameExpression }
-     */
-    public AnchorNameExpression getAnchorNameExpression() {
-        return anchorNameExpression;
-    }
-
-    /**
-     * Sets the value of the anchorNameExpression property.
-     *
-     * @param value allowed object is
-     *              {@link AnchorNameExpression }
-     */
-    public void setAnchorNameExpression(AnchorNameExpression value) {
-        this.anchorNameExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkReferenceExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkReferenceExpression }
-     */
-    public HyperlinkReferenceExpression getHyperlinkReferenceExpression() {
-        return hyperlinkReferenceExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkReferenceExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkReferenceExpression }
-     */
-    public void setHyperlinkReferenceExpression(HyperlinkReferenceExpression value) {
-        this.hyperlinkReferenceExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkWhenExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkWhenExpression }
-     */
-    public HyperlinkWhenExpression getHyperlinkWhenExpression() {
-        return hyperlinkWhenExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkWhenExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkWhenExpression }
-     */
-    public void setHyperlinkWhenExpression(HyperlinkWhenExpression value) {
-        this.hyperlinkWhenExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkAnchorExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkAnchorExpression }
-     */
-    public HyperlinkAnchorExpression getHyperlinkAnchorExpression() {
-        return hyperlinkAnchorExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkAnchorExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkAnchorExpression }
-     */
-    public void setHyperlinkAnchorExpression(HyperlinkAnchorExpression value) {
-        this.hyperlinkAnchorExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkPageExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkPageExpression }
-     */
-    public HyperlinkPageExpression getHyperlinkPageExpression() {
-        return hyperlinkPageExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkPageExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkPageExpression }
-     */
-    public void setHyperlinkPageExpression(HyperlinkPageExpression value) {
-        this.hyperlinkPageExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkTooltipExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkTooltipExpression }
-     */
-    public HyperlinkTooltipExpression getHyperlinkTooltipExpression() {
-        return hyperlinkTooltipExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkTooltipExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkTooltipExpression }
-     */
-    public void setHyperlinkTooltipExpression(HyperlinkTooltipExpression value) {
-        this.hyperlinkTooltipExpression = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkParameter property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the hyperlinkParameter property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getHyperlinkParameter().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link HyperlinkParameter }
-     */
-    public List<HyperlinkParameter> getHyperlinkParameter() {
-        if (hyperlinkParameter == null) {
-            hyperlinkParameter = new ArrayList<HyperlinkParameter>();
-        }
-        return this.hyperlinkParameter;
-    }
-
-    /**
-     * Gets the value of the scaleImage property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getScaleImage() {
-        return scaleImage;
-    }
-
-    /**
-     * Sets the value of the scaleImage property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setScaleImage(String value) {
-        this.scaleImage = value;
-    }
-
-    /**
-     * Gets the value of the rotation property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getRotation() {
-        return rotation;
-    }
-
-    /**
-     * Sets the value of the rotation property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setRotation(String value) {
-        this.rotation = value;
-    }
-
-    /**
-     * Gets the value of the hAlign property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getHAlign() {
-        return hAlign;
-    }
-
-    /**
-     * Sets the value of the hAlign property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setHAlign(String value) {
-        this.hAlign = value;
-    }
-
-    /**
-     * Gets the value of the vAlign property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getVAlign() {
-        return vAlign;
-    }
-
-    /**
-     * Sets the value of the vAlign property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setVAlign(String value) {
-        this.vAlign = value;
-    }
-
-    /**
-     * Gets the value of the isUsingCache property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsUsingCache() {
-        return isUsingCache;
-    }
-
-    /**
-     * Sets the value of the isUsingCache property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsUsingCache(String value) {
-        this.isUsingCache = value;
-    }
-
-    /**
-     * Gets the value of the isLazy property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsLazy() {
-        if (isLazy == null) {
-            return "false";
-        } else {
-            return isLazy;
-        }
-    }
-
-    /**
-     * Sets the value of the isLazy property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsLazy(String value) {
-        this.isLazy = value;
-    }
-
-    /**
-     * Gets the value of the onErrorType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getOnErrorType() {
-        if (onErrorType == null) {
-            return "Error";
-        } else {
-            return onErrorType;
-        }
-    }
-
-    /**
-     * Sets the value of the onErrorType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setOnErrorType(String value) {
-        this.onErrorType = value;
-    }
-
-    /**
-     * Gets the value of the evaluationTime property.
-     *
-     * @return possible object is
-     * {@link ComplexEvaluationTime }
-     */
-    public ComplexEvaluationTime getEvaluationTime() {
-        if (evaluationTime == null) {
-            return ComplexEvaluationTime.NOW;
-        } else {
-            return evaluationTime;
-        }
-    }
-
-    /**
-     * Sets the value of the evaluationTime property.
-     *
-     * @param value allowed object is
-     *              {@link ComplexEvaluationTime }
-     */
-    public void setEvaluationTime(ComplexEvaluationTime value) {
-        this.evaluationTime = value;
-    }
-
-    /**
-     * Gets the value of the evaluationGroup property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getEvaluationGroup() {
-        return evaluationGroup;
-    }
-
-    /**
-     * Sets the value of the evaluationGroup property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setEvaluationGroup(String value) {
-        this.evaluationGroup = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getHyperlinkType() {
-        return hyperlinkType;
-    }
-
-    /**
-     * Sets the value of the hyperlinkType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setHyperlinkType(String value) {
-        this.hyperlinkType = value;
-    }
-
-    /**
-     * Gets the value of the hyperlinkTarget property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getHyperlinkTarget() {
-        return hyperlinkTarget;
-    }
-
-    /**
-     * Sets the value of the hyperlinkTarget property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setHyperlinkTarget(String value) {
-        this.hyperlinkTarget = value;
-    }
-
-    /**
-     * Gets the value of the bookmarkLevel property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getBookmarkLevel() {
-        if (bookmarkLevel == null) {
-            return "0";
-        } else {
-            return bookmarkLevel;
-        }
-    }
-
-    /**
-     * Sets the value of the bookmarkLevel property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setBookmarkLevel(String value) {
-        this.bookmarkLevel = value;
-    }
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ReportElement reportElement;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Box box;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public GraphicElement graphicElement;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ImageExpression imageExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public AnchorNameExpression anchorNameExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkReferenceExpression hyperlinkReferenceExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkWhenExpression hyperlinkWhenExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkAnchorExpression hyperlinkAnchorExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkPageExpression hyperlinkPageExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkTooltipExpression hyperlinkTooltipExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<HyperlinkParameter> hyperlinkParameter=new ArrayList<>();
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String scaleImage;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String rotation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String hAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String vAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String isUsingCache;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String isLazy="false";
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String onErrorType="Error";
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public ComplexEvaluationTime evaluationTime= ComplexEvaluationTime.NOW;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String evaluationGroup;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String hyperlinkType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String hyperlinkTarget;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String bookmarkLevel="0";
 
 }

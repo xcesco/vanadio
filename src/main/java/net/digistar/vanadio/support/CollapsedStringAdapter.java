@@ -4,7 +4,7 @@ import com.abubusoft.kripton.TypeAdapter;
 
 public class CollapsedStringAdapter implements TypeAdapter<String, String> {
 
-  protected static boolean isWhiteSpace(char ch) {
+  public static boolean isWhiteSpace(char ch) {
     if (ch > ' ') {
       return false;
     } else {

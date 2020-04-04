@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,40 +62,36 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement",
-        "parametersMapExpression",
-        "subreportParameter",
-        "connectionExpression",
-        "dataSourceExpression",
-        "returnValue",
-        "subreportExpression"
-})
-@XmlRootElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Subreport {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ParametersMapExpression parametersMapExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<SubreportParameter> subreportParameter;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ConnectionExpression connectionExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DataSourceExpression dataSourceExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<ReturnValue> returnValue;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected SubreportExpression subreportExpression;
-    @XmlAttribute(name = "isUsingCache")
-    protected String isUsingCache;
-    @XmlAttribute(name = "runToBottom")
-    protected String runToBottom;
-    @XmlAttribute(name = "overflowType")
-    protected String overflowType;
+// @XmlRootElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Subreport {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ReportElement reportElement;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ParametersMapExpression parametersMapExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<SubreportParameter> subreportParameter;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ConnectionExpression connectionExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DataSourceExpression dataSourceExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<ReturnValue> returnValue;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public SubreportExpression subreportExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isUsingCache")
+    public String isUsingCache;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "runToBottom")
+    public String runToBottom;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "overflowType")
+    public String overflowType;
 
     /**
      * Gets the value of the reportElement property.

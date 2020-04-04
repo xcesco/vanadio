@@ -13,8 +13,13 @@ public final class VanadioTestUtils {
     return binder.parse(VanadioTestUtils.class.getClassLoader().getResource("reports/" + fileName + ".jrxml").openStream(), JasperReport.class);
   }
 
-  public static String write(JasperReport report) throws Exception {
+  public static String write(JasperReport report) {
     BinderContext binder = KriptonBinder.bind(BinderType.JSON);
+    return binder.serialize(report);
+  }
+
+  public static String writeAsYaml(JasperReport report) {
+    BinderContext binder = KriptonBinder.bind(BinderType.YAML);
     return binder.serialize(report);
   }
 }

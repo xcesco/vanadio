@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,35 +37,32 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "hyperlinkReferenceExpression",
-        "hyperlinkWhenExpression",
-        "hyperlinkAnchorExpression",
-        "hyperlinkPageExpression",
-        "hyperlinkTooltipExpression",
-        "hyperlinkParameter"
-})
-@XmlRootElement(name = "otherSectionHyperlink", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class OtherSectionHyperlink {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkReferenceExpression hyperlinkReferenceExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkWhenExpression hyperlinkWhenExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkAnchorExpression hyperlinkAnchorExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkPageExpression hyperlinkPageExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HyperlinkTooltipExpression hyperlinkTooltipExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<HyperlinkParameter> hyperlinkParameter;
-    @XmlAttribute(name = "hyperlinkType")
-    protected String hyperlinkType;
-    @XmlAttribute(name = "hyperlinkTarget")
-    protected String hyperlinkTarget;
+// @XmlRootElement(name = "otherSectionHyperlink", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  OtherSectionHyperlink {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkReferenceExpression hyperlinkReferenceExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkWhenExpression hyperlinkWhenExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkAnchorExpression hyperlinkAnchorExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkPageExpression hyperlinkPageExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HyperlinkTooltipExpression hyperlinkTooltipExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<HyperlinkParameter> hyperlinkParameter;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkType")
+    public String hyperlinkType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkTarget")
+    public String hyperlinkTarget;
 
     /**
      * Gets the value of the hyperlinkReferenceExpression property.

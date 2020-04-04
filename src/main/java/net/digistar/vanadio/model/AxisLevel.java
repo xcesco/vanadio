@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -37,29 +37,30 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "labelExpression",
-        "axisLevelBucket"
-})
-@XmlRootElement(name = "axisLevel", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class AxisLevel {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected AxisLevel.LabelExpression labelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected AxisLevelBucket axisLevelBucket;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
+// @XmlRootElement(name = "axisLevel", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  AxisLevel {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public AxisLevelLabelExpression labelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public AxisLevelBucket axisLevelBucket;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
 
     /**
      * Gets the value of the labelExpression property.
      *
      * @return possible object is
-     * {@link AxisLevel.LabelExpression }
+     * {@link AxisLevelLabelExpression }
      */
-    public AxisLevel.LabelExpression getLabelExpression() {
+    public AxisLevelLabelExpression getLabelExpression() {
         return labelExpression;
     }
 
@@ -67,9 +68,9 @@ public class AxisLevel {
      * Sets the value of the labelExpression property.
      *
      * @param value allowed object is
-     *              {@link AxisLevel.LabelExpression }
+     *              {@link AxisLevelLabelExpression }
      */
-    public void setLabelExpression(AxisLevel.LabelExpression value) {
+    public void setLabelExpression(AxisLevelLabelExpression value) {
         this.labelExpression = value;
     }
 
@@ -114,49 +115,6 @@ public class AxisLevel {
     }
 
 
-    /**
-     * <p>Java class for anonymous complex type.
-     *
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     *
-     * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
-     * </pre>
-     */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-            "content"
-    })
-    public static class LabelExpression {
 
-        @XmlValue
-        protected String content;
-
-        /**
-         * Gets the value of the content property.
-         *
-         * @return possible object is
-         * {@link String }
-         */
-        public String getContent() {
-            return content;
-        }
-
-        /**
-         * Sets the value of the content property.
-         *
-         * @param value allowed object is
-         *              {@link String }
-         */
-        public void setContent(String value) {
-            this.content = value;
-        }
-
-    }
 
 }

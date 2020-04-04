@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -40,26 +40,26 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "bucketExpression",
-        "orderByExpression",
-        "comparatorExpression"
-})
-@XmlRootElement(name = "bucket", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Bucket {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected BucketExpression bucketExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected OrderByExpression orderByExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ComparatorExpression comparatorExpression;
-    @XmlAttribute(name = "class")
-    protected String clazz;
-    @XmlAttribute(name = "order")
-    protected String order;
+// @XmlRootElement(name = "bucket", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Bucket {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public BucketExpression bucketExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public OrderByExpression orderByExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ComparatorExpression comparatorExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
+    public String clazz;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "order")
+    public String order;
 
     /**
      * Gets the value of the bucketExpression property.

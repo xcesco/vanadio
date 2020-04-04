@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -45,42 +45,36 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "plot",
-        "xAxisLabelExpression",
-        "xAxisFormat",
-        "yAxisLabelExpression",
-        "yAxisFormat",
-        "domainAxisMinValueExpression",
-        "domainAxisMaxValueExpression",
-        "rangeAxisMinValueExpression",
-        "rangeAxisMaxValueExpression"
-})
-@XmlRootElement(name = "bubblePlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class BubblePlot {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "bubblePlot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Plot plot;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected XAxisLabelExpression xAxisLabelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected XAxisFormat xAxisFormat;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected YAxisLabelExpression yAxisLabelExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected YAxisFormat yAxisFormat;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DomainAxisMinValueExpression domainAxisMinValueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DomainAxisMaxValueExpression domainAxisMaxValueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected RangeAxisMinValueExpression rangeAxisMinValueExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected RangeAxisMaxValueExpression rangeAxisMaxValueExpression;
-    @XmlAttribute(name = "scaleType")
-    protected String scaleType;
+@BindType
+public class  BubblePlot {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public Plot plot;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public XAxisLabelExpression xAxisLabelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public XAxisFormat xAxisFormat;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public YAxisLabelExpression yAxisLabelExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public YAxisFormat yAxisFormat;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DomainAxisMinValueExpression domainAxisMinValueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DomainAxisMaxValueExpression domainAxisMaxValueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public RangeAxisMinValueExpression rangeAxisMinValueExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public RangeAxisMaxValueExpression rangeAxisMaxValueExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "scaleType")
+    public String scaleType;
 
     /**
      * Gets the value of the plot property.

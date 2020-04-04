@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -55,37 +56,36 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "bucket",
-        "crosstabHeader",
-        "crosstabColumnHeader",
-        "crosstabTotalColumnHeader"
-})
-@XmlRootElement(name = "columnGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class ColumnGroup {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected Bucket bucket;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CrosstabHeader crosstabHeader;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CrosstabColumnHeader crosstabColumnHeader;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CrosstabTotalColumnHeader crosstabTotalColumnHeader;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "height", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String height;
-    @XmlAttribute(name = "totalPosition")
-    protected String totalPosition;
-    @XmlAttribute(name = "headerPosition")
-    protected String headerPosition;
-    @XmlAttribute(name = "mergeHeaderCells")
-    protected Boolean mergeHeaderCells;
+// @XmlRootElement(name = "columnGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  ColumnGroup {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public Bucket bucket;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CrosstabHeader crosstabHeader;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CrosstabColumnHeader crosstabColumnHeader;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CrosstabTotalColumnHeader crosstabTotalColumnHeader;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "height", required = true)
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String height;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "totalPosition")
+    public String totalPosition;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "headerPosition")
+    public String headerPosition;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "mergeHeaderCells")
+    public Boolean mergeHeaderCells;
 
     /**
      * Gets the value of the bucket property.

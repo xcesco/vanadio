@@ -8,7 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,183 +57,37 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "property",
-        "box",
-        "lineOrRectangleOrEllipse"
-})
-@XmlRootElement(name = "cellContents", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "cellContents", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class CellContents {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Property> property;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Box box;
-    @XmlElements({
-            @XmlElement(name = "line", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Line.class),
-            @XmlElement(name = "rectangle", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Rectangle.class),
-            @XmlElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Ellipse.class),
-            @XmlElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Image.class),
-            @XmlElement(name = "staticText", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StaticText.class),
-            @XmlElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TextField.class),
-            @XmlElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Subreport.class),
-            @XmlElement(name = "elementGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ElementGroup.class),
-            @XmlElement(name = "frame", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Frame.class),
-            @XmlElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ComponentElement.class),
-            @XmlElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GenericElement.class)
-    })
-    protected List<Object> lineOrRectangleOrEllipse;
-    @XmlAttribute(name = "backcolor")
-    protected String backcolor;
-    @XmlAttribute(name = "mode")
-    protected String mode;
-    @XmlAttribute(name = "style")
-    protected String style;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Property> property=new ArrayList<>();
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Box box;
 
-    /**
-     * Gets the value of the property property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the property property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getProperty().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Property }
-     */
-    public List<Property> getProperty() {
-        if (property == null) {
-            property = new ArrayList<Property>();
-        }
-        return this.property;
-    }
-
-    /**
-     * Gets the value of the box property.
-     *
-     * @return possible object is
-     * {@link Box }
-     */
-    public Box getBox() {
-        return box;
-    }
-
-    /**
-     * Sets the value of the box property.
-     *
-     * @param value allowed object is
-     *              {@link Box }
-     */
-    public void setBox(Box value) {
-        this.box = value;
-    }
-
-    /**
-     * Gets the value of the lineOrRectangleOrEllipse property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the lineOrRectangleOrEllipse property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getLineOrRectangleOrEllipse().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Line }
-     * {@link Rectangle }
-     * {@link Ellipse }
-     * {@link Image }
-     * {@link StaticText }
-     * {@link TextField }
-     * {@link Subreport }
-     * {@link ElementGroup }
-     * {@link Frame }
-     * {@link ComponentElement }
-     * {@link GenericElement }
-     */
-    public List<Object> getLineOrRectangleOrEllipse() {
-        if (lineOrRectangleOrEllipse == null) {
-            lineOrRectangleOrEllipse = new ArrayList<Object>();
-        }
-        return this.lineOrRectangleOrEllipse;
-    }
-
-    /**
-     * Gets the value of the backcolor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getBackcolor() {
-        return backcolor;
-    }
-
-    /**
-     * Sets the value of the backcolor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setBackcolor(String value) {
-        this.backcolor = value;
-    }
-
-    /**
-     * Gets the value of the mode property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getMode() {
-        return mode;
-    }
-
-    /**
-     * Sets the value of the mode property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setMode(String value) {
-        this.mode = value;
-    }
-
-    /**
-     * Gets the value of the style property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getStyle() {
-        return style;
-    }
-
-    /**
-     * Sets the value of the style property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setStyle(String value) {
-        this.style = value;
-    }
+    //TODO manage list
+//    @XmlElements({
+//            @XmlElement(name = "line", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Line.class),
+//            @XmlElement(name = "rectangle", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Rectangle.class),
+//            @XmlElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Ellipse.class),
+//            @XmlElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Image.class),
+//            @XmlElement(name = "staticText", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StaticText.class),
+//            @XmlElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TextField.class),
+//            @XmlElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Subreport.class),
+//            @XmlElement(name = "elementGroup", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ElementGroup.class),
+//            @XmlElement(name = "frame", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Frame.class),
+//            @XmlElement(name = "componentElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = ComponentElement.class),
+//            @XmlElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = GenericElement.class)
+//    })
+//    public List<Object> lineOrRectangleOrEllipse;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String backcolor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String mode;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String style;
 
 }

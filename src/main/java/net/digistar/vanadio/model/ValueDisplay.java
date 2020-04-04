@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -30,20 +30,22 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "font"
-})
-@XmlRootElement(name = "valueDisplay", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class ValueDisplay {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "valueDisplay", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Font font;
-    @XmlAttribute(name = "color")
-    protected String color;
-    @XmlAttribute(name = "mask")
-    protected String mask;
+@BindType
+public class  ValueDisplay {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Font font;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "color")
+    public String color;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "mask")
+    public String mask;
 
     /**
      * Gets the value of the font property.

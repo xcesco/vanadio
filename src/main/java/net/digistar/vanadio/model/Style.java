@@ -8,9 +8,12 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -293,131 +296,130 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "pen",
-        "box",
-        "paragraph",
-        "conditionalStyle"
-})
-@XmlRootElement(name = "style", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Style {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "style", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Pen pen;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Box box;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Paragraph paragraph;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<ConditionalStyle> conditionalStyle;
-    @XmlAttribute(name = "name")
-    protected String name;
-    @XmlAttribute(name = "isDefault")
-    protected String isDefault;
-    @XmlAttribute(name = "style")
-    protected String style;
-    @XmlAttribute(name = "mode")
-    protected String mode;
-    @XmlAttribute(name = "forecolor")
-    protected String forecolor;
-    @XmlAttribute(name = "backcolor")
-    protected String backcolor;
-    @XmlAttribute(name = "pen")
-    protected String stylePen;
-    @XmlAttribute(name = "fill")
-    protected String fill;
-    @XmlAttribute(name = "radius")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String radius;
-    @XmlAttribute(name = "scaleImage")
-    protected String scaleImage;
-    @XmlAttribute(name = "hAlign")
-    protected String hAlign;
-    @XmlAttribute(name = "hTextAlign")
-    protected String hTextAlign;
-    @XmlAttribute(name = "hImageAlign")
-    protected String hImageAlign;
-    @XmlAttribute(name = "vAlign")
-    protected String vAlign;
-    @XmlAttribute(name = "vTextAlign")
-    protected String vTextAlign;
-    @XmlAttribute(name = "vImageAlign")
-    protected String vImageAlign;
-    @XmlAttribute(name = "border")
-    protected String border;
-    @XmlAttribute(name = "borderColor")
-    protected String borderColor;
-    @XmlAttribute(name = "padding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String padding;
-    @XmlAttribute(name = "topBorder")
-    protected String topBorder;
-    @XmlAttribute(name = "topBorderColor")
-    protected String topBorderColor;
-    @XmlAttribute(name = "topPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String topPadding;
-    @XmlAttribute(name = "leftBorder")
-    protected String leftBorder;
-    @XmlAttribute(name = "leftBorderColor")
-    protected String leftBorderColor;
-    @XmlAttribute(name = "leftPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String leftPadding;
-    @XmlAttribute(name = "bottomBorder")
-    protected String bottomBorder;
-    @XmlAttribute(name = "bottomBorderColor")
-    protected String bottomBorderColor;
-    @XmlAttribute(name = "bottomPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String bottomPadding;
-    @XmlAttribute(name = "rightBorder")
-    protected String rightBorder;
-    @XmlAttribute(name = "rightBorderColor")
-    protected String rightBorderColor;
-    @XmlAttribute(name = "rightPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String rightPadding;
-    @XmlAttribute(name = "rotation")
-    protected String rotation;
-    @XmlAttribute(name = "lineSpacing")
-    protected String lineSpacing;
-    @XmlAttribute(name = "isStyledText")
-    protected String isStyledText;
-    @XmlAttribute(name = "markup")
-    protected String markup;
-    @XmlAttribute(name = "fontName")
-    protected String fontName;
-    @XmlAttribute(name = "fontSize")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String fontSize;
-    @XmlAttribute(name = "isBold")
-    protected String isBold;
-    @XmlAttribute(name = "isItalic")
-    protected String isItalic;
-    @XmlAttribute(name = "isUnderline")
-    protected String isUnderline;
-    @XmlAttribute(name = "isStrikeThrough")
-    protected String isStrikeThrough;
-    @XmlAttribute(name = "pdfFontName")
-    protected String pdfFontName;
-    @XmlAttribute(name = "pdfEncoding")
-    protected String pdfEncoding;
-    @XmlAttribute(name = "isPdfEmbedded")
-    protected String isPdfEmbedded;
-    @XmlAttribute(name = "pattern")
-    protected String pattern;
-    @XmlAttribute(name = "isBlankWhenNull")
-    protected String isBlankWhenNull;
+@BindType
+public class  Style {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Pen pen;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Box box;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Paragraph paragraph;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<ConditionalStyle> conditionalStyle;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name")
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isDefault")
+    public String isDefault;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "style")
+    public String style;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "mode")
+    public String mode;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "forecolor")
+    public String forecolor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "backcolor")
+    public String backcolor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pen")
+    public String stylePen;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fill")
+    public String fill;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "radius")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String radius;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "scaleImage")
+    public String scaleImage;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hAlign")
+    public String hAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hTextAlign")
+    public String hTextAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hImageAlign")
+    public String hImageAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "vAlign")
+    public String vAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "vTextAlign")
+    public String vTextAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "vImageAlign")
+    public String vImageAlign;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "border")
+    public String border;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "borderColor")
+    public String borderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "padding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String padding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "topBorder")
+    public String topBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "topBorderColor")
+    public String topBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "topPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String topPadding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftBorder")
+    public String leftBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftBorderColor")
+    public String leftBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String leftPadding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bottomBorder")
+    public String bottomBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bottomBorderColor")
+    public String bottomBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bottomPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String bottomPadding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightBorder")
+    public String rightBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightBorderColor")
+    public String rightBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String rightPadding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rotation")
+    public String rotation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineSpacing")
+    public String lineSpacing;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStyledText")
+    public String isStyledText;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "markup")
+    public String markup;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fontName")
+    public String fontName;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fontSize")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String fontSize;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isBold")
+    public String isBold;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isItalic")
+    public String isItalic;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isUnderline")
+    public String isUnderline;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStrikeThrough")
+    public String isStrikeThrough;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pdfFontName")
+    public String pdfFontName;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pdfEncoding")
+    public String pdfEncoding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isPdfEmbedded")
+    public String isPdfEmbedded;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pattern")
+    public String pattern;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isBlankWhenNull")
+    public String isBlankWhenNull;
 
     public void sethAlign(String hAlign) {
         this.hAlign = hAlign;

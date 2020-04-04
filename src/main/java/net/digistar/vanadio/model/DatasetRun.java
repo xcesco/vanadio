@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,35 +39,32 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "property",
-        "parametersMapExpression",
-        "datasetParameter",
-        "connectionExpression",
-        "dataSourceExpression",
-        "returnValue"
-})
-@XmlRootElement(name = "datasetRun", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class DatasetRun {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "datasetRun", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<Property> property;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ParametersMapExpression parametersMapExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<DatasetParameter> datasetParameter;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ConnectionExpression connectionExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected DataSourceExpression dataSourceExpression;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<VariableReturnValue> returnValue;
-    @XmlAttribute(name = "subDataset", required = true)
-    protected String subDataset;
-    @XmlAttribute(name = "uuid")
-    protected String uuid;
+@BindType
+public class  DatasetRun {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<Property> property;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ParametersMapExpression parametersMapExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<DatasetParameter> datasetParameter;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ConnectionExpression connectionExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public DataSourceExpression dataSourceExpression;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<VariableReturnValue> returnValue;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "subDataset", required = true)
+    public String subDataset;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "uuid")
+    public String uuid;
 
     /**
      * Gets the value of the property property.

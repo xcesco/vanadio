@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -51,63 +51,50 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "barChart",
-        "bar3DChart",
-        "xyBarChart",
-        "stackedBarChart",
-        "stackedBar3DChart",
-        "lineChart",
-        "xyLineChart",
-        "areaChart",
-        "xyAreaChart",
-        "scatterChart",
-        "bubbleChart",
-        "timeSeriesChart",
-        "highLowChart",
-        "candlestickChart",
-        "stackedAreaChart",
-        "ganttChart"
-})
-@XmlRootElement(name = "axis", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Axis {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected BarChart barChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Bar3DChart bar3DChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected XyBarChart xyBarChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected StackedBarChart stackedBarChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected StackedBar3DChart stackedBar3DChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LineChart lineChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected XyLineChart xyLineChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected AreaChart areaChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected XyAreaChart xyAreaChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected ScatterChart scatterChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected BubbleChart bubbleChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected TimeSeriesChart timeSeriesChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected HighLowChart highLowChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected CandlestickChart candlestickChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected StackedAreaChart stackedAreaChart;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected GanttChart ganttChart;
-    @XmlAttribute(name = "position")
-    protected String position;
+// // @XmlRootElement(name = "axis", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Axis {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public BarChart barChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Bar3DChart bar3DChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public XyBarChart xyBarChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public StackedBarChart stackedBarChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public StackedBar3DChart stackedBar3DChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LineChart lineChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public XyLineChart xyLineChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public AreaChart areaChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public XyAreaChart xyAreaChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public ScatterChart scatterChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public BubbleChart bubbleChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public TimeSeriesChart timeSeriesChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public HighLowChart highLowChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public CandlestickChart candlestickChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public StackedAreaChart stackedAreaChart;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public GanttChart ganttChart;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "position")
+    public String position;
 
     /**
      * Gets the value of the barChart property.

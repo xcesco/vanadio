@@ -8,8 +8,14 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
+
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.*;
+import com.abubusoft.kripton.xml.XmlType;
+
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -40,101 +46,19 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "font"
-})
-@XmlRootElement(name = "chartLegend", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "chartLegend", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
 public class ChartLegend {
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Font font;
-    @XmlAttribute(name = "textColor")
-    protected String textColor;
-    @XmlAttribute(name = "backgroundColor")
-    protected String backgroundColor;
-    @XmlAttribute(name = "position")
-    protected String position;
-
-    /**
-     * Gets the value of the font property.
-     *
-     * @return possible object is
-     * {@link Font }
-     */
-    public Font getFont() {
-        return font;
-    }
-
-    /**
-     * Sets the value of the font property.
-     *
-     * @param value allowed object is
-     *              {@link Font }
-     */
-    public void setFont(Font value) {
-        this.font = value;
-    }
-
-    /**
-     * Gets the value of the textColor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getTextColor() {
-        return textColor;
-    }
-
-    /**
-     * Sets the value of the textColor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTextColor(String value) {
-        this.textColor = value;
-    }
-
-    /**
-     * Gets the value of the backgroundColor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getBackgroundColor() {
-        return backgroundColor;
-    }
-
-    /**
-     * Sets the value of the backgroundColor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setBackgroundColor(String value) {
-        this.backgroundColor = value;
-    }
-
-    /**
-     * Gets the value of the position property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getPosition() {
-        return position;
-    }
-
-    /**
-     * Sets the value of the position property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setPosition(String value) {
-        this.position = value;
-    }
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Font font;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String textColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String backgroundColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    public String position;
 
 }

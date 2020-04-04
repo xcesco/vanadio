@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -29,18 +29,20 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "subreportParameterExpression"
-})
-@XmlRootElement(name = "subreportParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class SubreportParameter {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected SubreportParameterExpression subreportParameterExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
+// @XmlRootElement(name = "subreportParameter", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  SubreportParameter {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public SubreportParameterExpression subreportParameterExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
 
     /**
      * Gets the value of the subreportParameterExpression property.

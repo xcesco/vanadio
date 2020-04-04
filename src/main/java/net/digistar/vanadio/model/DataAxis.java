@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.annotation.*;
 import com.abubusoft.kripton.xml.XmlType;
 
 import java.util.ArrayList;
@@ -40,17 +40,19 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "axisLevel"
-//})
-//@XmlRootElement(name = "dataAxis", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class DataAxis {
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "dataAxis", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-  //    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+@BindType
+public class  DataAxis {
+
+  //    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public List<AxisLevel> axisLevel = new ArrayList<>();
 
-  @BindXml(xmlType = XmlType.ATTRIBUTE)
+  @BindXml(xmlType = XmlType.ATTRIBUTE) //
   public String axis;
 }

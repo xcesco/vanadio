@@ -8,9 +8,12 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -104,68 +107,66 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "pen",
-        "topPen",
-        "leftPen",
-        "bottomPen",
-        "rightPen"
-})
-@XmlRootElement(name = "box", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Box {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "box", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Pen pen;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected TopPen topPen;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected LeftPen leftPen;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected BottomPen bottomPen;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected RightPen rightPen;
-    @XmlAttribute(name = "border")
-    protected String border;
-    @XmlAttribute(name = "borderColor")
-    protected String borderColor;
-    @XmlAttribute(name = "padding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String padding;
-    @XmlAttribute(name = "topBorder")
-    protected String topBorder;
-    @XmlAttribute(name = "topBorderColor")
-    protected String topBorderColor;
-    @XmlAttribute(name = "topPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String topPadding;
-    @XmlAttribute(name = "leftBorder")
-    protected String leftBorder;
-    @XmlAttribute(name = "leftBorderColor")
-    protected String leftBorderColor;
-    @XmlAttribute(name = "leftPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String leftPadding;
-    @XmlAttribute(name = "bottomBorder")
-    protected String bottomBorder;
-    @XmlAttribute(name = "bottomBorderColor")
-    protected String bottomBorderColor;
-    @XmlAttribute(name = "bottomPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String bottomPadding;
-    @XmlAttribute(name = "rightBorder")
-    protected String rightBorder;
-    @XmlAttribute(name = "rightBorderColor")
-    protected String rightBorderColor;
-    @XmlAttribute(name = "rightPadding")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String rightPadding;
+@BindType
+public class  Box {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Pen pen;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public TopPen topPen;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public LeftPen leftPen;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public BottomPen bottomPen;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public RightPen rightPen;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "border")
+    public String border;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "borderColor")
+    public String borderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "padding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String padding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "topBorder")
+    public String topBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "topBorderColor")
+    public String topBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "topPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String topPadding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftBorder")
+    public String leftBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftBorderColor")
+    public String leftBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String leftPadding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bottomBorder")
+    public String bottomBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bottomBorderColor")
+    public String bottomBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bottomPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String bottomPadding;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightBorder")
+    public String rightBorder;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightBorderColor")
+    public String rightBorderColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightPadding")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String rightPadding;
 
     /**
      * Gets the value of the pen property.

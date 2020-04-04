@@ -8,8 +8,11 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
+
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -40,23 +43,24 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "font",
-        "titleExpression"
-})
-@XmlRootElement(name = "chartTitle", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class ChartTitle {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "chartTitle", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Font font;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected TitleExpression titleExpression;
-    @XmlAttribute(name = "position")
-    protected String position;
-    @XmlAttribute(name = "color")
-    protected String color;
+@BindType
+public class  ChartTitle {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Font font;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public TitleExpression titleExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "position")
+    public String position;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "color")
+    public String color;
 
     /**
      * Gets the value of the font property.

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -26,14 +26,18 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "import", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Import {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "import", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlAttribute(name = "value", required = true)
-    protected String value;
+@BindType
+public class  Import {
+
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "value", required = true)
+    public String value;
 
     /**
      * Gets the value of the value property.

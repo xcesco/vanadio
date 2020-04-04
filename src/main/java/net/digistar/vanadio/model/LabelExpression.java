@@ -5,10 +5,7 @@
 // Generated on: 2020.04.02 at 11:06:40 PM CEST 
 //
 
-
 package net.digistar.vanadio.model;
-
-import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -24,35 +21,15 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "content"
-})
-@XmlRootElement(name = "labelExpression", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
+
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
 public class LabelExpression {
 
-    @XmlValue
-    protected String content;
-
-    /**
-     * Gets the value of the content property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getContent() {
-        return content;
-    }
-
-    /**
-     * Sets the value of the content property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setContent(String value) {
-        this.content = value;
-    }
+  @BindXml(xmlType = XmlType.VALUE)
+  public String content;
 
 }

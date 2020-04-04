@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -77,31 +77,32 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "font",
-        "paragraph"
-})
-@XmlRootElement(name = "textElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class TextElement {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "textElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Font font;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Paragraph paragraph;
-    @XmlAttribute(name = "textAlignment")
-    protected String textAlignment;
-    @XmlAttribute(name = "verticalAlignment")
-    protected String verticalAlignment;
-    @XmlAttribute(name = "rotation")
-    protected String rotation;
-    @XmlAttribute(name = "lineSpacing")
-    protected String lineSpacing;
-    @XmlAttribute(name = "isStyledText")
-    protected String isStyledText;
-    @XmlAttribute(name = "markup")
-    protected String markup;
+@BindType
+public class  TextElement {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Font font;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Paragraph paragraph;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "textAlignment")
+    public String textAlignment;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "verticalAlignment")
+    public String verticalAlignment;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rotation")
+    public String rotation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineSpacing")
+    public String lineSpacing;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStyledText")
+    public String isStyledText;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "markup")
+    public String markup;
 
     /**
      * Gets the value of the font property.

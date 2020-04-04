@@ -8,9 +8,12 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,30 +46,32 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "seriesColor"
-})
-@XmlRootElement(name = "plot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Plot {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "plot", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<SeriesColor> seriesColor;
-    @XmlAttribute(name = "backcolor")
-    protected String backcolor;
-    @XmlAttribute(name = "orientation")
-    protected String orientation;
-    @XmlAttribute(name = "backgroundAlpha")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String backgroundAlpha;
-    @XmlAttribute(name = "foregroundAlpha")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String foregroundAlpha;
-    @XmlAttribute(name = "labelRotation")
-    protected String labelRotation;
+@BindType
+public class  Plot {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<SeriesColor> seriesColor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "backcolor")
+    public String backcolor;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "orientation")
+    public String orientation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "backgroundAlpha")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String backgroundAlpha;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "foregroundAlpha")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String foregroundAlpha;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "labelRotation")
+    public String labelRotation;
 
     /**
      * Gets the value of the seriesColor property.

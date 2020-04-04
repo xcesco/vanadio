@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -25,18 +25,20 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "content"
-})
-@XmlRootElement(name = "queryString", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class QueryString {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlValue
-    protected String content;
-    @XmlAttribute(name = "language")
-    protected String language;
+// @XmlRootElement(name = "queryString", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  QueryString {
+
+      @BindXml(xmlType = XmlType.VALUE)
+    public String content;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "language")
+    public String language;
 
     /**
      * Gets the value of the content property.

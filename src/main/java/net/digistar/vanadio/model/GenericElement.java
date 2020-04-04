@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,26 +34,26 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "reportElement",
-        "genericElementType",
-        "genericElementParameter"
-})
-@XmlRootElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class GenericElement {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected ReportElement reportElement;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected GenericElementType genericElementType;
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected List<GenericElementParameter> genericElementParameter;
-    @XmlAttribute(name = "evaluationTime")
-    protected ComplexEvaluationTime evaluationTime;
-    @XmlAttribute(name = "evaluationGroup")
-    protected String evaluationGroup;
+// @XmlRootElement(name = "genericElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  GenericElement {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public ReportElement reportElement;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public GenericElementType genericElementType;
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public List<GenericElementParameter> genericElementParameter;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationTime")
+    public ComplexEvaluationTime evaluationTime;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationGroup")
+    public String evaluationGroup;
 
     /**
      * Gets the value of the reportElement property.

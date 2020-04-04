@@ -8,8 +8,11 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
+
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -29,18 +32,20 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "axisFormat"
-})
-@XmlRootElement(name = "categoryAxisFormat", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class CategoryAxisFormat {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "categoryAxisFormat", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
-    protected AxisFormat axisFormat;
-    @XmlAttribute(name = "labelRotation")
-    protected String labelRotation;
+@BindType
+public class  CategoryAxisFormat {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
+    public AxisFormat axisFormat;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "labelRotation")
+    public String labelRotation;
 
     /**
      * Gets the value of the axisFormat property.

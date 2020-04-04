@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -55,22 +55,24 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "pen"
-})
-@XmlRootElement(name = "graphicElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class GraphicElement {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected Pen pen;
-    @XmlAttribute(name = "stretchType")
-    protected String stretchType;
-    @XmlAttribute(name = "pen")
-    protected String graphicPen;
-    @XmlAttribute(name = "fill")
-    protected String fill;
+// @XmlRootElement(name = "graphicElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  GraphicElement {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public Pen pen;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "stretchType")
+    public String stretchType;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pen")
+    public String graphicPen;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fill")
+    public String fill;
 
     /**
      * Gets the value of the pen property.

@@ -8,9 +8,10 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+// import javax.xml.bind.annotation.*;
+import com.abubusoft.kripton.annotation.BindAdapter;
+import net.digistar.vanadio.support.CollapsedStringAdapter;
+// import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -38,20 +39,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "leftPen", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class LeftPen {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+// @XmlRootElement(name = "leftPen", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlAttribute(name = "lineWidth")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlSchemaType(name = "NMTOKEN")
-    protected String lineWidth;
-    @XmlAttribute(name = "lineStyle")
-    protected String lineStyle;
-    @XmlAttribute(name = "lineColor")
-    protected String lineColor;
+@BindType
+public class  LeftPen {
+
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineWidth")
+    @BindAdapter(adapter=CollapsedStringAdapter.class)
+    // // @XmlSchemaType(name = "NMTOKEN")
+    public String lineWidth;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineStyle")
+    public String lineStyle;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineColor")
+    public String lineColor;
 
     /**
      * Gets the value of the lineWidth property.

@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 
 /**
@@ -41,28 +41,30 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-        "measureExpression"
-})
-@XmlRootElement(name = "measure", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class Measure {
+// @XmlAccessorType(XmlAccessType.FIELD)
 
-    @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    protected MeasureExpression measureExpression;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "class")
-    protected String clazz;
-    @XmlAttribute(name = "calculation")
-    protected AggregationCalculationType calculation;
-    @XmlAttribute(name = "incrementerFactoryClass")
-    protected String incrementerFactoryClass;
-    @XmlAttribute(name = "percentageOf")
-    protected String percentageOf;
-    @XmlAttribute(name = "percentageCalculatorClass")
-    protected String percentageCalculatorClass;
+// @XmlRootElement(name = "measure", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  Measure {
+
+    // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
+    public MeasureExpression measureExpression;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
+    public String clazz;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "calculation")
+    public AggregationCalculationType calculation;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "incrementerFactoryClass")
+    public String incrementerFactoryClass;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "percentageOf")
+    public String percentageOf;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "percentageCalculatorClass")
+    public String percentageCalculatorClass;
 
     /**
      * Gets the value of the measureExpression property.

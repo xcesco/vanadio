@@ -30,14 +30,15 @@ import java.util.List;
  * &lt;/complexType&gt;
  * </pre>
  */
-//@XmlAccessorType(XmlAccessType.FIELD)
-//@XmlType(name = "", propOrder = {
-//        "dataset",
-//        "timePeriodSeries"
-//})
-//@XmlRootElement(name = "timePeriodDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
-//@BindType
-public class TimePeriodDataset {
+//// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//// @XmlRootElement(name = "timePeriodDataset", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
+
+@BindType
+public class  TimePeriodDataset {
     public Dataset dataset;
 
     public List<TimePeriodSeries> timePeriodSeries = new ArrayList<>();

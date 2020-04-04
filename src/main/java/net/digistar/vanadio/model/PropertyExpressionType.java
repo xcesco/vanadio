@@ -8,7 +8,7 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.*;
+// import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for propertyExpressionType complex type.
@@ -33,22 +33,24 @@ import javax.xml.bind.annotation.*;
  * &lt;/complexType&gt;
  * </pre>
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "propertyExpressionType", namespace = "http://jasperreports.sourceforge.net/jasperreports", propOrder = {
-        "content"
-})
-@XmlSeeAlso({
-        DatasetPropertyExpressionType.class
-})
-//@BindType
-public class PropertyExpressionType {
+// @XmlAccessorType(XmlAccessType.FIELD)
+//
+//@XmlSeeAlso({
+//        DatasetPropertyExpressionType.class
+//})
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
+import com.abubusoft.kripton.xml.XmlType;
 
-    @XmlValue
-    protected String content;
-    @XmlAttribute(name = "name", required = true)
-    protected String name;
-    @XmlAttribute(name = "type")
-    protected String type;
+@BindType
+public class  PropertyExpressionType {
+
+      @BindXml(xmlType = XmlType.VALUE)
+    public String content;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
+    public String name;
+    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "type")
+    public String type;
 
     /**
      * Gets the value of the content property.
