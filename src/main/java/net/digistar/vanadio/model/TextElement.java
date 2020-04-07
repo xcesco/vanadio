@@ -84,184 +84,34 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
 public class  TextElement {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public Font font;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public Paragraph paragraph;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "textAlignment")
     public String textAlignment;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "verticalAlignment")
     public String verticalAlignment;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rotation")
     public String rotation;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineSpacing")
     public String lineSpacing;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStyledText")
     public String isStyledText;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "markup")
     public String markup;
-
-    /**
-     * Gets the value of the font property.
-     *
-     * @return possible object is
-     * {@link Font }
-     */
-    public Font getFont() {
-        return font;
-    }
-
-    /**
-     * Sets the value of the font property.
-     *
-     * @param value allowed object is
-     *              {@link Font }
-     */
-    public void setFont(Font value) {
-        this.font = value;
-    }
-
-    /**
-     * Gets the value of the paragraph property.
-     *
-     * @return possible object is
-     * {@link Paragraph }
-     */
-    public Paragraph getParagraph() {
-        return paragraph;
-    }
-
-    /**
-     * Sets the value of the paragraph property.
-     *
-     * @param value allowed object is
-     *              {@link Paragraph }
-     */
-    public void setParagraph(Paragraph value) {
-        this.paragraph = value;
-    }
-
-    /**
-     * Gets the value of the textAlignment property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getTextAlignment() {
-        return textAlignment;
-    }
-
-    /**
-     * Sets the value of the textAlignment property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTextAlignment(String value) {
-        this.textAlignment = value;
-    }
-
-    /**
-     * Gets the value of the verticalAlignment property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getVerticalAlignment() {
-        return verticalAlignment;
-    }
-
-    /**
-     * Sets the value of the verticalAlignment property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setVerticalAlignment(String value) {
-        this.verticalAlignment = value;
-    }
-
-    /**
-     * Gets the value of the rotation property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getRotation() {
-        return rotation;
-    }
-
-    /**
-     * Sets the value of the rotation property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setRotation(String value) {
-        this.rotation = value;
-    }
-
-    /**
-     * Gets the value of the lineSpacing property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getLineSpacing() {
-        return lineSpacing;
-    }
-
-    /**
-     * Sets the value of the lineSpacing property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setLineSpacing(String value) {
-        this.lineSpacing = value;
-    }
-
-    /**
-     * Gets the value of the isStyledText property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsStyledText() {
-        return isStyledText;
-    }
-
-    /**
-     * Sets the value of the isStyledText property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsStyledText(String value) {
-        this.isStyledText = value;
-    }
-
-    /**
-     * Gets the value of the markup property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getMarkup() {
-        return markup;
-    }
-
-    /**
-     * Sets the value of the markup property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setMarkup(String value) {
-        this.markup = value;
-    }
 
 }

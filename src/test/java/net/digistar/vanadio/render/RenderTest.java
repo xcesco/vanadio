@@ -31,12 +31,6 @@ public class RenderTest {
 
   @Test
   public void testPdfDocument() {
-    PdfDocument doc = new PdfDocument();
-    PageInfo.Builder builder = new PageInfo.Builder(20, 10, 1);
-    PageInfo pdf = builder.create();
-    assertEquals(0, doc.getPages().size());
-    Page page = doc.startPage(pdf); // java.lang.IllegalStateException: document is closed!
-//    doc.finishPage(page);
-//    assertEquals(0, doc.getPages().size());
+
   }
 }

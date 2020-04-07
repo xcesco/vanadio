@@ -58,227 +58,50 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
 public class  Paragraph {
-
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-    public List<TabStop> tabStop;
+    public List<TabStop> tabStop=new ArrayList<>();
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineSpacing")
     public String lineSpacing;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineSpacingSize")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String lineSpacingSize;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "firstLineIndent")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String firstLineIndent;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "leftIndent")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String leftIndent;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "rightIndent")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String rightIndent;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "spacingBefore")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String spacingBefore;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "spacingAfter")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String spacingAfter;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "tabStopWidth")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String tabStopWidth;
-
-    /**
-     * Gets the value of the tabStop property.
-     *
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tabStop property.
-     *
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTabStop().add(newItem);
-     * </pre>
-     *
-     *
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TabStop }
-     */
-    public List<TabStop> getTabStop() {
-        if (tabStop == null) {
-            tabStop = new ArrayList<TabStop>();
-        }
-        return this.tabStop;
-    }
-
-    /**
-     * Gets the value of the lineSpacing property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getLineSpacing() {
-        return lineSpacing;
-    }
-
-    /**
-     * Sets the value of the lineSpacing property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setLineSpacing(String value) {
-        this.lineSpacing = value;
-    }
-
-    /**
-     * Gets the value of the lineSpacingSize property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getLineSpacingSize() {
-        return lineSpacingSize;
-    }
-
-    /**
-     * Sets the value of the lineSpacingSize property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setLineSpacingSize(String value) {
-        this.lineSpacingSize = value;
-    }
-
-    /**
-     * Gets the value of the firstLineIndent property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getFirstLineIndent() {
-        return firstLineIndent;
-    }
-
-    /**
-     * Sets the value of the firstLineIndent property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setFirstLineIndent(String value) {
-        this.firstLineIndent = value;
-    }
-
-    /**
-     * Gets the value of the leftIndent property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getLeftIndent() {
-        return leftIndent;
-    }
-
-    /**
-     * Sets the value of the leftIndent property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setLeftIndent(String value) {
-        this.leftIndent = value;
-    }
-
-    /**
-     * Gets the value of the rightIndent property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getRightIndent() {
-        return rightIndent;
-    }
-
-    /**
-     * Sets the value of the rightIndent property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setRightIndent(String value) {
-        this.rightIndent = value;
-    }
-
-    /**
-     * Gets the value of the spacingBefore property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getSpacingBefore() {
-        return spacingBefore;
-    }
-
-    /**
-     * Sets the value of the spacingBefore property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setSpacingBefore(String value) {
-        this.spacingBefore = value;
-    }
-
-    /**
-     * Gets the value of the spacingAfter property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getSpacingAfter() {
-        return spacingAfter;
-    }
-
-    /**
-     * Sets the value of the spacingAfter property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setSpacingAfter(String value) {
-        this.spacingAfter = value;
-    }
-
-    /**
-     * Gets the value of the tabStopWidth property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getTabStopWidth() {
-        return tabStopWidth;
-    }
-
-    /**
-     * Sets the value of the tabStopWidth property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setTabStopWidth(String value) {
-        this.tabStopWidth = value;
-    }
 
 }

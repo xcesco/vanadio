@@ -14,6 +14,7 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.*;
 import com.abubusoft.kripton.xml.XmlType;
 import net.digistar.vanadio.support.CollapsedStringAdapter;
+import net.digistar.vanadio.support.ComplexEvaluationTimeAdapter;
 // import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
@@ -117,53 +118,80 @@ import java.util.List;
 //// @XmlAccessorType(XmlAccessType.FIELD)
 //
 //// @XmlRootElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+
+/**
+ * CHECKED
+ */
 @BindType
 public class Image {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     public ReportElement reportElement;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public Box box;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public GraphicElement graphicElement;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public ImageExpression imageExpression;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public AnchorNameExpression anchorNameExpression;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public HyperlinkReferenceExpression hyperlinkReferenceExpression;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public HyperlinkWhenExpression hyperlinkWhenExpression;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public HyperlinkAnchorExpression hyperlinkAnchorExpression;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public HyperlinkPageExpression hyperlinkPageExpression;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public HyperlinkTooltipExpression hyperlinkTooltipExpression;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public List<HyperlinkParameter> hyperlinkParameter=new ArrayList<>();
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String scaleImage;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String rotation;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String hAlign;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String vAlign;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String isUsingCache;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String isLazy="false";
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String onErrorType="Error";
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
+    @BindAdapter(adapter = ComplexEvaluationTimeAdapter.class)
     public ComplexEvaluationTime evaluationTime= ComplexEvaluationTime.NOW;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String evaluationGroup;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String hyperlinkType;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     public String hyperlinkTarget;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) //
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")

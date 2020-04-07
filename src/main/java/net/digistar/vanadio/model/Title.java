@@ -35,30 +35,12 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
-public class  Title {
+public class Title {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public Band band;
-
-    /**
-     * Gets the value of the band property.
-     *
-     * @return possible object is
-     * {@link Band }
-     */
-    public Band getBand() {
-        return band;
-    }
-
-    /**
-     * Sets the value of the band property.
-     *
-     * @param value allowed object is
-     *              {@link Band }
-     */
-    public void setBand(Band value) {
-        this.band = value;
-    }
-
 }

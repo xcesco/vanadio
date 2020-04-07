@@ -40,8 +40,11 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
-public class  Rectangle {
+public class Rectangle {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     public ReportElement reportElement;
@@ -51,65 +54,4 @@ public class  Rectangle {
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String radius;
-
-    /**
-     * Gets the value of the reportElement property.
-     *
-     * @return possible object is
-     * {@link ReportElement }
-     */
-    public ReportElement getReportElement() {
-        return reportElement;
-    }
-
-    /**
-     * Sets the value of the reportElement property.
-     *
-     * @param value allowed object is
-     *              {@link ReportElement }
-     */
-    public void setReportElement(ReportElement value) {
-        this.reportElement = value;
-    }
-
-    /**
-     * Gets the value of the graphicElement property.
-     *
-     * @return possible object is
-     * {@link GraphicElement }
-     */
-    public GraphicElement getGraphicElement() {
-        return graphicElement;
-    }
-
-    /**
-     * Sets the value of the graphicElement property.
-     *
-     * @param value allowed object is
-     *              {@link GraphicElement }
-     */
-    public void setGraphicElement(GraphicElement value) {
-        this.graphicElement = value;
-    }
-
-    /**
-     * Gets the value of the radius property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getRadius() {
-        return radius;
-    }
-
-    /**
-     * Sets the value of the radius property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setRadius(String value) {
-        this.radius = value;
-    }
-
 }

@@ -171,13 +171,16 @@ import static com.abubusoft.kripton.xml.XmlType.ATTRIBUTE;
 @BindType
 public class JasperReport {
   public List<Property> property = new ArrayList<>();
-//
-//  public List<DatasetPropertyExpressionType> propertyExpression = new ArrayList<>();
-//
-//  @BindXml(elementTag = "import")
-//  public List<Import> importList = new ArrayList<>();
-//  public List<Template> template = new ArrayList<>();
-//  public List<ReportFont> reportFont = new ArrayList<>();
+
+  public List<DatasetPropertyExpressionType> propertyExpression = new ArrayList<>();
+
+  @BindXml(elementTag = "import")
+  public List<Import> importList = new ArrayList<>();
+
+  public List<Template> template = new ArrayList<>();
+
+  public List<ReportFont> reportFont = new ArrayList<>();
+
 //  public List<Style> style = new ArrayList<>();
 //  public List<SubDataset> subDataset = new ArrayList<>();
 //  public List<Scriptlet> scriptlet = new ArrayList<>();
@@ -189,7 +192,7 @@ public class JasperReport {
 //  public FilterExpression filterExpression;
 //  public List<Group> group = new ArrayList<>();
 //  public Background background;
-//  public Title title;
+    public Title title;
 //  public PageHeader pageHeader;
 //  public ColumnHeader columnHeader;
 //  //// @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")

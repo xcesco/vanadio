@@ -44,6 +44,10 @@ import com.abubusoft.kripton.xml.XmlType;
 //// @XmlAccessorType(XmlAccessType.FIELD)
 //
 //// @XmlRootElement(name = "break", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+
+/**
+ * CHECKED
+ */
 @BindType
 public class Break {
 

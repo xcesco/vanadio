@@ -82,53 +82,73 @@ import java.util.List;
 // @XmlAccessorType(XmlAccessType.FIELD)
 // @XmlRootElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports")
 
+/**
+ * CHECKED
+ */
 @BindType
 public class TextField {
 
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
   public ReportElement reportElement;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public Box box;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public TextElement textElement;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public TextFieldExpression textFieldExpression;
 
-  //TODO ojbect
+  //TODO converted ojbect -> string
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
-  //public Object patternExpression;
+  public String patternExpression;
 
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public AnchorNameExpression anchorNameExpression;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public HyperlinkReferenceExpression hyperlinkReferenceExpression;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public HyperlinkWhenExpression hyperlinkWhenExpression;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public HyperlinkAnchorExpression hyperlinkAnchorExpression;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public HyperlinkPageExpression hyperlinkPageExpression;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public HyperlinkTooltipExpression hyperlinkTooltipExpression;
+
   // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
   public List<HyperlinkParameter> hyperlinkParameter;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStretchWithOverflow")
   public String isStretchWithOverflow;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "textAdjust")
   public String textAdjust;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationTime")
   public ComplexEvaluationTime evaluationTime = ComplexEvaluationTime.NOW;
-  ;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationGroup")
   public String evaluationGroup;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pattern")
   public String pattern;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isBlankWhenNull")
   public String isBlankWhenNull;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkType")
   public String hyperlinkType;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "hyperlinkTarget")
   public String hyperlinkTarget;
+
   @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "bookmarkLevel")
   @BindAdapter(adapter = CollapsedStringAdapter.class)
   // // @XmlSchemaType(name = "NMTOKEN")

@@ -28,61 +28,23 @@ package net.digistar.vanadio.model;
 // @XmlAccessorType(XmlAccessType.FIELD)
 
 // @XmlRootElement(name = "imageExpression", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+import com.abubusoft.kripton.annotation.Bind;
 import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
-public class  ImageExpression {
+public class ImageExpression {
 
-      @BindXml(xmlType = XmlType.VALUE)
+    @BindXml(xmlType = XmlType.VALUE)
     public String content;
+
+    @Bind("class")
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "class")
     // @XmlSchemaType(name = "anySimpleType")
-    public String clazz;
-
-    /**
-     * Gets the value of the content property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getContent() {
-        return content;
-    }
-
-    /**
-     * Sets the value of the content property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setContent(String value) {
-        this.content = value;
-    }
-
-    /**
-     * Gets the value of the clazz property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getClazz() {
-        if (clazz == null) {
-            return "java.lang.String";
-        } else {
-            return clazz;
-        }
-    }
-
-    /**
-     * Sets the value of the clazz property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setClazz(String value) {
-        this.clazz = value;
-    }
+    public String clazz="java.lang.String";
 
 }

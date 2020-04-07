@@ -39,7 +39,6 @@ import com.abubusoft.kripton.xml.XmlType;
 @XmlEnum
 public enum AggregationCalculationType {
 
-
     /**
      * No calculations are performed.
      */

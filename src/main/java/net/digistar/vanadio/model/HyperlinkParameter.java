@@ -35,52 +35,15 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
-public class  HyperlinkParameter {
+public class HyperlinkParameter {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     public HyperlinkParameterExpression hyperlinkParameterExpression;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
     public String name;
-
-    /**
-     * Gets the value of the hyperlinkParameterExpression property.
-     *
-     * @return possible object is
-     * {@link HyperlinkParameterExpression }
-     */
-    public HyperlinkParameterExpression getHyperlinkParameterExpression() {
-        return hyperlinkParameterExpression;
-    }
-
-    /**
-     * Sets the value of the hyperlinkParameterExpression property.
-     *
-     * @param value allowed object is
-     *              {@link HyperlinkParameterExpression }
-     */
-    public void setHyperlinkParameterExpression(HyperlinkParameterExpression value) {
-        this.hyperlinkParameterExpression = value;
-    }
-
-    /**
-     * Gets the value of the name property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets the value of the name property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
 }

@@ -42,74 +42,17 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * Checked
+ */
 @BindType
 public class  PropertyExpressionType {
-
-      @BindXml(xmlType = XmlType.VALUE)
+    @BindXml(xmlType = XmlType.VALUE)
     public String content;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "name", required = true)
     public String name;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "type")
     public String type;
-
-    /**
-     * Gets the value of the content property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getContent() {
-        return content;
-    }
-
-    /**
-     * Sets the value of the content property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setContent(String value) {
-        this.content = value;
-    }
-
-    /**
-     * Gets the value of the name property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets the value of the name property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * Gets the value of the type property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * Sets the value of the type property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setType(String value) {
-        this.type = value;
-    }
-
 }

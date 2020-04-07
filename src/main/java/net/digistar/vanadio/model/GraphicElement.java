@@ -62,96 +62,22 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
 public class  GraphicElement {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public Pen pen;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "stretchType")
     public String stretchType;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pen")
     public String graphicPen;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fill")
     public String fill;
-
-    /**
-     * Gets the value of the pen property.
-     *
-     * @return possible object is
-     * {@link Pen }
-     */
-    public Pen getPen() {
-        return pen;
-    }
-
-    /**
-     * Sets the value of the pen property.
-     *
-     * @param value allowed object is
-     *              {@link Pen }
-     */
-    public void setPen(Pen value) {
-        this.pen = value;
-    }
-
-    /**
-     * Gets the value of the stretchType property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getStretchType() {
-        return stretchType;
-    }
-
-    /**
-     * Sets the value of the stretchType property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setStretchType(String value) {
-        this.stretchType = value;
-    }
-
-    /**
-     * Gets the value of the graphicPen property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getGraphicPen() {
-        return graphicPen;
-    }
-
-    /**
-     * Sets the value of the graphicPen property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setGraphicPen(String value) {
-        this.graphicPen = value;
-    }
-
-    /**
-     * Gets the value of the fill property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getFill() {
-        return fill;
-    }
-
-    /**
-     * Sets the value of the fill property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setFill(String value) {
-        this.fill = value;
-    }
 
 }

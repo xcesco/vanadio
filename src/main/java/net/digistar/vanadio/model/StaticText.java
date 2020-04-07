@@ -37,8 +37,11 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
-public class  StaticText {
+public class StaticText {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     public ReportElement reportElement;
@@ -48,85 +51,5 @@ public class  StaticText {
     public TextElement textElement;
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public Text text;
-
-    /**
-     * Gets the value of the reportElement property.
-     *
-     * @return possible object is
-     * {@link ReportElement }
-     */
-    public ReportElement getReportElement() {
-        return reportElement;
-    }
-
-    /**
-     * Sets the value of the reportElement property.
-     *
-     * @param value allowed object is
-     *              {@link ReportElement }
-     */
-    public void setReportElement(ReportElement value) {
-        this.reportElement = value;
-    }
-
-    /**
-     * Gets the value of the box property.
-     *
-     * @return possible object is
-     * {@link Box }
-     */
-    public Box getBox() {
-        return box;
-    }
-
-    /**
-     * Sets the value of the box property.
-     *
-     * @param value allowed object is
-     *              {@link Box }
-     */
-    public void setBox(Box value) {
-        this.box = value;
-    }
-
-    /**
-     * Gets the value of the textElement property.
-     *
-     * @return possible object is
-     * {@link TextElement }
-     */
-    public TextElement getTextElement() {
-        return textElement;
-    }
-
-    /**
-     * Sets the value of the textElement property.
-     *
-     * @param value allowed object is
-     *              {@link TextElement }
-     */
-    public void setTextElement(TextElement value) {
-        this.textElement = value;
-    }
-
-    /**
-     * Gets the value of the text property.
-     *
-     * @return possible object is
-     * {@link Text }
-     */
-    public Text getText() {
-        return text;
-    }
-
-    /**
-     * Sets the value of the text property.
-     *
-     * @param value allowed object is
-     *              {@link Text }
-     */
-    public void setText(Text value) {
-        this.text = value;
-    }
 
 }

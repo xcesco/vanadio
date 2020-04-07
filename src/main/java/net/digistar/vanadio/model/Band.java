@@ -94,6 +94,10 @@ import java.util.List;
 //// @XmlAccessorType(XmlAccessType.FIELD)
 //
 //// @XmlRootElement(name = "band", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+
+/**
+ * IN PROGRESS
+ */
 @BindType
 public class Band {
 
@@ -103,11 +107,21 @@ public class Band {
   @Bind("line")
   public List<Line> lineList = new ArrayList<>();
 
-//    @XmlElement(name = "rectangle", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Rectangle.class),
-//    @XmlElement(name = "ellipse", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Ellipse.class),
-//    @XmlElement(name = "image", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Image.class),
-//    @XmlElement(name = "staticText", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = StaticText.class),
-//    @XmlElement(name = "textField", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = TextField.class),
+  @Bind("rectangle")
+  public List<Rectangle> rectangle = new ArrayList<>();
+
+  @Bind("ellipse")
+  public List<Ellipse> ellipse = new ArrayList<>();
+
+  @Bind("image")
+  public List<Image> image = new ArrayList<>();
+
+  @Bind("staticText")
+  public List<StaticText> staticText = new ArrayList<>();
+
+  @Bind("textField")
+  public List<TextField> textField = new ArrayList<>();
+
 //    @XmlElement(name = "subreport", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Subreport.class),
 //    @XmlElement(name = "pieChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = PieChart.class),
 //    @XmlElement(name = "pie3DChart", namespace = "http://jasperreports.sourceforge.net/jasperreports", type = Pie3DChart.class),

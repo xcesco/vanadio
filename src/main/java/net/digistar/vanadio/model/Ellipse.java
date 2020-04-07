@@ -36,52 +36,15 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
-public class  Ellipse {
+public class Ellipse {
 
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports", required = true)
     public ReportElement reportElement;
+
     // @XmlElement(namespace = "http://jasperreports.sourceforge.net/jasperreports")
     public GraphicElement graphicElement;
-
-    /**
-     * Gets the value of the reportElement property.
-     *
-     * @return possible object is
-     * {@link ReportElement }
-     */
-    public ReportElement getReportElement() {
-        return reportElement;
-    }
-
-    /**
-     * Sets the value of the reportElement property.
-     *
-     * @param value allowed object is
-     *              {@link ReportElement }
-     */
-    public void setReportElement(ReportElement value) {
-        this.reportElement = value;
-    }
-
-    /**
-     * Gets the value of the graphicElement property.
-     *
-     * @return possible object is
-     * {@link GraphicElement }
-     */
-    public GraphicElement getGraphicElement() {
-        return graphicElement;
-    }
-
-    /**
-     * Sets the value of the graphicElement property.
-     *
-     * @param value allowed object is
-     *              {@link GraphicElement }
-     */
-    public void setGraphicElement(GraphicElement value) {
-        this.graphicElement = value;
-    }
-
 }

@@ -8,11 +8,9 @@
 
 package net.digistar.vanadio.model;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import com.abubusoft.kripton.annotation.BindType;
+import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
-
 
 /**
  * <p>Java class for datasetPropertyExpressionType complex type.
@@ -39,35 +37,14 @@ import com.abubusoft.kripton.xml.XmlType;
  */
 // @XmlAccessorType(XmlAccessType.FIELD)
 
-import com.abubusoft.kripton.annotation.BindType;
-import com.abubusoft.kripton.annotation.BindXml;
-import com.abubusoft.kripton.xml.XmlType;
-
+/**
+ * CHECKED
+ */
 @BindType
-public class  DatasetPropertyExpressionType
+public class DatasetPropertyExpressionType
         extends PropertyExpressionType {
 
-    @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationTime")
-    public String evaluationTime;
-
-    /**
-     * Gets the value of the evaluationTime property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getEvaluationTime() {
-        return evaluationTime;
-    }
-
-    /**
-     * Sets the value of the evaluationTime property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setEvaluationTime(String value) {
-        this.evaluationTime = value;
-    }
+  @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "evaluationTime")
+  public String evaluationTime;
 
 }

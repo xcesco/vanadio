@@ -79,230 +79,41 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
 public class  Font {
 
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "reportFont")
     public String reportFont;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "fontName")
     public String fontName;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "size")
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String size;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isBold")
     public String isBold;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isItalic")
     public String isItalic;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isUnderline")
     public String isUnderline;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isStrikeThrough")
     public String isStrikeThrough;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pdfFontName")
     public String pdfFontName;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "pdfEncoding")
     public String pdfEncoding;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "isPdfEmbedded")
     public String isPdfEmbedded;
-
-    /**
-     * Gets the value of the reportFont property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getReportFont() {
-        return reportFont;
-    }
-
-    /**
-     * Sets the value of the reportFont property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setReportFont(String value) {
-        this.reportFont = value;
-    }
-
-    /**
-     * Gets the value of the fontName property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getFontName() {
-        return fontName;
-    }
-
-    /**
-     * Sets the value of the fontName property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setFontName(String value) {
-        this.fontName = value;
-    }
-
-    /**
-     * Gets the value of the size property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getSize() {
-        return size;
-    }
-
-    /**
-     * Sets the value of the size property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setSize(String value) {
-        this.size = value;
-    }
-
-    /**
-     * Gets the value of the isBold property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsBold() {
-        return isBold;
-    }
-
-    /**
-     * Sets the value of the isBold property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsBold(String value) {
-        this.isBold = value;
-    }
-
-    /**
-     * Gets the value of the isItalic property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsItalic() {
-        return isItalic;
-    }
-
-    /**
-     * Sets the value of the isItalic property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsItalic(String value) {
-        this.isItalic = value;
-    }
-
-    /**
-     * Gets the value of the isUnderline property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsUnderline() {
-        return isUnderline;
-    }
-
-    /**
-     * Sets the value of the isUnderline property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsUnderline(String value) {
-        this.isUnderline = value;
-    }
-
-    /**
-     * Gets the value of the isStrikeThrough property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsStrikeThrough() {
-        return isStrikeThrough;
-    }
-
-    /**
-     * Sets the value of the isStrikeThrough property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsStrikeThrough(String value) {
-        this.isStrikeThrough = value;
-    }
-
-    /**
-     * Gets the value of the pdfFontName property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getPdfFontName() {
-        return pdfFontName;
-    }
-
-    /**
-     * Sets the value of the pdfFontName property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setPdfFontName(String value) {
-        this.pdfFontName = value;
-    }
-
-    /**
-     * Gets the value of the pdfEncoding property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getPdfEncoding() {
-        return pdfEncoding;
-    }
-
-    /**
-     * Sets the value of the pdfEncoding property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setPdfEncoding(String value) {
-        this.pdfEncoding = value;
-    }
-
-    /**
-     * Gets the value of the isPdfEmbedded property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getIsPdfEmbedded() {
-        return isPdfEmbedded;
-    }
-
-    /**
-     * Sets the value of the isPdfEmbedded property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setIsPdfEmbedded(String value) {
-        this.isPdfEmbedded = value;
-    }
-
 }

@@ -111,6 +111,10 @@ import java.util.List;
 //// @XmlAccessorType(XmlAccessType.FIELD)
 //
 //// @XmlRootElement(name = "reportElement", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+
+/**
+ * CHECKED
+ */
 @BindType
 public class ReportElement {
 

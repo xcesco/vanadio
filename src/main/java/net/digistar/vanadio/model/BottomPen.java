@@ -47,6 +47,9 @@ import com.abubusoft.kripton.annotation.BindType;
 import com.abubusoft.kripton.annotation.BindXml;
 import com.abubusoft.kripton.xml.XmlType;
 
+/**
+ * CHECKED
+ */
 @BindType
 public class  BottomPen {
 
@@ -54,69 +57,11 @@ public class  BottomPen {
     @BindAdapter(adapter=CollapsedStringAdapter.class)
     // // @XmlSchemaType(name = "NMTOKEN")
     public String lineWidth;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineStyle")
     public String lineStyle;
+
     @BindXml(xmlType = XmlType.ATTRIBUTE) // name = "lineColor")
     public String lineColor;
-
-    /**
-     * Gets the value of the lineWidth property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getLineWidth() {
-        return lineWidth;
-    }
-
-    /**
-     * Sets the value of the lineWidth property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setLineWidth(String value) {
-        this.lineWidth = value;
-    }
-
-    /**
-     * Gets the value of the lineStyle property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getLineStyle() {
-        return lineStyle;
-    }
-
-    /**
-     * Sets the value of the lineStyle property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setLineStyle(String value) {
-        this.lineStyle = value;
-    }
-
-    /**
-     * Gets the value of the lineColor property.
-     *
-     * @return possible object is
-     * {@link String }
-     */
-    public String getLineColor() {
-        return lineColor;
-    }
-
-    /**
-     * Sets the value of the lineColor property.
-     *
-     * @param value allowed object is
-     *              {@link String }
-     */
-    public void setLineColor(String value) {
-        this.lineColor = value;
-    }
 
 }

@@ -4,6 +4,7 @@ columnCount: "1"
 columnDirection: "LTR"
 columnSpacing: "0"
 columnWidth: "555"
+importList: []
 isFloatColumnFooter: "false"
 isIgnorePagination: "false"
 isSummaryNewPage: "false"
@@ -37,8 +38,403 @@ property:
   value: "pixel"
 - name: "com.jaspersoft.studio.unit.columnSpacing"
   value: "pixel"
+propertyExpression: []
+reportFont: []
 rightMargin: "20"
 sectionType: "Band"
+template: []
+title:
+  band:
+    height: "210"
+    property: []
+    splitType: "Stretch"
+    break: []
+    ellipse: []
+    image: []
+    line:
+    - direction: "TopDown"
+      reportElement:
+        height: "60"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property:
+        - name: "com.jaspersoft.studio.unit.height"
+          value: "pixel"
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "67fabd44-30fa-464e-a8f6-bfb4e51de81c"
+        width: "1"
+        x: "213"
+        y: "16"
+    - direction: "TopDown"
+      reportElement:
+        height: "1"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "f96f04f9-c8aa-4517-ac63-bb164e606ace"
+        width: "550"
+        x: "0"
+        y: "138"
+    rectangle:
+    - reportElement:
+        height: "60"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property:
+        - name: "com.jaspersoft.studio.unit.x"
+          value: "pixel"
+        - name: "com.jaspersoft.studio.unit.width"
+          value: "pixel"
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "f68be353-a14c-4502-bdc6-324d7d0aadea"
+        width: "542"
+        x: "8"
+        y: "16"
+    staticText:
+    - reportElement:
+        height: "16"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "5afbf083-2e2c-4a44-bef3-dace4d6a289c"
+        width: "214"
+        x: "10"
+        y: "0"
+      text:
+        content: "SERVIZIO SANITARIO NAZIONALE"
+      textElement:
+        font:
+          size: "8"
+    - reportElement:
+        height: "16"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "43881300-c76b-4af7-852d-46ed539d8c92"
+        width: "230"
+        x: "330"
+        y: "0"
+      text:
+        content: "RICETTA ELETTRONICA - PROMEMORIA PER L'ASSISTITO"
+      textElement:
+        font:
+          size: "8"
+    textField:
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "30"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "020e3373-1778-4347-80c0-a79d9605e0fd"
+        width: "180"
+        x: "13"
+        y: "24"
+      textFieldExpression:
+        content: "$F{regione}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "16"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "ccf51acf-421b-457b-9565-d0e222b96c48"
+        width: "110"
+        x: "222"
+        y: "57"
+      textFieldExpression:
+        content: "\"*\"+$F{nreRegioneProvincia}+\"*\""
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "16"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "7068510e-e7b5-45a7-a122-464756a55ab9"
+        width: "190"
+        x: "341"
+        y: "56"
+      textElement:
+        textAlignment: "Center"
+      textFieldExpression:
+        content: "\"*\"+$F{nreLottoProgressivo}+\"*\""
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "b7f67928-dae2-4b3c-b6a6-c5823f3db118"
+        width: "275"
+        x: "0"
+        y: "80"
+      textFieldExpression:
+        content: "$F{cognomeNome}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "28"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "acd9ac3e-86a7-4d30-8d89-480275eb5a52"
+        width: "270"
+        x: "0"
+        y: "111"
+      textFieldExpression:
+        content: "$F{indirizzo}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "55ed3d45-c7ec-4967-9e30-bc301a310803"
+        width: "92"
+        x: "340"
+        y: "121"
+      textFieldExpression:
+        content: "$F{citta}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "f3af7712-57d5-4a97-b9f6-a33a304ba10c"
+        width: "38"
+        x: "430"
+        y: "121"
+      textFieldExpression:
+        content: "$F{provincia}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "9c8b2d0f-142a-4645-8d0b-f14b2b4e33d7"
+        width: "66"
+        x: "274"
+        y: "120"
+      textFieldExpression:
+        content: "$F{cap}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "16"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "486ef37e-a78c-416d-8e02-ca68560bb88d"
+        width: "270"
+        x: "280"
+        y: "111"
+      textElement:
+        textAlignment: "Center"
+      textFieldExpression:
+        content: "\"*\"+$F{codiceFiscale}+\"*\""
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "dbd178d6-5e24-4cc9-87de-a26d08f002ae"
+        width: "66"
+        x: "0"
+        y: "145"
+      textFieldExpression:
+        content: "$F{esenzione}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "254c9237-25aa-45c9-b768-b8ef43941350"
+        width: "66"
+        x: "180"
+        y: "145"
+      textFieldExpression:
+        content: "$F{assistitoProvincia}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "51bbd7bb-48ef-4819-afaf-c162eb950415"
+        width: "66"
+        x: "290"
+        y: "145"
+      textFieldExpression:
+        content: "$F{codiceASL}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "bad76e0c-6dee-4b1f-a285-a2c0dfe6ceb7"
+        width: "186"
+        x: "364"
+        y: "145"
+      textFieldExpression:
+        content: "$F{disposizioniRegionali}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "ccbe7033-dee5-40bb-aa4c-fef4cb3880ce"
+        width: "270"
+        x: "0"
+        y: "170"
+      textFieldExpression:
+        content: "$F{tipologiaPrescrizione}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "27582967-d8b4-43c2-9b28-cfeb3a809c76"
+        width: "66"
+        x: "290"
+        y: "170"
+      textFieldExpression:
+        content: "$F{altro}"
+    - bookmarkLevel: "0"
+      evaluationTime: "NOW"
+      reportElement:
+        height: "18"
+        isPrintInFirstWholeBand: "false"
+        isPrintRepeatedValues: "true"
+        isPrintWhenDetailOverflows: "false"
+        isRemoveLineWhenBlank: "false"
+        positionType: "FixRelativeToTop"
+        property: []
+        propertyExpression: []
+        stretchType: "FixRelativeToTop"
+        uuid: "7844d148-0d92-4ac0-b17c-97cfe54be725"
+        width: "66"
+        x: "390"
+        y: "171"
+      textFieldExpression:
+        content: "$F{priorita}"
 topMargin: "20"
 uuid: "dfcc67f8-27a8-4010-90a8-70d1d9f2f28d"
 whenResourceMissingType: "Null"

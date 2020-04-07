@@ -31,6 +31,10 @@ import com.abubusoft.kripton.xml.XmlType;
 //// @XmlAccessorType(XmlAccessType.FIELD)
 //
 //// @XmlRootElement(name = "property", namespace = "http://jasperreports.sourceforge.net/jasperreports")
+
+/**
+ * CHECKED
+ */
 @BindType
 public class Property {
     public String content;
